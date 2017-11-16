@@ -2,7 +2,7 @@
 /**
  * Post API: WP_Post_Type class
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Post
  * @since 4.6.0
  */
@@ -526,8 +526,8 @@ final class WP_Post_Type {
 	 *
 	 * @since 4.6.0
 	 *
-	 * @global WP_Rewrite $wp_rewrite WordPress Rewrite Component.
-	 * @global WP         $wp         Current WordPress environment instance.
+	 * @global WP_Rewrite $wp_rewrite CM5 Rewrite Component.
+	 * @global WP         $wp         Current CM5 environment instance.
 	 */
 	public function add_rewrite_rules() {
 		global $wp_rewrite, $wp;
@@ -617,8 +617,8 @@ final class WP_Post_Type {
 	 *
 	 * @since 4.6.0
 	 *
-	 * @global WP_Rewrite $wp_rewrite          WordPress rewrite component.
-	 * @global WP         $wp                  Current WordPress environment instance.
+	 * @global WP_Rewrite $wp_rewrite          CM5 rewrite component.
+	 * @global WP         $wp                  Current CM5 environment instance.
 	 * @global array      $post_type_meta_caps Used to remove meta capabilities.
 	 */
 	public function remove_rewrite_rules() {

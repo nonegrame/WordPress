@@ -1,8 +1,8 @@
 <?php
 /**
- * Base WordPress Image Editor
+ * Base CM5 Image Editor
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Image_Editor
  */
 

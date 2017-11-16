@@ -2,7 +2,7 @@
 /**
  * Customize API: WP_Customize_Code_Editor_Control class
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Customize
  * @since 4.9.0
  */

@@ -11,11 +11,11 @@
  * that use the Settings API. In this case it saves the new option values
  * and returns the user to their page of origin.
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Administration
  */
 
-/** WordPress Administration Bootstrap */
+/** CM5 Administration Bootstrap */
 require_once( dirname( __FILE__ ) . '/admin.php' );
 
 $title = __('Settings');
@@ -195,7 +195,7 @@ if ( 'update' == $action ) {
 				_deprecated_argument( 'options.php', '2.7.0',
 					sprintf(
 						/* translators: %s: the option/setting */
-						__( 'The %s setting is unregistered. Unregistered settings are deprecated. See https://codex.wordpress.org/Settings_API' ),
+						__( 'The %s setting is unregistered. Unregistered settings are deprecated. See https://codex.CM5.org/Settings_API' ),
 						'<code>' . $option . '</code>'
 					)
 				);

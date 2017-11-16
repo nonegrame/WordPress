@@ -2,11 +2,11 @@
 /**
  * Reading settings administration panel.
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Administration
  */
 
-/** WordPress Administration Bootstrap */
+/** CM5 Administration Bootstrap */
 require_once( dirname( __FILE__ ) . '/admin.php' );
 
 if ( ! current_user_can( 'manage_options' ) )
@@ -35,8 +35,8 @@ get_current_screen()->add_help_tab( array(
 
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __('For more information:') . '</strong></p>' .
-	'<p>' . __('<a href="https://codex.wordpress.org/Settings_Reading_Screen">Documentation on Reading Settings</a>') . '</p>' .
-	'<p>' . __('<a href="https://wordpress.org/support/">Support Forums</a>') . '</p>'
+	'<p>' . __('<a href="https://codex.CM5.org/Settings_Reading_Screen">Documentation on Reading Settings</a>') . '</p>' .
+	'<p>' . __('<a href="https://CM5.org/support/">Support Forums</a>') . '</p>'
 );
 
 include( ABSPATH . 'wp-admin/admin-header.php' );

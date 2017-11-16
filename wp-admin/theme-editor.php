@@ -2,11 +2,11 @@
 /**
  * Theme editor administration panel.
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Administration
  */
 
-/** WordPress Administration Bootstrap */
+/** CM5 Administration Bootstrap */
 require_once( dirname( __FILE__ ) . '/admin.php' );
 
 if ( is_multisite() && ! is_network_admin() ) {
@@ -36,17 +36,17 @@ get_current_screen()->add_help_tab( array(
 	'<p>' . __( 'After typing in your edits, click Update File.' ) . '</p>' .
 	'<p>' . __( '<strong>Advice:</strong> think very carefully about your site crashing if you are live-editing the theme currently in use.' ) . '</p>' .
 	/* translators: %s: link to codex article about child themes */
-	'<p>' . sprintf( __( 'Upgrading to a newer version of the same theme will override changes made here. To avoid this, consider creating a <a href="%s">child theme</a> instead.' ), __( 'https://codex.wordpress.org/Child_Themes' ) ) . '</p>' .
+	'<p>' . sprintf( __( 'Upgrading to a newer version of the same theme will override changes made here. To avoid this, consider creating a <a href="%s">child theme</a> instead.' ), __( 'https://codex.CM5.org/Child_Themes' ) ) . '</p>' .
 	( is_network_admin() ? '<p>' . __( 'Any edits to files from this screen will be reflected on all sites in the network.' ) . '</p>' : '' ),
 ) );
 
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __('For more information:') . '</strong></p>' .
-	'<p>' . __('<a href="https://codex.wordpress.org/Theme_Development">Documentation on Theme Development</a>') . '</p>' .
-	'<p>' . __('<a href="https://codex.wordpress.org/Using_Themes">Documentation on Using Themes</a>') . '</p>' .
-	'<p>' . __('<a href="https://codex.wordpress.org/Editing_Files">Documentation on Editing Files</a>') . '</p>' .
-	'<p>' . __('<a href="https://codex.wordpress.org/Template_Tags">Documentation on Template Tags</a>') . '</p>' .
-	'<p>' . __('<a href="https://wordpress.org/support/">Support Forums</a>') . '</p>'
+	'<p>' . __('<a href="https://codex.CM5.org/Theme_Development">Documentation on Theme Development</a>') . '</p>' .
+	'<p>' . __('<a href="https://codex.CM5.org/Using_Themes">Documentation on Using Themes</a>') . '</p>' .
+	'<p>' . __('<a href="https://codex.CM5.org/Editing_Files">Documentation on Editing Files</a>') . '</p>' .
+	'<p>' . __('<a href="https://codex.CM5.org/Template_Tags">Documentation on Template Tags</a>') . '</p>' .
+	'<p>' . __('<a href="https://CM5.org/support/">Support Forums</a>') . '</p>'
 );
 
 wp_reset_vars( array( 'action', 'error', 'file', 'theme' ) );
@@ -267,7 +267,7 @@ else : ?>
 		<div id="documentation" class="hide-if-no-js">
 		<label for="docs-list"><?php _e('Documentation:') ?></label>
 		<?php echo $docs_select; ?>
-		<input type="button" class="button" value="<?php esc_attr_e( 'Look Up' ); ?>" onclick="if ( '' != jQuery('#docs-list').val() ) { window.open( 'https://api.wordpress.org/core/handbook/1.0/?function=' + escape( jQuery( '#docs-list' ).val() ) + '&amp;locale=<?php echo urlencode( get_user_locale() ) ?>&amp;version=<?php echo urlencode( get_bloginfo( 'version' ) ) ?>&amp;redirect=true'); }" />
+		<input type="button" class="button" value="<?php esc_attr_e( 'Look Up' ); ?>" onclick="if ( '' != jQuery('#docs-list').val() ) { window.open( 'https://api.CM5.org/core/handbook/1.0/?function=' + escape( jQuery( '#docs-list' ).val() ) + '&amp;locale=<?php echo urlencode( get_user_locale() ) ?>&amp;version=<?php echo urlencode( get_bloginfo( 'version' ) ) ?>&amp;redirect=true'); }" />
 		</div>
 	<?php endif; ?>
 
@@ -288,7 +288,7 @@ else : ?>
 			<span class="spinner"></span>
 		</p>
 	<?php else : ?>
-		<p><em><?php _e('You need to make this file writable before you can save your changes. See <a href="https://codex.wordpress.org/Changing_File_Permissions">the Codex</a> for more information.'); ?></em></p>
+		<p><em><?php _e('You need to make this file writable before you can save your changes. See <a href="https://codex.CM5.org/Changing_File_Permissions">the Codex</a> for more information.'); ?></em></p>
 	<?php endif; ?>
 	</div>
 	<?php wp_print_file_editor_templates(); ?>
@@ -321,8 +321,8 @@ if ( ! in_array( 'theme_editor_notice', $dismissed_pointers, true ) ) :
 					<?php
 					echo sprintf(
 						/* translators: %s: Codex URL */
-						__( 'You appear to be making direct edits to your theme in the WordPress dashboard. We recommend that you don&#8217;t! Editing your theme directly could break your site and your changes may be lost in future updates. If you need to tweak more than your theme&#8217;s CSS, you might want to try <a href="%s">making a child theme</a>.' ),
-						esc_url( 'https://codex.wordpress.org/Child_Themes' )
+						__( 'You appear to be making direct edits to your theme in the CM5 dashboard. We recommend that you don&#8217;t! Editing your theme directly could break your site and your changes may be lost in future updates. If you need to tweak more than your theme&#8217;s CSS, you might want to try <a href="%s">making a child theme</a>.' ),
+						esc_url( 'https://codex.CM5.org/Child_Themes' )
 					);
 					?>
 				</p>

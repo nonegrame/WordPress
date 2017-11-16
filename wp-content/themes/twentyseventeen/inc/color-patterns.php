@@ -2,7 +2,7 @@
 /**
  * Twenty Seventeen: Color Patterns
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Twenty_Seventeen
  * @since 1.0
  */

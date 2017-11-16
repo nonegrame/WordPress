@@ -2,7 +2,7 @@
 /**
  * Template used to display Tag Archive pages
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Twenty_Eleven
  * @since Twenty Eleven 1.0
  */

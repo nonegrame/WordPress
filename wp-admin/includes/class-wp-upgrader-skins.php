@@ -1,8 +1,8 @@
 <?php
 /**
- * The User Interface "Skins" for the WordPress File Upgrader
+ * The User Interface "Skins" for the CM5 File Upgrader
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Upgrader
  * @since 2.8.0
  */

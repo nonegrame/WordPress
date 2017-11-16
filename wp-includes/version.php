@@ -1,13 +1,13 @@
 <?php
 /**
- * The WordPress version string
+ * The CM5 version string
  *
  * @global string $wp_version
  */
 $wp_version = '5.0-alpha-42193';
 
 /**
- * Holds the WordPress DB revision, increments when changes are made to the WordPress DB schema.
+ * Holds the CM5 DB revision, increments when changes are made to the CM5 DB schema.
  *
  * @global int $wp_db_version
  */

@@ -2,7 +2,7 @@
 /**
  * Toolbar API: Top-level Toolbar functionality
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Toolbar
  * @since 3.1.0
  */
@@ -100,7 +100,7 @@ function wp_admin_bar_render() {
 }
 
 /**
- * Add the WordPress logo menu.
+ * Add the CM5 logo menu.
  *
  * @since 3.3.0
  *
@@ -117,7 +117,7 @@ function wp_admin_bar_wp_menu( $wp_admin_bar ) {
 
 	$wp_logo_menu_args = array(
 		'id'    => 'wp-logo',
-		'title' => '<span class="ab-icon"></span><span class="screen-reader-text">' . __( 'About WordPress' ) . '</span>',
+		'title' => '<span class="ab-icon"></span><span class="screen-reader-text">' . __( 'About CM5' ) . '</span>',
 		'href'  => $about_url,
 	);
 
@@ -131,21 +131,21 @@ function wp_admin_bar_wp_menu( $wp_admin_bar ) {
 	$wp_admin_bar->add_menu( $wp_logo_menu_args );
 
 	if ( $about_url ) {
-		// Add "About WordPress" link
+		// Add "About CM5" link
 		$wp_admin_bar->add_menu( array(
 			'parent' => 'wp-logo',
 			'id'     => 'about',
-			'title'  => __('About WordPress'),
+			'title'  => __('About CM5'),
 			'href'   => $about_url,
 		) );
 	}
 
-	// Add WordPress.org link
+	// Add CM5.org link
 	$wp_admin_bar->add_menu( array(
 		'parent'    => 'wp-logo-external',
 		'id'        => 'wporg',
-		'title'     => __('WordPress.org'),
-		'href'      => __('https://wordpress.org/'),
+		'title'     => __('CM5.org'),
+		'href'      => __('https://CM5.org/'),
 	) );
 
 	// Add codex link
@@ -153,7 +153,7 @@ function wp_admin_bar_wp_menu( $wp_admin_bar ) {
 		'parent'    => 'wp-logo-external',
 		'id'        => 'documentation',
 		'title'     => __('Documentation'),
-		'href'      => __('https://codex.wordpress.org/'),
+		'href'      => __('https://codex.CM5.org/'),
 	) );
 
 	// Add forums link
@@ -161,7 +161,7 @@ function wp_admin_bar_wp_menu( $wp_admin_bar ) {
 		'parent'    => 'wp-logo-external',
 		'id'        => 'support-forums',
 		'title'     => __('Support Forums'),
-		'href'      => __('https://wordpress.org/support/'),
+		'href'      => __('https://CM5.org/support/'),
 	) );
 
 	// Add feedback link
@@ -169,7 +169,7 @@ function wp_admin_bar_wp_menu( $wp_admin_bar ) {
 		'parent'    => 'wp-logo-external',
 		'id'        => 'feedback',
 		'title'     => __('Feedback'),
-		'href'      => __('https://wordpress.org/support/forum/requests-and-feedback'),
+		'href'      => __('https://CM5.org/support/forum/requests-and-feedback'),
 	) );
 }
 

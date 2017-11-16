@@ -6,7 +6,7 @@
  * Includes functionality for theme-specific files as well as operations for uploading,
  * archiving, and rendering output when necessary.
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Filesystem
  * @since 2.3.0
  */
@@ -64,8 +64,8 @@ $wp_file_descriptions = array(
 );
 
 /**
- * Get the description for standard WordPress theme files and other various standard
- * WordPress files
+ * Get the description for standard CM5 theme files and other various standard
+ * CM5 files
  *
  * @since 1.5.0
  *
@@ -94,11 +94,11 @@ function get_file_description( $file ) {
 }
 
 /**
- * Get the absolute filesystem path to the root of the WordPress installation
+ * Get the absolute filesystem path to the root of the CM5 installation
  *
  * @since 1.5.0
  *
- * @return string Full filesystem path to the root of the WordPress installation
+ * @return string Full filesystem path to the root of the CM5 installation
  */
 function get_home_path() {
 	$home    = set_url_scheme( get_option( 'home' ), 'http' );
@@ -308,7 +308,7 @@ function wp_print_file_editor_templates() {
 				</p>
 				<pre>{{ data.message }}</pre>
 			<# } else if ( 'file_not_writable' === data.code ) { #>
-				<p><?php _e( 'You need to make this file writable before you can save your changes. See <a href="https://codex.wordpress.org/Changing_File_Permissions">the Codex</a> for more information.' ); ?></p>
+				<p><?php _e( 'You need to make this file writable before you can save your changes. See <a href="https://codex.CM5.org/Changing_File_Permissions">the Codex</a> for more information.' ); ?></p>
 			<# } else { #>
 				<p>{{ data.message || data.code }}</p>
 
@@ -682,7 +682,7 @@ function validate_file_to_edit( $file, $allowed_files = array() ) {
 }
 
 /**
- * Handle PHP uploads in WordPress, sanitizing file names, checking extensions for mime type,
+ * Handle PHP uploads in CM5, sanitizing file names, checking extensions for mime type,
  * and moving the file to the appropriate directory within the uploads directory.
  *
  * @access private
@@ -706,7 +706,7 @@ function _wp_handle_upload( &$file, $overrides, $time, $action ) {
 	}
 
 	/**
-	 * Filters the data for a file before it is uploaded to WordPress.
+	 * Filters the data for a file before it is uploaded to CM5.
 	 *
 	 * The dynamic portion of the hook name, `$action`, refers to the post action.
 	 *
@@ -952,7 +952,7 @@ function wp_handle_sideload( &$file, $overrides = false, $time = null ) {
 
 
 /**
- * Downloads a URL to a local temporary file using the WordPress HTTP Class.
+ * Downloads a URL to a local temporary file using the CM5 HTTP Class.
  * Please note, That the calling function must unlink() the file.
  *
  * @since 2.5.0
@@ -1022,7 +1022,7 @@ function verify_file_md5( $filename, $expected_md5 ) {
 }
 
 /**
- * Unzips a specified ZIP file to a location on the Filesystem via the WordPress Filesystem Abstraction.
+ * Unzips a specified ZIP file to a location on the Filesystem via the CM5 Filesystem Abstraction.
  * Assumes that WP_Filesystem() has already been called and set up. Does not extract a root-level __MACOSX directory, if present.
  *
  * Attempts to increase the PHP Memory limit to 256M before uncompressing,
@@ -1301,7 +1301,7 @@ function _unzip_file_pclzip($file, $to, $needed_dirs = array()) {
 }
 
 /**
- * Copies a directory from one location to another via the WordPress Filesystem Abstraction.
+ * Copies a directory from one location to another via the CM5 Filesystem Abstraction.
  * Assumes that WP_Filesystem() has already been called and setup.
  *
  * @since 2.5.0
@@ -1354,10 +1354,10 @@ function copy_dir($from, $to, $skip_list = array() ) {
 }
 
 /**
- * Initialises and connects the WordPress Filesystem Abstraction classes.
+ * Initialises and connects the CM5 Filesystem Abstraction classes.
  * This function will include the chosen transport and attempt connecting.
  *
- * Plugins may add extra transports, And force WordPress to use them by returning
+ * Plugins may add extra transports, And force CM5 to use them by returning
  * the filename via the {@see 'filesystem_method_file'} filter.
  *
  * @since 2.5.0
@@ -1435,7 +1435,7 @@ function WP_Filesystem( $args = false, $context = false, $allow_relaxed_file_own
  * The return value can be overridden by defining the `FS_METHOD` constant in `wp-config.php`,
  * or filtering via {@see 'filesystem_method'}.
  *
- * @link https://codex.wordpress.org/Editing_wp-config.php#WordPress_Upgrade_Constants
+ * @link https://codex.CM5.org/Editing_wp-config.php#CM5_Upgrade_Constants
  *
  * Plugins may define a custom transport handler, See WP_Filesystem().
  *
@@ -1470,7 +1470,7 @@ function get_filesystem_method( $args = array(), $context = '', $allow_relaxed_f
 		$temp_handle = @fopen($temp_file_name, 'w');
 		if ( $temp_handle ) {
 
-			// Attempt to determine the file owner of the WordPress files, and that of newly created files
+			// Attempt to determine the file owner of the CM5 files, and that of newly created files
 			$wp_file_owner = $temp_file_owner = false;
 			if ( function_exists('fileowner') ) {
 				$wp_file_owner = @fileowner( __FILE__ );
@@ -1478,7 +1478,7 @@ function get_filesystem_method( $args = array(), $context = '', $allow_relaxed_f
 			}
 
 			if ( $wp_file_owner !== false && $wp_file_owner === $temp_file_owner ) {
-				// WordPress is creating files as the same owner as the WordPress files,
+				// CM5 is creating files as the same owner as the CM5 files,
 				// this means it's safe to modify & create new files via PHP.
 				$method = 'direct';
 				$GLOBALS['_wp_filesystem_direct_method'] = 'file_owner';
@@ -1517,7 +1517,7 @@ function get_filesystem_method( $args = array(), $context = '', $allow_relaxed_f
  *
  * All chosen/entered details are saved, excluding the password.
  *
- * Hostnames may be in the form of hostname:portnumber (eg: wordpress.org:2467)
+ * Hostnames may be in the form of hostname:portnumber (eg: CM5.org:2467)
  * to specify an alternate FTP/SSH port.
  *
  * Plugins may override this form by returning true|false via the {@see 'request_filesystem_credentials'} filter.
@@ -1687,7 +1687,7 @@ echo "<$heading_tag id='request-filesystem-credentials-title'>" . __( 'Connectio
 <p id="request-filesystem-credentials-desc"><?php
 	$label_user = __('Username');
 	$label_pass = __('Password');
-	_e('To perform the requested action, WordPress needs to access your web server.');
+	_e('To perform the requested action, CM5 needs to access your web server.');
 	echo ' ';
 	if ( ( isset( $types['ftp'] ) || isset( $types['ftps'] ) ) ) {
 		if ( isset( $types['ssh'] ) ) {
@@ -1705,7 +1705,7 @@ echo "<$heading_tag id='request-filesystem-credentials-title'>" . __( 'Connectio
 ?></p>
 <label for="hostname">
 	<span class="field-title"><?php _e( 'Hostname' ) ?></span>
-	<input name="hostname" type="text" id="hostname" aria-describedby="request-filesystem-credentials-desc" class="code" placeholder="<?php esc_attr_e( 'example: www.wordpress.org' ) ?>" value="<?php echo esc_attr($hostname); if ( !empty($port) ) echo ":$port"; ?>"<?php disabled( defined('FTP_HOST') ); ?> />
+	<input name="hostname" type="text" id="hostname" aria-describedby="request-filesystem-credentials-desc" class="code" placeholder="<?php esc_attr_e( 'example: www.CM5.org' ) ?>" value="<?php echo esc_attr($hostname); if ( !empty($port) ) echo ":$port"; ?>"<?php disabled( defined('FTP_HOST') ); ?> />
 </label>
 <div class="ftp-username">
 	<label for="username">

@@ -2,15 +2,15 @@
 /**
  * Query API: WP_Query class
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Query
  * @since 4.7.0
  */
 
 /**
- * The WordPress Query class.
+ * The CM5 Query class.
  *
- * @link https://codex.wordpress.org/Function_Reference/WP_Query Codex page.
+ * @link https://codex.CM5.org/Function_Reference/WP_Query Codex page.
  *
  * @since 1.5.0
  * @since 4.5.0 Removed the `$comments_popup` property.
@@ -440,7 +440,7 @@ class WP_Query {
 	/**
 	 * Resets query flags to false.
 	 *
-	 * The query flags are what page info WordPress was able to figure out.
+	 * The query flags are what page info CM5 was able to figure out.
 	 *
 	 * @since 2.0.0
 	 */
@@ -1240,7 +1240,7 @@ class WP_Query {
 	 *
 	 * @since 3.7.0
 	 *
-	 * @global wpdb $wpdb WordPress database abstraction object.
+	 * @global wpdb $wpdb CM5 database abstraction object.
 	 *
 	 * @param array $q Query variables.
 	 * @return string WHERE clause.
@@ -1396,7 +1396,7 @@ class WP_Query {
 	 *
 	 * @since 3.7.0
 	 *
-	 * @global wpdb $wpdb WordPress database abstraction object.
+	 * @global wpdb $wpdb CM5 database abstraction object.
 	 *
 	 * @param array $q Query variables.
 	 * @return string ORDER BY clause.
@@ -1452,7 +1452,7 @@ class WP_Query {
 	 *
 	 * @since 4.0.0
 	 *
-	 * @global wpdb $wpdb WordPress database abstraction object.
+	 * @global wpdb $wpdb CM5 database abstraction object.
 	 *
 	 * @param string $orderby Alias for the field to order by.
 	 * @return string|false Table-prefixed value to used in the ORDER clause. False otherwise.
@@ -2740,7 +2740,7 @@ class WP_Query {
 		/**
 		 * Filters the posts array before the query takes place.
 		 *
-		 * Return a non-null value to bypass WordPress's default post queries.
+		 * Return a non-null value to bypass CM5's default post queries.
 		 *
 		 * Filtering functions that require pagination information are encouraged to set
 		 * the `found_posts` and `max_num_pages` properties of the WP_Query object,
@@ -3209,7 +3209,7 @@ class WP_Query {
 	}
 
 	/**
-	 * Sets up the WordPress query by parsing query string.
+	 * Sets up the CM5 query by parsing query string.
 	 *
 	 * @since 1.5.0
 	 *
@@ -3317,7 +3317,7 @@ class WP_Query {
 	/**
 	 * Constructor.
 	 *
-	 * Sets up the WordPress query, if parameter is not empty.
+	 * Sets up the CM5 query, if parameter is not empty.
 	 *
 	 * @since 1.5.0
 	 *

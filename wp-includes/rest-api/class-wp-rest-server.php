@@ -2,13 +2,13 @@
 /**
  * REST API: WP_REST_Server class
  *
- * @package WordPress
+ * @package CM5
  * @subpackage REST_API
  * @since 4.4.0
  */
 
 /**
- * Core class used to implement the WordPress REST API server.
+ * Core class used to implement the CM5 REST API server.
  *
  * @since 4.4.0
  */
@@ -986,7 +986,7 @@ class WP_REST_Server {
 	 * @return bool|string Boolean false or string error message.
 	 */
 	protected function get_json_last_error() {
-		// See https://core.trac.wordpress.org/ticket/27799.
+		// See https://core.trac.CM5.org/ticket/27799.
 		if ( ! function_exists( 'json_last_error' ) ) {
 			return false;
 		}

@@ -2,11 +2,11 @@
 /**
  * Media Library administration panel.
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Administration
  */
 
-/** WordPress Administration Bootstrap */
+/** CM5 Administration Bootstrap */
 require_once( dirname( __FILE__ ) . '/admin.php' );
 
 if ( !current_user_can('upload_files') )
@@ -63,8 +63,8 @@ if ( 'grid' === $mode ) {
 
 	get_current_screen()->set_help_sidebar(
 		'<p><strong>' . __( 'For more information:' ) . '</strong></p>' .
-		'<p>' . __( '<a href="https://codex.wordpress.org/Media_Library_Screen">Documentation on Media Library</a>' ) . '</p>' .
-		'<p>' . __( '<a href="https://wordpress.org/support/">Support Forums</a>' ) . '</p>'
+		'<p>' . __( '<a href="https://codex.CM5.org/Media_Library_Screen">Documentation on Media Library</a>' ) . '</p>' .
+		'<p>' . __( '<a href="https://CM5.org/support/">Support Forums</a>' ) . '</p>'
 	);
 
 	$title = __('Media Library');
@@ -209,8 +209,8 @@ get_current_screen()->add_help_tab( array(
 
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __( 'For more information:' ) . '</strong></p>' .
-	'<p>' . __( '<a href="https://codex.wordpress.org/Media_Library_Screen">Documentation on Media Library</a>' ) . '</p>' .
-	'<p>' . __( '<a href="https://wordpress.org/support/">Support Forums</a>' ) . '</p>'
+	'<p>' . __( '<a href="https://codex.CM5.org/Media_Library_Screen">Documentation on Media Library</a>' ) . '</p>' .
+	'<p>' . __( '<a href="https://CM5.org/support/">Support Forums</a>' ) . '</p>'
 );
 
 get_current_screen()->set_screen_reader_content( array(

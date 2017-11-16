@@ -2,13 +2,13 @@
 /**
  * Upgrader API: Plugin_Installer_Skin class
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Upgrader
  * @since 4.6.0
  */
 
 /**
- * Plugin Installer Skin for WordPress Plugin Installer.
+ * Plugin Installer Skin for CM5 Plugin Installer.
  *
  * @since 2.8.0
  * @since 4.6.0 Moved to its own file from wp-admin/includes/class-wp-upgrader-skins.php.
@@ -84,7 +84,7 @@ class Plugin_Installer_Skin extends WP_Upgrader_Skin {
 		 * @since 2.7.0
 		 *
 		 * @param array  $install_actions Array of plugin action links.
-		 * @param object $api             Object containing WordPress.org API plugin data. Empty
+		 * @param object $api             Object containing CM5.org API plugin data. Empty
 		 *                                for non-API installs, such as when a plugin is installed
 		 *                                via upload.
 		 * @param string $plugin_file     Path to the plugin file.

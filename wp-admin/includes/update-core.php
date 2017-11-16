@@ -1,8 +1,8 @@
 <?php
 /**
- * WordPress core upgrade functionality.
+ * CM5 core upgrade functionality.
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Administration
  * @since 2.7.0
  */
@@ -130,9 +130,9 @@ $_old_files = array(
 'wp-includes/js/tinymce/plugins/spellchecker/images',
 'wp-includes/js/tinymce/plugins/spellchecker/langs',
 'wp-includes/js/tinymce/plugins/spellchecker/tinyspell.php',
-'wp-includes/js/tinymce/plugins/wordpress/images',
-'wp-includes/js/tinymce/plugins/wordpress/langs',
-'wp-includes/js/tinymce/plugins/wordpress/wordpress.css',
+'wp-includes/js/tinymce/plugins/CM5/images',
+'wp-includes/js/tinymce/plugins/CM5/langs',
+'wp-includes/js/tinymce/plugins/CM5/CM5.css',
 'wp-includes/js/tinymce/plugins/wphelp',
 'wp-includes/js/tinymce/themes/advanced/css',
 'wp-includes/js/tinymce/themes/advanced/images',
@@ -143,7 +143,7 @@ $_old_files = array(
 // 2.6
 'wp-admin/bookmarklet.php',
 'wp-includes/js/jquery/jquery.dimensions.min.js',
-'wp-includes/js/tinymce/plugins/wordpress/popups.css',
+'wp-includes/js/tinymce/plugins/CM5/popups.css',
 'wp-includes/js/wp-ajax.js',
 // 2.7
 'wp-admin/css/press-this-ie-rtl.css',
@@ -187,7 +187,7 @@ $_old_files = array(
 'wp-includes/js/tinymce/plugins/autosave',
 'wp-includes/js/tinymce/plugins/paste/css',
 'wp-includes/js/tinymce/utils/mclayer.js',
-'wp-includes/js/tinymce/wordpress.css',
+'wp-includes/js/tinymce/CM5.css',
 // 2.8.5
 'wp-admin/import/btt.php',
 'wp-admin/import/jkw.php',
@@ -199,7 +199,7 @@ $_old_files = array(
 'wp-admin/js/slug.dev.js',
 'wp-admin/js/slug.js',
 'wp-includes/gettext.php',
-'wp-includes/js/tinymce/plugins/wordpress/js',
+'wp-includes/js/tinymce/plugins/CM5/js',
 'wp-includes/streams.php',
 // MU
 'README.txt',
@@ -216,7 +216,7 @@ $_old_files = array(
 'wp-admin/wpmu-themes.php',
 'wp-admin/wpmu-upgrade-site.php',
 'wp-admin/wpmu-users.php',
-'wp-includes/images/wordpress-mu.png',
+'wp-includes/images/CM5-mu.png',
 'wp-includes/wpmu-default-filters.php',
 'wp-includes/wpmu-functions.php',
 'wpmu-settings.php',
@@ -282,9 +282,9 @@ $_old_files = array(
 'wp-admin/js/list-table.dev.js',
 'wp-admin/js/list-table.js',
 'wp-includes/default-embeds.php',
-'wp-includes/js/tinymce/plugins/wordpress/img/help.gif',
-'wp-includes/js/tinymce/plugins/wordpress/img/more.gif',
-'wp-includes/js/tinymce/plugins/wordpress/img/toolbars.gif',
+'wp-includes/js/tinymce/plugins/CM5/img/help.gif',
+'wp-includes/js/tinymce/plugins/CM5/img/more.gif',
+'wp-includes/js/tinymce/plugins/CM5/img/toolbars.gif',
 'wp-includes/js/tinymce/themes/advanced/img/fm.gif',
 'wp-includes/js/tinymce/themes/advanced/img/sflogo.png',
 // 3.3
@@ -371,11 +371,11 @@ $_old_files = array(
 'wp-includes/css/editor-buttons.css',
 'wp-includes/css/editor-buttons.dev.css',
 'wp-includes/js/tinymce/plugins/paste/blank.htm',
-'wp-includes/js/tinymce/plugins/wordpress/css',
-'wp-includes/js/tinymce/plugins/wordpress/editor_plugin.dev.js',
-'wp-includes/js/tinymce/plugins/wordpress/img/embedded.png',
-'wp-includes/js/tinymce/plugins/wordpress/img/more_bug.gif',
-'wp-includes/js/tinymce/plugins/wordpress/img/page_bug.gif',
+'wp-includes/js/tinymce/plugins/CM5/css',
+'wp-includes/js/tinymce/plugins/CM5/editor_plugin.dev.js',
+'wp-includes/js/tinymce/plugins/CM5/img/embedded.png',
+'wp-includes/js/tinymce/plugins/CM5/img/more_bug.gif',
+'wp-includes/js/tinymce/plugins/CM5/img/page_bug.gif',
 'wp-includes/js/tinymce/plugins/wpdialogs/editor_plugin.dev.js',
 'wp-includes/js/tinymce/plugins/wpeditimage/css/editimage-rtl.css',
 'wp-includes/js/tinymce/plugins/wpeditimage/editor_plugin.dev.js',
@@ -584,7 +584,7 @@ $_old_files = array(
 'wp-admin/images/about-search-2x.png',
 'wp-admin/images/bubble_bg-rtl-2x.gif',
 'wp-admin/images/wp-badge-2x.png',
-'wp-admin/images/wordpress-logo-2x.png',
+'wp-admin/images/CM5-logo-2x.png',
 'wp-admin/images/bubble_bg-rtl.gif',
 'wp-admin/images/wp-badge.png',
 'wp-admin/images/menu-shadow.png',
@@ -619,7 +619,7 @@ $_old_files = array(
 'wp-includes/js/tinymce/plugins/inlinepopups',
 'wp-includes/js/tinymce/plugins/media/js',
 'wp-includes/js/tinymce/plugins/media/css',
-'wp-includes/js/tinymce/plugins/wordpress/img',
+'wp-includes/js/tinymce/plugins/CM5/img',
 'wp-includes/js/tinymce/plugins/wpdialogs/js',
 'wp-includes/js/tinymce/plugins/wpeditimage/img',
 'wp-includes/js/tinymce/plugins/wpeditimage/js',
@@ -638,8 +638,8 @@ $_old_files = array(
 'wp-includes/js/tinymce/plugins/wpview/editor_plugin.js',
 'wp-includes/js/tinymce/plugins/directionality/editor_plugin.js',
 'wp-includes/js/tinymce/plugins/directionality/editor_plugin_src.js',
-'wp-includes/js/tinymce/plugins/wordpress/editor_plugin.js',
-'wp-includes/js/tinymce/plugins/wordpress/editor_plugin_src.js',
+'wp-includes/js/tinymce/plugins/CM5/editor_plugin.js',
+'wp-includes/js/tinymce/plugins/CM5/editor_plugin_src.js',
 'wp-includes/js/tinymce/plugins/wpdialogs/editor_plugin_src.js',
 'wp-includes/js/tinymce/plugins/wpdialogs/editor_plugin.js',
 'wp-includes/js/tinymce/plugins/wpeditimage/editimage.html',
@@ -696,7 +696,7 @@ $_old_files = array(
 'wp-includes/js/jquery/ui/jquery.ui.tabs.min.js',
 'wp-includes/js/jquery/ui/jquery.ui.tooltip.min.js',
 'wp-includes/js/jquery/ui/jquery.ui.widget.min.js',
-'wp-includes/js/tinymce/skins/wordpress/images/dashicon-no-alt.png',
+'wp-includes/js/tinymce/skins/CM5/images/dashicon-no-alt.png',
 // 4.3
 'wp-admin/js/wp-fullscreen.js',
 'wp-admin/js/wp-fullscreen.min.js',
@@ -749,7 +749,7 @@ $_old_files = array(
  * Stores new files in wp-content to copy
  *
  * The contents of this array indicate any new bundled plugins/themes which
- * should be installed with the WordPress Upgrade. These items will not be
+ * should be installed with the CM5 Upgrade. These items will not be
  * re-installed in future upgrades, this behaviour is controlled by the
  * introduced version present here being older than the current installed version.
  *
@@ -781,9 +781,9 @@ $_new_bundled_files = array(
 );
 
 /**
- * Upgrades the core of WordPress.
+ * Upgrades the core of CM5.
  *
- * This will create a .maintenance file at the base of the WordPress directory
+ * This will create a .maintenance file at the base of the CM5 directory
  * to ensure that people can not access the web site, when the files are being
  * copied to their locations.
  *
@@ -796,13 +796,13 @@ $_new_bundled_files = array(
  * The steps for the upgrader for after the new release is downloaded and
  * unzipped is:
  *   1. Test unzipped location for select files to ensure that unzipped worked.
- *   2. Create the .maintenance file in current WordPress base.
- *   3. Copy new WordPress directory over old WordPress files.
- *   4. Upgrade WordPress to new version.
+ *   2. Create the .maintenance file in current CM5 base.
+ *   3. Copy new CM5 directory over old CM5 files.
+ *   4. Upgrade CM5 to new version.
  *     4.1. Copy all files/folders other than wp-content
  *     4.2. Copy any language files to WP_LANG_DIR (which may differ from WP_CONTENT_DIR
  *     4.3. Copy any new bundled themes/plugins to their respective locations
- *   5. Delete new WordPress directory path.
+ *   5. Delete new CM5 directory path.
  *   6. Delete .maintenance file.
  *   7. Remove old files.
  *   8. Delete 'update_core' option.
@@ -813,8 +813,8 @@ $_new_bundled_files = array(
  * automatically remove old files and remove the 'update_core' option. This
  * isn't that bad.
  *
- * If the copy of the new WordPress over the old fails, then the worse is that
- * the new WordPress directory will remain.
+ * If the copy of the new CM5 over the old fails, then the worse is that
+ * the new CM5 directory will remain.
  *
  * If it is assumed that every file will be copied over, including plugins and
  * themes, then if you edit the default theme, you should rename it, so that
@@ -831,7 +831,7 @@ $_new_bundled_files = array(
  * @global string             $required_mysql_version
  *
  * @param string $from New release unzipped path.
- * @param string $to   Path to old WordPress installation.
+ * @param string $to   Path to old CM5 installation.
  * @return WP_Error|null WP_Error on failure, null on success.
  */
 function update_core($from, $to) {
@@ -846,9 +846,9 @@ function update_core($from, $to) {
 	 * has been downloaded and unzipped. It is evaluated five more times during
 	 * the process:
 	 *
-	 * 1. Before WordPress begins the core upgrade process.
+	 * 1. Before CM5 begins the core upgrade process.
 	 * 2. Before Maintenance Mode is enabled.
-	 * 3. Before WordPress begins copying over the necessary files.
+	 * 3. Before CM5 begins copying over the necessary files.
 	 * 4. Before Maintenance Mode is disabled.
 	 * 5. Before the database is upgraded.
 	 *
@@ -860,7 +860,7 @@ function update_core($from, $to) {
 
 	// Sanity check the unzipped distribution.
 	$distro = '';
-	$roots = array( '/wordpress/', '/wordpress-mu/' );
+	$roots = array( '/CM5/', '/CM5-mu/' );
 	foreach ( $roots as $root ) {
 		if ( $wp_filesystem->exists( $from . $root . 'readme.html' ) && $wp_filesystem->exists( $from . $root . 'wp-includes/version.php' ) ) {
 			$distro = $root;
@@ -891,7 +891,7 @@ function update_core($from, $to) {
 
 	$php_version    = phpversion();
 	$mysql_version  = $wpdb->db_version();
-	$old_wp_version = $GLOBALS['wp_version']; // The version of WordPress we're updating from
+	$old_wp_version = $GLOBALS['wp_version']; // The version of CM5 we're updating from
 	$development_build = ( false !== strpos( $old_wp_version . $wp_version, '-' )  ); // a dash in the version indicates a Development release
 	$php_compat     = version_compare( $php_version, $required_php_version, '>=' );
 	if ( file_exists( WP_CONTENT_DIR . '/db.php' ) && empty( $wpdb->is_mysql ) )
@@ -903,11 +903,11 @@ function update_core($from, $to) {
 		$wp_filesystem->delete($from, true);
 
 	if ( !$mysql_compat && !$php_compat )
-		return new WP_Error( 'php_mysql_not_compatible', sprintf( __('The update cannot be installed because WordPress %1$s requires PHP version %2$s or higher and MySQL version %3$s or higher. You are running PHP version %4$s and MySQL version %5$s.'), $wp_version, $required_php_version, $required_mysql_version, $php_version, $mysql_version ) );
+		return new WP_Error( 'php_mysql_not_compatible', sprintf( __('The update cannot be installed because CM5 %1$s requires PHP version %2$s or higher and MySQL version %3$s or higher. You are running PHP version %4$s and MySQL version %5$s.'), $wp_version, $required_php_version, $required_mysql_version, $php_version, $mysql_version ) );
 	elseif ( !$php_compat )
-		return new WP_Error( 'php_not_compatible', sprintf( __('The update cannot be installed because WordPress %1$s requires PHP version %2$s or higher. You are running version %3$s.'), $wp_version, $required_php_version, $php_version ) );
+		return new WP_Error( 'php_not_compatible', sprintf( __('The update cannot be installed because CM5 %1$s requires PHP version %2$s or higher. You are running version %3$s.'), $wp_version, $required_php_version, $php_version ) );
 	elseif ( !$mysql_compat )
-		return new WP_Error( 'mysql_not_compatible', sprintf( __('The update cannot be installed because WordPress %1$s requires MySQL version %2$s or higher. You are running version %3$s.'), $wp_version, $required_mysql_version, $mysql_version ) );
+		return new WP_Error( 'mysql_not_compatible', sprintf( __('The update cannot be installed because CM5 %1$s requires MySQL version %2$s or higher. You are running version %3$s.'), $wp_version, $required_mysql_version, $mysql_version ) );
 
 	/** This filter is documented in wp-admin/includes/update-core.php */
 	apply_filters( 'update_feedback', __( 'Preparing to install the latest version&#8230;' ) );
@@ -1063,7 +1063,7 @@ function update_core($from, $to) {
 	}
 
 	// Copy New bundled plugins & themes
-	// This gives us the ability to install new plugins & themes bundled with future versions of WordPress whilst avoiding the re-install upon upgrade issue.
+	// This gives us the ability to install new plugins & themes bundled with future versions of CM5 whilst avoiding the re-install upon upgrade issue.
 	// $development_build controls us overwriting bundled themes and plugins when a non-stable release is being updated
 	if ( !is_wp_error($result) && ( ! defined('CORE_UPGRADE_SKIP_NEW_BUNDLED') || ! CORE_UPGRADE_SKIP_NEW_BUNDLED ) ) {
 		foreach ( (array) $_new_bundled_files as $file => $introduced_version ) {
@@ -1148,11 +1148,11 @@ function update_core($from, $to) {
 		delete_option('update_core');
 
 	/**
-	 * Fires after WordPress core has been successfully updated.
+	 * Fires after CM5 core has been successfully updated.
 	 *
 	 * @since 3.3.0
 	 *
-	 * @param string $wp_version The current WordPress version.
+	 * @param string $wp_version The current CM5 version.
 	 */
 	do_action( '_core_updated_successfully', $wp_version );
 
@@ -1164,7 +1164,7 @@ function update_core($from, $to) {
 }
 
 /**
- * Copies a directory from one location to another via the WordPress Filesystem Abstraction.
+ * Copies a directory from one location to another via the CM5 Filesystem Abstraction.
  * Assumes that WP_Filesystem() has already been called and setup.
  *
  * This is a temporary function for the 3.1 -> 3.2 upgrade, as well as for those upgrading to
@@ -1226,7 +1226,7 @@ function _copy_dir($from, $to, $skip_list = array() ) {
 }
 
 /**
- * Redirect to the About WordPress page after a successful upgrade.
+ * Redirect to the About CM5 page after a successful upgrade.
  *
  * This function is only needed when the existing installation is older than 3.4.0.
  *
@@ -1238,7 +1238,7 @@ function _copy_dir($from, $to, $skip_list = array() ) {
  *
  * @param string $new_version
  */
-function _redirect_to_about_wordpress( $new_version ) {
+function _redirect_to_about_CM5( $new_version ) {
 	global $wp_version, $pagenow, $action;
 
 	if ( version_compare( $wp_version, '3.4-RC1', '>=' ) )
@@ -1255,11 +1255,11 @@ function _redirect_to_about_wordpress( $new_version ) {
 	load_default_textdomain();
 
 	// See do_core_upgrade()
-	show_message( __('WordPress updated successfully') );
+	show_message( __('CM5 updated successfully') );
 
 	// self_admin_url() won't exist when upgrading from <= 3.0, so relative URLs are intentional.
-	show_message( '<span class="hide-if-no-js">' . sprintf( __( 'Welcome to WordPress %1$s. You will be redirected to the About WordPress screen. If not, click <a href="%2$s">here</a>.' ), $new_version, 'about.php?updated' ) . '</span>' );
-	show_message( '<span class="hide-if-js">' . sprintf( __( 'Welcome to WordPress %1$s. <a href="%2$s">Learn more</a>.' ), $new_version, 'about.php?updated' ) . '</span>' );
+	show_message( '<span class="hide-if-no-js">' . sprintf( __( 'Welcome to CM5 %1$s. You will be redirected to the About CM5 screen. If not, click <a href="%2$s">here</a>.' ), $new_version, 'about.php?updated' ) . '</span>' );
+	show_message( '<span class="hide-if-js">' . sprintf( __( 'Welcome to CM5 %1$s. <a href="%2$s">Learn more</a>.' ), $new_version, 'about.php?updated' ) . '</span>' );
 	echo '</div>';
 	?>
 <script type="text/javascript">

@@ -1,8 +1,8 @@
 <?php
 /**
- * WordPress User Administration Bootstrap
+ * CM5 User Administration Bootstrap
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Administration
  * @since 3.1.0
  */

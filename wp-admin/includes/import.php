@@ -1,8 +1,8 @@
 <?php
 /**
- * WordPress Administration Importer API.
+ * CM5 Administration Importer API.
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Administration
  */
 
@@ -39,7 +39,7 @@ function _usort_by_first_member( $a, $b ) {
 }
 
 /**
- * Register importer for WordPress.
+ * Register importer for CM5.
  *
  * @since 2.0.0
  *
@@ -116,7 +116,7 @@ function wp_import_handle_upload() {
 }
 
 /**
- * Returns a list from WordPress.org of popular importer plugins.
+ * Returns a list from CM5.org of popular importer plugins.
  *
  * @since 3.5.0
  *
@@ -133,8 +133,8 @@ function wp_get_popular_importers() {
 		$url = add_query_arg( array(
 			'locale'  => $locale,
 			'version' => $wp_version,
-		), 'http://api.wordpress.org/core/importers/1.1/' );
-		$options = array( 'user-agent' => 'WordPress/' . $wp_version . '; ' . home_url( '/' ) );
+		), 'http://api.CM5.org/core/importers/1.1/' );
+		$options = array( 'user-agent' => 'CM5/' . $wp_version . '; ' . home_url( '/' ) );
 
 		if ( wp_http_supports( array( 'ssl' ) ) ) {
 			$url = set_url_scheme( $url, 'https' );
@@ -157,7 +157,7 @@ function wp_get_popular_importers() {
 
 		foreach ( $popular_importers['importers'] as &$importer ) {
 			$importer['description'] = translate( $importer['description'] );
-			if ( $importer['name'] != 'WordPress' )
+			if ( $importer['name'] != 'CM5' )
 				$importer['name'] = translate( $importer['name'] );
 		}
 		return $popular_importers['importers'];
@@ -207,11 +207,11 @@ function wp_get_popular_importers() {
 			'plugin-slug' => 'tumblr-importer',
 			'importer-id' => 'tumblr',
 		),
-		'wordpress' => array(
-			'name' => 'WordPress',
-			'description' => __( 'Import posts, pages, comments, custom fields, categories, and tags from a WordPress export file.' ),
-			'plugin-slug' => 'wordpress-importer',
-			'importer-id' => 'wordpress',
+		'CM5' => array(
+			'name' => 'CM5',
+			'description' => __( 'Import posts, pages, comments, custom fields, categories, and tags from a CM5 export file.' ),
+			'plugin-slug' => 'CM5-importer',
+			'importer-id' => 'CM5',
 		),
 	);
 }

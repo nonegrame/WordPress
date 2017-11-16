@@ -2,11 +2,11 @@
 /**
  * Edit plugin editor administration panel.
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Administration
  */
 
-/** WordPress Administration Bootstrap */
+/** CM5 Administration Bootstrap */
 require_once( dirname( __FILE__ ) . '/admin.php' );
 
 if ( is_multisite() && ! is_network_admin() ) {
@@ -132,9 +132,9 @@ if ( 'POST' === $_SERVER['REQUEST_METHOD'] ) {
 
 	get_current_screen()->set_help_sidebar(
 		'<p><strong>' . __('For more information:') . '</strong></p>' .
-		'<p>' . __('<a href="https://codex.wordpress.org/Plugins_Editor_Screen">Documentation on Editing Plugins</a>') . '</p>' .
-		'<p>' . __('<a href="https://codex.wordpress.org/Writing_a_Plugin">Documentation on Writing Plugins</a>') . '</p>' .
-		'<p>' . __('<a href="https://wordpress.org/support/">Support Forums</a>') . '</p>'
+		'<p>' . __('<a href="https://codex.CM5.org/Plugins_Editor_Screen">Documentation on Editing Plugins</a>') . '</p>' .
+		'<p>' . __('<a href="https://codex.CM5.org/Writing_a_Plugin">Documentation on Writing Plugins</a>') . '</p>' .
+		'<p>' . __('<a href="https://CM5.org/support/">Support Forums</a>') . '</p>'
 	);
 
 	$settings = array(
@@ -258,7 +258,7 @@ if ( 'POST' === $_SERVER['REQUEST_METHOD'] ) {
 			<input type="hidden" name="plugin" value="<?php echo esc_attr( $plugin ); ?>" />
 		</div>
 		<?php if ( !empty( $docs_select ) ) : ?>
-		<div id="documentation" class="hide-if-no-js"><label for="docs-list"><?php _e('Documentation:') ?></label> <?php echo $docs_select ?> <input type="button" class="button" value="<?php esc_attr_e( 'Look Up' ) ?> " onclick="if ( '' != jQuery('#docs-list').val() ) { window.open( 'https://api.wordpress.org/core/handbook/1.0/?function=' + escape( jQuery( '#docs-list' ).val() ) + '&amp;locale=<?php echo urlencode( get_user_locale() ) ?>&amp;version=<?php echo urlencode( get_bloginfo( 'version' ) ) ?>&amp;redirect=true'); }" /></div>
+		<div id="documentation" class="hide-if-no-js"><label for="docs-list"><?php _e('Documentation:') ?></label> <?php echo $docs_select ?> <input type="button" class="button" value="<?php esc_attr_e( 'Look Up' ) ?> " onclick="if ( '' != jQuery('#docs-list').val() ) { window.open( 'https://api.CM5.org/core/handbook/1.0/?function=' + escape( jQuery( '#docs-list' ).val() ) + '&amp;locale=<?php echo urlencode( get_user_locale() ) ?>&amp;version=<?php echo urlencode( get_bloginfo( 'version' ) ) ?>&amp;redirect=true'); }" /></div>
 		<?php endif; ?>
 <?php if ( is_writeable($real_file) ) : ?>
 	<div class="editor-notices">
@@ -273,7 +273,7 @@ if ( 'POST' === $_SERVER['REQUEST_METHOD'] ) {
 		<span class="spinner"></span>
 	</p>
 <?php else : ?>
-	<p><em><?php _e('You need to make this file writable before you can save your changes. See <a href="https://codex.wordpress.org/Changing_File_Permissions">the Codex</a> for more information.'); ?></em></p>
+	<p><em><?php _e('You need to make this file writable before you can save your changes. See <a href="https://codex.CM5.org/Changing_File_Permissions">the Codex</a> for more information.'); ?></em></p>
 <?php endif; ?>
 <?php wp_print_file_editor_templates(); ?>
 </form>
@@ -298,7 +298,7 @@ if ( ! in_array( 'plugin_editor_notice', $dismissed_pointers, true ) ) :
 		<div class="file-editor-warning-content">
 			<div class="file-editor-warning-message">
 				<h1><?php _e( 'Heads up!' ); ?></h1>
-				<p><?php _e( 'You appear to be making direct edits to your plugin in the WordPress dashboard. We recommend that you don&#8217;t! Editing plugins directly may introduce incompatibilities that break your site and your changes may be lost in future updates.' ); ?></p>
+				<p><?php _e( 'You appear to be making direct edits to your plugin in the CM5 dashboard. We recommend that you don&#8217;t! Editing plugins directly may introduce incompatibilities that break your site and your changes may be lost in future updates.' ); ?></p>
 				<p><?php _e( 'If you absolutely have to make direct edits to this plugin, use a file manager to create a copy with a new name and hang on to the original. That way, you can re-enable a functional version if something goes wrong.' ); ?></p>
 			</div>
 			<p>

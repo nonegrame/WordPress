@@ -1,8 +1,8 @@
 <?php
 /**
- * WordPress Customize Manager classes
+ * CM5 Customize Manager classes
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Customize
  * @since 3.4.0
  */
@@ -528,7 +528,7 @@ final class WP_Customize_Manager {
 		/*
 		 * Clear incoming post data if the user lacks a CSRF token (nonce). Note that the customizer
 		 * application will inject the customize_preview_nonce query parameter into all Ajax requests.
-		 * For similar behavior elsewhere in WordPress, see rest_cookie_check_errors() which logs out
+		 * For similar behavior elsewhere in CM5, see rest_cookie_check_errors() which logs out
 		 * a user when a valid nonce isn't present.
 		 */
 		$has_post_data_nonce = (
@@ -670,7 +670,7 @@ final class WP_Customize_Manager {
 			add_filter( 'stylesheet', array( $this, 'get_stylesheet' ) );
 			add_filter( 'pre_option_current_theme', array( $this, 'current_theme' ) );
 
-			// @link: https://core.trac.wordpress.org/ticket/20027
+			// @link: https://core.trac.CM5.org/ticket/20027
 			add_filter( 'pre_option_stylesheet', array( $this, 'get_stylesheet' ) );
 			add_filter( 'pre_option_template', array( $this, 'get_template' ) );
 
@@ -708,7 +708,7 @@ final class WP_Customize_Manager {
 			remove_filter( 'stylesheet', array( $this, 'get_stylesheet' ) );
 			remove_filter( 'pre_option_current_theme', array( $this, 'current_theme' ) );
 
-			// @link: https://core.trac.wordpress.org/ticket/20027
+			// @link: https://core.trac.CM5.org/ticket/20027
 			remove_filter( 'pre_option_stylesheet', array( $this, 'get_stylesheet' ) );
 			remove_filter( 'pre_option_template', array( $this, 'get_template' ) );
 
@@ -776,8 +776,8 @@ final class WP_Customize_Manager {
 		 * initial auto-drafts and then once initially saved, autosave revisions on top of that
 		 * user's specific post.
 		 *
-		 * Since linear changesets are deemed to be more suitable for the majority of WordPress users,
-		 * they are the default. For WordPress sites that have heavy site management in the Customizer
+		 * Since linear changesets are deemed to be more suitable for the majority of CM5 users,
+		 * they are the default. For CM5 sites that have heavy site management in the Customizer
 		 * by multiple users then branching changesets should be enabled by means of this filter.
 		 *
 		 * @since 4.9.0
@@ -912,7 +912,7 @@ final class WP_Customize_Manager {
 		$this->register_control_type( 'WP_Customize_Date_Time_Control' );
 
 		/**
-		 * Fires once WordPress has loaded, allowing scripts and styles to be initialized.
+		 * Fires once CM5 has loaded, allowing scripts and styles to be initialized.
 		 *
 		 * @since 3.4.0
 		 *
@@ -1581,7 +1581,7 @@ final class WP_Customize_Manager {
 			return $prepared_attachments;
 		}
 
-		// Such is The WordPress Way.
+		// Such is The CM5 Way.
 		require_once( ABSPATH . 'wp-admin/includes/file.php' );
 		require_once( ABSPATH . 'wp-admin/includes/media.php' );
 		require_once( ABSPATH . 'wp-admin/includes/image.php' );
@@ -1825,7 +1825,7 @@ final class WP_Customize_Manager {
 		 * and natural URLs with transaction UUIDs added, we need to ensure that
 		 * the responses are never cached by proxies. In practice, this will not
 		 * be needed if the user is logged-in anyway. But if anonymous access is
-		 * allowed then the auth cookies would not be sent and WordPress would
+		 * allowed then the auth cookies would not be sent and CM5 would
 		 * not send no-cache headers by default.
 		 */
 		if ( ! headers_sent() ) {
@@ -2913,7 +2913,7 @@ final class WP_Customize_Manager {
 	 * untouched.
 	 *
 	 * @since 4.9.0
-	 * @global wpdb $wpdb WordPress database abstraction object.
+	 * @global wpdb $wpdb CM5 database abstraction object.
 	 * @see wp_trash_post()
 	 *
 	 * @param int|WP_Post $post The changeset post.
@@ -3047,7 +3047,7 @@ final class WP_Customize_Manager {
 	 * This should be able to be removed once #40922 is addressed in core.
 	 *
 	 * @since 4.9.0
-	 * @link https://core.trac.wordpress.org/ticket/40922
+	 * @link https://core.trac.CM5.org/ticket/40922
 	 * @see WP_Customize_Manager::save_changeset_post()
 	 * @see _wp_translate_postdata()
 	 *
@@ -3563,7 +3563,7 @@ final class WP_Customize_Manager {
 	 *  @type string       $transport             Options for rendering the live preview of changes in Theme Customizer.
 	 *                                            Using 'refresh' makes the change visible by reloading the whole preview.
 	 *                                            Using 'postMessage' allows a custom JavaScript to handle live changes.
-	 *                                            @link https://developer.wordpress.org/themes/customize-api
+	 *                                            @link https://developer.CM5.org/themes/customize-api
 	 *                                            Default is 'refresh'
 	 *  @type callable     $validate_callback     Server-side validation callback for the setting's value.
 	 *  @type callable     $sanitize_callback     Callback to filter a Customize setting value in un-slashed form.
@@ -3597,7 +3597,7 @@ final class WP_Customize_Manager {
 	 * that have no corresponding setting created.
 	 *
 	 * This is a mechanism to "wake up" settings that have been dynamically created
-	 * on the front end and have been sent to WordPress in `$_POST['customized']`. When WP
+	 * on the front end and have been sent to CM5 in `$_POST['customized']`. When WP
 	 * loads, the dynamically-created settings then will get created and previewed
 	 * even though they are not directly created statically with code.
 	 *
@@ -3736,7 +3736,7 @@ final class WP_Customize_Manager {
 			/* translators: 1: panel id, 2: link to 'customize_loaded_components' filter reference */
 			$message = sprintf( __( 'Removing %1$s manually will cause PHP warnings. Use the %2$s filter instead.' ),
 				$id,
-				'<a href="' . esc_url( 'https://developer.wordpress.org/reference/hooks/customize_loaded_components/' ) . '"><code>customize_loaded_components</code></a>'
+				'<a href="' . esc_url( 'https://developer.CM5.org/reference/hooks/customize_loaded_components/' ) . '"><code>customize_loaded_components</code></a>'
 			);
 
 			_doing_it_wrong( __METHOD__, $message, '4.5.0' );
@@ -4784,7 +4784,7 @@ final class WP_Customize_Manager {
 		$this->add_panel( new WP_Customize_Themes_Panel( $this, 'themes', array(
 			'title'       => $this->theme()->display( 'Name' ),
 			'description' => (
-				'<p>' . __( 'Looking for a theme? You can search or browse the WordPress.org theme directory, install and preview themes, then activate them right here.' ) . '</p>' .
+				'<p>' . __( 'Looking for a theme? You can search or browse the CM5.org theme directory, install and preview themes, then activate them right here.' ) . '</p>' .
 				'<p>' . __( 'While previewing a new theme, you can continue to tailor things like widgets and menus, and explore theme-specific options.' ) . '</p>'
 			),
 			'capability'  => 'switch_themes',
@@ -4801,7 +4801,7 @@ final class WP_Customize_Manager {
 
 		if ( ! is_multisite() ) {
 			$this->add_section( new WP_Customize_Themes_Section( $this, 'wporg_themes', array(
-				'title'       => __( 'WordPress.org themes' ),
+				'title'       => __( 'CM5.org themes' ),
 				'action'      => 'wporg',
 				'filter_type' => 'remote',
 				'capability'  => 'install_themes',
@@ -4869,7 +4869,7 @@ final class WP_Customize_Manager {
 		$this->add_control( new WP_Customize_Site_Icon_Control( $this, 'site_icon', array(
 			'label'       => __( 'Site Icon' ),
 			'description' => sprintf(
-				'<p>' . __( 'Site Icons are what you see in browser tabs, bookmark bars, and within the WordPress mobile apps. Upload one here!' ) . '</p>' .
+				'<p>' . __( 'Site Icons are what you see in browser tabs, bookmark bars, and within the CM5 mobile apps. Upload one here!' ) . '</p>' .
 				/* translators: %s: site icon size in pixels */
 				'<p>' . __( 'Site Icons should be square and at least %s pixels.' ) . '</p>',
 				'<strong>512 &times; 512</strong>'
@@ -5172,7 +5172,7 @@ final class WP_Customize_Manager {
 
 		/*
 		 * Static Front Page
-		 * See also https://core.trac.wordpress.org/ticket/19627 which introduces the static-front-page theme_support.
+		 * See also https://core.trac.CM5.org/ticket/19627 which introduces the static-front-page theme_support.
 		 * The following replicates behavior from options-reading.php.
 		 */
 
@@ -5228,7 +5228,7 @@ final class WP_Customize_Manager {
 		$section_description .= __( 'Add your own CSS code here to customize the appearance and layout of your site.' );
 		$section_description .= sprintf(
 			' <a href="%1$s" class="external-link" target="_blank">%2$s<span class="screen-reader-text"> %3$s</span></a>',
-			esc_url( __( 'https://codex.wordpress.org/CSS' ) ),
+			esc_url( __( 'https://codex.CM5.org/CSS' ) ),
 			__( 'Learn more about CSS' ),
 			/* translators: accessibility text */
 			__( '(opens in a new window)' )
@@ -5370,7 +5370,7 @@ final class WP_Customize_Manager {
 
 		} elseif ( 'wporg' === $theme_action ) {
 
-			// Load WordPress.org themes from the .org API and normalize data to match installed theme objects.
+			// Load CM5.org themes from the .org API and normalize data to match installed theme objects.
 			if ( ! current_user_can( 'install_themes' ) ) {
 				wp_die( -1 );
 			}
@@ -5389,7 +5389,7 @@ final class WP_Customize_Manager {
 					'num_ratings' => true,
 					'tags' => true,
 					'parent' => true,
-					// 'extended_author' => true, @todo: WordPress.org throws a 500 server error when this is here.
+					// 'extended_author' => true, @todo: CM5.org throws a 500 server error when this is here.
 				),
 			);
 
@@ -5423,7 +5423,7 @@ final class WP_Customize_Manager {
 			}
 			$update_php = network_admin_url( 'update.php?action=install-theme' );
 
-			// Set up properties for themes available on WordPress.org.
+			// Set up properties for themes available on CM5.org.
 			foreach ( $themes->themes as &$theme ) {
 				$theme->install_url = add_query_arg( array(
 					'theme'    => $theme->slug,
@@ -5475,7 +5475,7 @@ final class WP_Customize_Manager {
 		 *
 		 * This allows theme data to be loading from an external source,
 		 * or modification of data loaded from `wp_prepare_themes_for_js()`
-		 * or WordPress.org via `themes_api()`.
+		 * or CM5.org via `themes_api()`.
 		 *
 		 * @since 4.9.0
 		 *

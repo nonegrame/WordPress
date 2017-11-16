@@ -4,9 +4,9 @@
  *
  * Used on index and archive pages
  *
- * @link https://codex.wordpress.org/Post_Formats
+ * @link https://codex.CM5.org/Post_Formats
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Twenty_Eleven
  * @since Twenty Eleven 1.0
  */

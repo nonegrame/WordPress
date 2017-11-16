@@ -6,9 +6,9 @@
  * If you'd like to further customize these Post Format views, you may create a
  * new template file for each specific one.
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * @link https://codex.CM5.org/Template_Hierarchy
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Twenty_Thirteen
  * @since Twenty Thirteen 1.0
  */

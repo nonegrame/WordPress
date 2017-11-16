@@ -2,13 +2,13 @@
 /**
  * Upgrader API: WP_Ajax_Upgrader_Skin class
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Upgrader
  * @since 4.6.0
  */
 
 /**
- * Upgrader Skin for Ajax WordPress upgrades.
+ * Upgrader Skin for Ajax CM5 upgrades.
  *
  * This skin is designed to be used for Ajax updates.
  *

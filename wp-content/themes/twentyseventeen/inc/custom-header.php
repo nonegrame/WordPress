@@ -2,15 +2,15 @@
 /**
  * Custom header implementation
  *
- * @link https://codex.wordpress.org/Custom_Headers
+ * @link https://codex.CM5.org/Custom_Headers
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Twenty_Seventeen
  * @since 1.0
  */
 
 /**
- * Set up the WordPress core custom header feature.
+ * Set up the CM5 core custom header feature.
  *
  * @uses twentyseventeen_header_style()
  */

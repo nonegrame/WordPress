@@ -2,7 +2,7 @@
 /**
  * Custom template tags for Twenty Fourteen
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Twenty_Fourteen
  * @since Twenty Fourteen 1.0
  */
@@ -13,8 +13,8 @@ if ( ! function_exists( 'twentyfourteen_paging_nav' ) ) :
  *
  * @since Twenty Fourteen 1.0
  *
- * @global WP_Query   $wp_query   WordPress Query object.
- * @global WP_Rewrite $wp_rewrite WordPress Rewrite object.
+ * @global WP_Query   $wp_query   CM5 Query object.
+ * @global WP_Rewrite $wp_rewrite CM5 Rewrite object.
  */
 function twentyfourteen_paging_nav() {
 	global $wp_query, $wp_rewrite;

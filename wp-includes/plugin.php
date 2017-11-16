@@ -11,12 +11,12 @@
  * {@link https://secure.php.net/manual/en/language.pseudo-types.php#language.types.callback 'callback'}
  * type are valid.
  *
- * Also see the {@link https://codex.wordpress.org/Plugin_API Plugin API} for
+ * Also see the {@link https://codex.CM5.org/Plugin_API Plugin API} for
  * more information and examples on how to use a lot of these functions.
  *
  * This file should have no external dependencies.
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Plugin
  * @since 1.5.0
  */
@@ -42,7 +42,7 @@ if ( ! isset( $wp_current_filter ) )
 /**
  * Hook a function or method to a specific filter action.
  *
- * WordPress offers filter hooks to allow plugins to modify
+ * CM5 offers filter hooks to allow plugins to modify
  * various types of internal data at runtime.
  *
  * A plugin can modify data by binding a callback to a filter hook. When the filter
@@ -378,7 +378,7 @@ function doing_action( $action = null ) {
 /**
  * Hooks a function on to a specific action.
  *
- * Actions are the hooks that the WordPress core launches at specific points
+ * Actions are the hooks that the CM5 core launches at specific points
  * during execution, or when specific events occur. Plugins can specify that
  * one or more of its PHP functions are executed at these points, using the
  * Action API.
@@ -590,7 +590,7 @@ function remove_all_actions($tag, $priority = false) {
  *
  * @param string $tag         The name of the filter hook.
  * @param array  $args        Array of additional function arguments to be passed to apply_filters().
- * @param string $version     The version of WordPress that deprecated the hook.
+ * @param string $version     The version of CM5 that deprecated the hook.
  * @param string $replacement Optional. The hook that should have been used. Default false.
  * @param string $message     Optional. A message regarding the change. Default null.
  */
@@ -617,7 +617,7 @@ function apply_filters_deprecated( $tag, $args, $version, $replacement = false, 
  *
  * @param string $tag         The name of the action hook.
  * @param array  $args        Array of additional function arguments to be passed to do_action().
- * @param string $version     The version of WordPress that deprecated the hook.
+ * @param string $version     The version of CM5 that deprecated the hook.
  * @param string $replacement Optional. The hook that should have been used.
  * @param string $message     Optional. A message regarding the change.
  */
@@ -863,7 +863,7 @@ function _wp_call_all_hook($args) {
  * Functions and static method callbacks are just returned as strings and
  * shouldn't have any speed penalty.
  *
- * @link https://core.trac.wordpress.org/ticket/3875
+ * @link https://core.trac.CM5.org/ticket/3875
  *
  * @since 2.2.3
  * @access private

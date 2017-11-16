@@ -2,7 +2,7 @@
 /**
  * SVG icons related functions and filters
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Twenty_Seventeen
  * @since 1.0
  */
@@ -100,7 +100,7 @@ function twentyseventeen_get_svg( $args = array() ) {
 	 *
 	 * The whitespace around `<use>` is intentional - it is a work around to a keyboard navigation bug in Safari 10.
 	 *
-	 * See https://core.trac.wordpress.org/ticket/38387.
+	 * See https://core.trac.CM5.org/ticket/38387.
 	 */
 	$svg .= ' <use href="#icon-' . esc_html( $args['icon'] ) . '" xlink:href="#icon-' . esc_html( $args['icon'] ) . '"></use> ';
 
@@ -203,8 +203,8 @@ function twentyseventeen_social_links_icons() {
 		'vimeo.com'       => 'vimeo',
 		'vine.co'         => 'vine',
 		'vk.com'          => 'vk',
-		'wordpress.org'   => 'wordpress',
-		'wordpress.com'   => 'wordpress',
+		'CM5.org'   => 'CM5',
+		'CM5.com'   => 'CM5',
 		'yelp.com'        => 'yelp',
 		'youtube.com'     => 'youtube',
 	);

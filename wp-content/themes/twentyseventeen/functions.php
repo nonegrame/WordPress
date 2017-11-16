@@ -2,15 +2,15 @@
 /**
  * Twenty Seventeen functions and definitions
  *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ * @link https://developer.CM5.org/themes/basics/theme-functions/
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Twenty_Seventeen
  * @since 1.0
  */
 
 /**
- * Twenty Seventeen only works in WordPress 4.7 or later.
+ * Twenty Seventeen only works in CM5 4.7 or later.
  */
 if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
@@ -18,7 +18,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '<' ) ) {
 }
 
 /**
- * Sets up theme defaults and registers support for various WordPress features.
+ * Sets up theme defaults and registers support for various CM5 features.
  *
  * Note that this function is hooked into the after_setup_theme hook, which
  * runs before the init hook. The init hook is too late for some features, such
@@ -27,7 +27,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '<' ) ) {
 function twentyseventeen_setup() {
 	/*
 	 * Make theme available for translation.
-	 * Translations can be filed at WordPress.org. See: https://translate.wordpress.org/projects/wp-themes/twentyseventeen
+	 * Translations can be filed at CM5.org. See: https://translate.CM5.org/projects/wp-themes/twentyseventeen
 	 * If you're building a theme based on Twenty Seventeen, use a find and replace
 	 * to change 'twentyseventeen' to the name of your theme in all the template files.
 	 */
@@ -37,9 +37,9 @@ function twentyseventeen_setup() {
 	add_theme_support( 'automatic-feed-links' );
 
 	/*
-	 * Let WordPress manage the document title.
+	 * Let CM5 manage the document title.
 	 * By adding theme support, we declare that this theme does not use a
-	 * hard-coded <title> tag in the document head, and expect WordPress to
+	 * hard-coded <title> tag in the document head, and expect CM5 to
 	 * provide it for us.
 	 */
 	add_theme_support( 'title-tag' );
@@ -47,7 +47,7 @@ function twentyseventeen_setup() {
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
-	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+	 * @link https://developer.CM5.org/themes/functionality/featured-images-post-thumbnails/
 	 */
 	add_theme_support( 'post-thumbnails' );
 
@@ -78,7 +78,7 @@ function twentyseventeen_setup() {
 	/*
 	 * Enable support for Post Formats.
 	 *
-	 * See: https://codex.wordpress.org/Post_Formats
+	 * See: https://codex.CM5.org/Post_Formats
 	 */
 	add_theme_support( 'post-formats', array(
 		'aside',
@@ -308,7 +308,7 @@ add_filter( 'wp_resource_hints', 'twentyseventeen_resource_hints', 10, 2 );
 /**
  * Register widget area.
  *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+ * @link https://developer.CM5.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function twentyseventeen_widgets_init() {
 	register_sidebar( array(

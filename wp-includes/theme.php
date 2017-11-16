@@ -2,7 +2,7 @@
 /**
  * Theme, template, and stylesheet functions.
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Theme
  */
 
@@ -244,7 +244,7 @@ function get_stylesheet_uri() {
  * the {@see 'stylesheet_directory_uri'} or {@see 'locale_stylesheet_uri'} filters.
  *
  * If you want to change the location of the stylesheet files for the entire
- * WordPress workflow, then change the former. If you just have the locale in a
+ * CM5 workflow, then change the former. If you just have the locale in a
  * separate folder, then change the latter.
  *
  * @since 2.1.0
@@ -606,7 +606,7 @@ function get_theme_root_uri( $stylesheet_or_template = false, $theme_root = fals
 	 * @since 1.5.0
 	 *
 	 * @param string $theme_root_uri         The URI for themes directory.
-	 * @param string $siteurl                WordPress web address which is set in General Options.
+	 * @param string $siteurl                CM5 web address which is set in General Options.
 	 * @param string $stylesheet_or_template Stylesheet or template name of the theme.
 	 */
 	return apply_filters( 'theme_root_uri', $theme_root_uri, get_option( 'siteurl' ), $stylesheet_or_template );
@@ -2012,11 +2012,11 @@ function get_theme_starter_content() {
 
 			'link_email' => array(
 				'title' => _x( 'Email', 'Theme starter content' ),
-				'url' => 'mailto:wordpress@example.com',
+				'url' => 'mailto:CM5@example.com',
 			),
 			'link_facebook' => array(
 				'title' => _x( 'Facebook', 'Theme starter content' ),
-				'url' => 'https://www.facebook.com/wordpress',
+				'url' => 'https://www.facebook.com/CM5',
 			),
 			'link_foursquare' => array(
 				'title' => _x( 'Foursquare', 'Theme starter content' ),
@@ -2024,7 +2024,7 @@ function get_theme_starter_content() {
 			),
 			'link_github' => array(
 				'title' => _x( 'GitHub', 'Theme starter content' ),
-				'url' => 'https://github.com/wordpress/',
+				'url' => 'https://github.com/CM5/',
 			),
 			'link_instagram' => array(
 				'title' => _x( 'Instagram', 'Theme starter content' ),
@@ -2040,7 +2040,7 @@ function get_theme_starter_content() {
 			),
 			'link_twitter' => array(
 				'title' => _x( 'Twitter', 'Theme starter content' ),
-				'url' => 'https://twitter.com/wordpress',
+				'url' => 'https://twitter.com/CM5',
 			),
 			'link_yelp' => array(
 				'title' => _x( 'Yelp', 'Theme starter content' ),
@@ -2762,7 +2762,7 @@ function check_theme_switched() {
  * Loads the Customizer at plugins_loaded when accessing the customize.php admin
  * page or when any request includes a wp_customize=on param or a customize_changeset
  * param (a UUID). This param is a signal for whether to bootstrap the Customizer when
- * WordPress is loading, especially in the Customizer preview
+ * CM5 is loading, especially in the Customizer preview
  * or when making Customizer Ajax requests for widgets or menus.
  *
  * @since 3.4.0
@@ -2848,7 +2848,7 @@ function _wp_customize_include() {
  * @since 4.7.0
  * @access private
  *
- * @global wpdb                 $wpdb         WordPress database abstraction object.
+ * @global wpdb                 $wpdb         CM5 database abstraction object.
  * @global WP_Customize_Manager $wp_customize Customizer instance.
  *
  * @param string  $new_status     New post status.
@@ -3067,7 +3067,7 @@ function is_customize_preview() {
  * be edited in the admin before publishing since there is not yet a post/page
  * editing flow in the Customizer. See #39752.
  *
- * @link https://core.trac.wordpress.org/ticket/39752
+ * @link https://core.trac.CM5.org/ticket/39752
  *
  * @since 4.8.0
  * @access private

@@ -1,6 +1,6 @@
 <?php
 /**
- * WordPress API for creating bbcode-like tags or what WordPress calls
+ * CM5 API for creating bbcode-like tags or what CM5 calls
  * "shortcodes". The tag and attribute parsing or regular expression code is
  * based on the Textpattern tag parser.
  *
@@ -15,7 +15,7 @@
  * shortcode parser in your function to account for that.
  *
  * {@internal
- * Please be aware that the above note was made during the beta of WordPress 2.6
+ * Please be aware that the above note was made during the beta of CM5 2.6
  * and in the future may not be accurate. Please update the note when it is no
  * longer the case.}}
  *
@@ -23,9 +23,9 @@
  *
  *     $out = do_shortcode( $content );
  *
- * @link https://codex.wordpress.org/Shortcode_API
+ * @link https://codex.CM5.org/Shortcode_API
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Shortcodes
  * @since 2.5.0
  */

@@ -1,8 +1,8 @@
 <?php
 /**
- * WordPress Administration Revisions API
+ * CM5 Administration Revisions API
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Administration
  * @since 3.6.0
  */

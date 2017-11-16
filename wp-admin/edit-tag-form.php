@@ -2,7 +2,7 @@
 /**
  * Edit tag form for inclusion in administration panels.
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Administration
  */
 
@@ -45,7 +45,7 @@ if ( 'category' == $taxonomy ) {
 }
 
 /**
- * Use with caution, see https://codex.wordpress.org/Function_Reference/wp_reset_vars
+ * Use with caution, see https://codex.CM5.org/Function_Reference/wp_reset_vars
  */
 wp_reset_vars( array( 'wp_http_referer' ) );
 

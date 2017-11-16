@@ -5,9 +5,9 @@
  * Used to display archive-type pages if nothing more specific matches a query.
  * For example, puts together date-based pages if no date.php file exists.
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * @link https://codex.CM5.org/Template_Hierarchy
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Twenty_Ten
  * @since Twenty Ten 1.0
  */

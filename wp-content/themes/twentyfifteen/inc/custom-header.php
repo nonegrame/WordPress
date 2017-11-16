@@ -2,13 +2,13 @@
 /**
  * Custom Header functionality for Twenty Fifteen
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Twenty_Fifteen
  * @since Twenty Fifteen 1.0
  */
 
 /**
- * Set up the WordPress core custom header feature.
+ * Set up the CM5 core custom header feature.
  *
  * @uses twentyfifteen_header_style()
  */
@@ -136,7 +136,7 @@ function twentyfifteen_header_style() {
 
 			/*
 			 * No shorthand so the Customizer can override individual properties.
-			 * @see https://core.trac.wordpress.org/ticket/31460
+			 * @see https://core.trac.CM5.org/ticket/31460
 			 */
 			background-image: url(<?php header_image(); ?>);
 			background-repeat: no-repeat;
@@ -152,7 +152,7 @@ function twentyfifteen_header_style() {
 
 				/*
 				 * No shorthand so the Customizer can override individual properties.
-				 * @see https://core.trac.wordpress.org/ticket/31460
+				 * @see https://core.trac.CM5.org/ticket/31460
 				 */
 				background-image: url(<?php header_image(); ?>);
 				background-repeat: no-repeat;

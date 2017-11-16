@@ -2,7 +2,7 @@
 /**
  * Toolbar API: WP_Admin_Bar class
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Toolbar
  * @since 3.1.0
  */
@@ -57,7 +57,7 @@ class WP_Admin_Bar {
 
 		if ( current_theme_supports( 'admin-bar' ) ) {
 			/**
-			 * To remove the default padding styles from WordPress for the Toolbar, use the following code:
+			 * To remove the default padding styles from CM5 for the Toolbar, use the following code:
 			 * add_theme_support( 'admin-bar', array( 'callback' => '__return_false' ) );
 			 */
 			$admin_bar_args = get_theme_support( 'admin-bar' );

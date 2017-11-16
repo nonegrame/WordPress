@@ -1,13 +1,13 @@
 <?php
 /**
- * WordPress Imagick Image Editor
+ * CM5 Imagick Image Editor
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Image_Editor
  */
 
 /**
- * WordPress Image Editor Class for Image Manipulation through Imagick PHP Module
+ * CM5 Image Editor Class for Image Manipulation through Imagick PHP Module
  *
  * @since 3.5.0
  *
@@ -274,7 +274,7 @@ class WP_Image_Editor_Imagick extends WP_Image_Editor {
 	/**
 	 * Efficiently resize the current image
 	 *
-	 * This is a WordPress specific implementation of Imagick::thumbnailImage(),
+	 * This is a CM5 specific implementation of Imagick::thumbnailImage(),
 	 * which resizes an image to given dimensions and removes any associated profiles.
 	 *
 	 * @since 4.5.0

@@ -2,7 +2,7 @@
 /**
  * Template loading functions.
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Template
  */
 
@@ -240,7 +240,7 @@ function get_category_template() {
  *
  * An example of this is:
  *
- * 1. tag-wordpress.php
+ * 1. tag-CM5.php
  * 2. tag-3.php
  * 3. tag.php
  *
@@ -650,9 +650,9 @@ function locate_template($template_names, $load = false, $require_once = true ) 
 }
 
 /**
- * Require the template file with WordPress environment.
+ * Require the template file with CM5 environment.
  *
- * The globals are set up for the template file to ensure that the WordPress
+ * The globals are set up for the template file to ensure that the CM5
  * environment is available from within the function. The query variables are
  * also available.
  *

@@ -2,11 +2,11 @@
 /**
  * Permalink Settings Administration Screen.
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Administration
  */
 
-/** WordPress Administration Bootstrap */
+/** CM5 Administration Bootstrap */
 require_once( dirname( __FILE__ ) . '/admin.php' );
 
 if ( ! current_user_can( 'manage_options' ) )
@@ -41,9 +41,9 @@ get_current_screen()->add_help_tab( array(
 
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __('For more information:') . '</strong></p>' .
-	'<p>' . __('<a href="https://codex.wordpress.org/Settings_Permalinks_Screen">Documentation on Permalinks Settings</a>') . '</p>' .
-	'<p>' . __('<a href="https://codex.wordpress.org/Using_Permalinks">Documentation on Using Permalinks</a>') . '</p>' .
-	'<p>' . __('<a href="https://wordpress.org/support/">Support Forums</a>') . '</p>'
+	'<p>' . __('<a href="https://codex.CM5.org/Settings_Permalinks_Screen">Documentation on Permalinks Settings</a>') . '</p>' .
+	'<p>' . __('<a href="https://codex.CM5.org/Using_Permalinks">Documentation on Using Permalinks</a>') . '</p>' .
+	'<p>' . __('<a href="https://CM5.org/support/">Support Forums</a>') . '</p>'
 );
 
 $home_path = get_home_path();
@@ -58,7 +58,7 @@ if ( ! got_url_rewrite() )
  * In a subdirectory configuration of multisite, the `/blog` prefix is used by
  * default on the main site to avoid collisions with other sites created on that
  * network. If the `permalink_structure` option has been changed to remove this
- * base prefix, WordPress core can no longer account for the possible collision.
+ * base prefix, CM5 core can no longer account for the possible collision.
  */
 if ( is_multisite() && ! is_subdomain_install() && is_main_site() && 0 === strpos( $permalink_structure, '/blog/' ) ) {
 	$blog_prefix = '/blog';
@@ -80,7 +80,7 @@ if ( $iis7_permalinks ) {
 		$writable = true;
 	} else {
 		$writable = false;
-		$existing_rules  = array_filter( extract_from_markers( $home_path . '.htaccess', 'WordPress' ) );
+		$existing_rules  = array_filter( extract_from_markers( $home_path . '.htaccess', 'CM5' ) );
 		$new_rules       = array_filter( explode( "\n", $wp_rewrite->mod_rewrite_rules() ) );
 		$update_required = ( $new_rules !== $existing_rules );
 	}
@@ -159,8 +159,8 @@ require( ABSPATH . 'wp-admin/admin-header.php' );
 	<p><?php
 		printf(
 			/* translators: %s: Codex URL */
-			__( 'WordPress offers you the ability to create a custom URL structure for your permalinks and archives. Custom URL structures can improve the aesthetics, usability, and forward-compatibility of your links. A <a href="%s">number of tags are available</a>, and here are some examples to get you started.' ),
-			__( 'https://codex.wordpress.org/Using_Permalinks' )
+			__( 'CM5 offers you the ability to create a custom URL structure for your permalinks and archives. Custom URL structures can improve the aesthetics, usability, and forward-compatibility of your links. A <a href="%s">number of tags are available</a>, and here are some examples to get you started.' ),
+			__( 'https://codex.CM5.org/Using_Permalinks' )
 		);
 	?></p>
 
@@ -307,7 +307,7 @@ printf( __( 'If you like, you may enter custom structures for your category and 
 		/* translators: 1: web.config, 2: Codex URL, 3: CTRL + a, 4: element code */
 		__( 'If your %1$s file was <a href="%2$s">writable</a>, we could do this automatically, but it isn&#8217;t so this is the url rewrite rule you should have in your %1$s file. Click in the field and press %3$s to select all. Then insert this rule inside of the %4$s element in %1$s file.' ),
 		'<code>web.config</code>',
-		__( 'https://codex.wordpress.org/Changing_File_Permissions' ),
+		__( 'https://codex.CM5.org/Changing_File_Permissions' ),
 		'<kbd>CTRL + a</kbd>',
 		'<code>/&lt;configuration&gt;/&lt;system.webServer&gt;/&lt;rewrite&gt;/&lt;rules&gt;</code>'
 	);
@@ -328,7 +328,7 @@ printf( __( 'If you like, you may enter custom structures for your category and 
 	printf(
 		/* translators: 1: Codex URL, 2: web.config, 3: CTRL + a */
 		__( 'If the root directory of your site was <a href="%1$s">writable</a>, we could do this automatically, but it isn&#8217;t so this is the url rewrite rule you should have in your %2$s file. Create a new file, called %2$s in the root directory of your site. Click in the field and press %3$s to select all. Then insert this code into the %2$s file.' ),
-		__( 'https://codex.wordpress.org/Changing_File_Permissions' ),
+		__( 'https://codex.CM5.org/Changing_File_Permissions' ),
 		'<code>web.config</code>',
 		'<kbd>CTRL + a</kbd>'
 	);
@@ -347,7 +347,7 @@ printf( __( 'If you like, you may enter custom structures for your category and 
 		<?php endif; ?>
 	<?php endif; ?>
 <?php elseif ( $is_nginx ) : ?>
-	<p><?php _e( '<a href="https://codex.wordpress.org/Nginx">Documentation on Nginx configuration</a>.' ); ?></p>
+	<p><?php _e( '<a href="https://codex.CM5.org/Nginx">Documentation on Nginx configuration</a>.' ); ?></p>
 <?php else:
 	if ( $permalink_structure && ! $using_index_permalinks && ! $writable && $update_required ) : ?>
 <p><?php
@@ -355,7 +355,7 @@ printf( __( 'If you like, you may enter custom structures for your category and 
 		/* translators: 1: .htaccess, 2: Codex URL, 3: CTRL + a */
 		__( 'If your %1$s file was <a href="%2$s">writable</a>, we could do this automatically, but it isn&#8217;t so these are the mod_rewrite rules you should have in your %1$s file. Click in the field and press %3$s to select all.' ),
 		'<code>.htaccess</code>',
-		__( 'https://codex.wordpress.org/Changing_File_Permissions' ),
+		__( 'https://codex.CM5.org/Changing_File_Permissions' ),
 		'<kbd>CTRL + a</kbd>'
 	);
 ?></p>

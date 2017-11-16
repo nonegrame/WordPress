@@ -1,8 +1,8 @@
 <?php
 /**
- * Main WordPress API
+ * Main CM5 API
  *
- * @package WordPress
+ * @package CM5
  */
 
 require( ABSPATH . WPINC . '/option.php' );
@@ -49,7 +49,7 @@ function mysql2date( $format, $date, $translate = true ) {
  * Other strings will be interpreted as PHP date formats (e.g. 'Y-m-d').
  *
  * If $gmt is set to either '1' or 'true', then both types will use GMT time.
- * if $gmt is false, the output is adjusted with the GMT offset in the WordPress option.
+ * if $gmt is false, the output is adjusted with the GMT offset in the CM5 option.
  *
  * @since 1.0.0
  *
@@ -96,7 +96,7 @@ function date_i18n( $dateformatstring, $unixtimestamp = false, $gmt = false ) {
 
 	/*
 	 * Store original value for language with untypical grammars.
-	 * See https://core.trac.wordpress.org/ticket/9396
+	 * See https://core.trac.CM5.org/ticket/9396
 	 */
 	$req_format = $dateformatstring;
 
@@ -440,7 +440,7 @@ function maybe_serialize( $data ) {
 		return serialize( $data );
 
 	// Double serialization is required for backward compatibility.
-	// See https://core.trac.wordpress.org/ticket/12930
+	// See https://core.trac.CM5.org/ticket/12930
 	// Also the world will end. See WP 3.6.1.
 	if ( is_serialized( $data, false ) )
 		return serialize( $data );
@@ -551,7 +551,7 @@ function wp_extract_urls( $content ) {
  *
  * @since 1.5.0
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb CM5 database abstraction object.
  *
  * @param string $content Post Content.
  * @param int    $post_ID Post ID.
@@ -945,7 +945,7 @@ function wp_remote_fopen( $uri ) {
 }
 
 /**
- * Set up the WordPress query.
+ * Set up the CM5 query.
  *
  * @since 2.0.0
  *
@@ -1176,11 +1176,11 @@ function cache_javascript_headers() {
 }
 
 /**
- * Retrieve the number of database queries during the WordPress execution.
+ * Retrieve the number of database queries during the CM5 execution.
  *
  * @since 2.0.0
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb CM5 database abstraction object.
  *
  * @return int Number of database queries.
  */
@@ -1340,17 +1340,17 @@ function do_robots() {
 }
 
 /**
- * Test whether WordPress is already installed.
+ * Test whether CM5 is already installed.
  *
  * The cache will be checked first. If you have a cache plugin, which saves
- * the cache values, then this will work. If you use the default WordPress
+ * the cache values, then this will work. If you use the default CM5
  * cache, and the database goes away, then you might have problems.
  *
- * Checks for the 'siteurl' option for whether WordPress is installed.
+ * Checks for the 'siteurl' option for whether CM5 is installed.
  *
  * @since 2.1.0
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb CM5 database abstraction object.
  *
  * @return bool Whether the site is already installed.
  */
@@ -2612,11 +2612,11 @@ function wp_nonce_ays( $action ) {
 		}
 	}
 
-	wp_die( $html, __( 'WordPress Failure Notice' ), 403 );
+	wp_die( $html, __( 'CM5 Failure Notice' ), 403 );
 }
 
 /**
- * Kill WordPress execution and display HTML message with error message.
+ * Kill CM5 execution and display HTML message with error message.
  *
  * This function complements the `die()` PHP function. The difference is that
  * HTML will be displayed to the user. It is recommended to use this function
@@ -2644,7 +2644,7 @@ function wp_nonce_ays( $action ) {
  *
  *     @type int    $response       The HTTP response code. Default 200 for Ajax requests, 500 otherwise.
  *     @type bool   $back_link      Whether to include a link to go back. Default false.
- *     @type string $text_direction The text direction. This is only useful internally, when WordPress
+ *     @type string $text_direction The text direction. This is only useful internally, when CM5
  *                                  is still loading and the site's locale is not set up yet. Accepts 'rtl'.
  *                                  Default is the value of is_rtl().
  * }
@@ -2660,7 +2660,7 @@ function wp_die( $message = '', $title = '', $args = array() ) {
 
 	if ( wp_doing_ajax() ) {
 		/**
-		 * Filters the callback for killing WordPress execution for Ajax requests.
+		 * Filters the callback for killing CM5 execution for Ajax requests.
 		 *
 		 * @since 3.4.0
 		 *
@@ -2669,7 +2669,7 @@ function wp_die( $message = '', $title = '', $args = array() ) {
 		$function = apply_filters( 'wp_die_ajax_handler', '_ajax_wp_die_handler' );
 	} elseif ( defined( 'XMLRPC_REQUEST' ) && XMLRPC_REQUEST ) {
 		/**
-		 * Filters the callback for killing WordPress execution for XML-RPC requests.
+		 * Filters the callback for killing CM5 execution for XML-RPC requests.
 		 *
 		 * @since 3.4.0
 		 *
@@ -2678,7 +2678,7 @@ function wp_die( $message = '', $title = '', $args = array() ) {
 		$function = apply_filters( 'wp_die_xmlrpc_handler', '_xmlrpc_wp_die_handler' );
 	} else {
 		/**
-		 * Filters the callback for killing WordPress execution for all non-Ajax, non-XML-RPC requests.
+		 * Filters the callback for killing CM5 execution for all non-Ajax, non-XML-RPC requests.
 		 *
 		 * @since 3.0.0
 		 *
@@ -2691,7 +2691,7 @@ function wp_die( $message = '', $title = '', $args = array() ) {
 }
 
 /**
- * Kills WordPress execution and display HTML message with error message.
+ * Kills CM5 execution and display HTML message with error message.
  *
  * This is the default handler for wp_die if you want a custom one for your
  * site then you can overload using the {@see 'wp_die_handler'} filter in wp_die().
@@ -2744,7 +2744,7 @@ function _default_wp_die_handler( $message, $title = '', $args = array() ) {
 		}
 
 		if ( empty($title) )
-			$title = $have_gettext ? __('WordPress &rsaquo; Error') : 'WordPress &rsaquo; Error';
+			$title = $have_gettext ? __('CM5 &rsaquo; Error') : 'CM5 &rsaquo; Error';
 
 		$text_direction = 'ltr';
 		if ( isset($r['text_direction']) && 'rtl' == $r['text_direction'] )
@@ -2890,7 +2890,7 @@ function _default_wp_die_handler( $message, $title = '', $args = array() ) {
 }
 
 /**
- * Kill WordPress execution and display XML message with error message.
+ * Kill CM5 execution and display XML message with error message.
  *
  * This is the handler for wp_die when processing XMLRPC requests.
  *
@@ -2917,7 +2917,7 @@ function _xmlrpc_wp_die_handler( $message, $title = '', $args = array() ) {
 }
 
 /**
- * Kill WordPress ajax execution.
+ * Kill CM5 ajax execution.
  *
  * This is the handler for wp_die when processing Ajax requests.
  *
@@ -2944,7 +2944,7 @@ function _ajax_wp_die_handler( $message, $title = '', $args = array() ) {
 }
 
 /**
- * Kill WordPress execution.
+ * Kill CM5 execution.
  *
  * This is the handler for wp_die when processing APP requests.
  *
@@ -3253,7 +3253,7 @@ function wp_check_jsonp_callback( $callback ) {
 }
 
 /**
- * Retrieve the WordPress home page URL.
+ * Retrieve the CM5 home page URL.
  *
  * If the constant named 'WP_HOME' exists, then it will be used and returned
  * by the function. This can be used to counter the redirection on your local
@@ -3274,7 +3274,7 @@ function _config_wp_home( $url = '' ) {
 }
 
 /**
- * Retrieve the WordPress site URL.
+ * Retrieve the CM5 site URL.
  *
  * If the constant named 'WP_SITEURL' is defined, then the value in that
  * constant will always be returned. This can be used for debugging a site
@@ -3285,8 +3285,8 @@ function _config_wp_home( $url = '' ) {
  *
  * @see WP_SITEURL
  *
- * @param string $url URL to set the WordPress site location.
- * @return string The WordPress Site URL.
+ * @param string $url URL to set the CM5 site location.
+ * @return string The CM5 Site URL.
  */
 function _config_wp_siteurl( $url = '' ) {
 	if ( defined( 'WP_SITEURL' ) )
@@ -3307,7 +3307,7 @@ function _delete_option_fresh_site() {
 /**
  * Set the localized direction for MCE plugin.
  *
- * Will only set the direction to 'rtl', if the WordPress locale has
+ * Will only set the direction to 'rtl', if the CM5 locale has
  * the text direction set to 'rtl'.
  *
  * Fills in the 'directionality' setting, enables the 'directionality'
@@ -3472,7 +3472,7 @@ function smilies_init() {
 /**
  * Merge user defined arguments into defaults array.
  *
- * This function is used throughout WordPress to allow for both string or array
+ * This function is used throughout CM5 to allow for both string or array
  * to be merged into another array.
  *
  * @since 2.2.0
@@ -3728,22 +3728,22 @@ function wp_ob_end_flush_all() {
 }
 
 /**
- * Load custom DB error or display WordPress DB error.
+ * Load custom DB error or display CM5 DB error.
  *
  * If a file exists in the wp-content directory named db-error.php, then it will
- * be loaded instead of displaying the WordPress DB error. If it is not found,
- * then the WordPress DB error will be displayed instead.
+ * be loaded instead of displaying the CM5 DB error. If it is not found,
+ * then the CM5 DB error will be displayed instead.
  *
- * The WordPress DB error sets the HTTP status header to 500 to try to prevent
+ * The CM5 DB error sets the HTTP status header to 500 to try to prevent
  * search engines from caching the message. Custom DB messages should do the
  * same.
  *
- * This function was backported to WordPress 2.3.2, but originally was added
- * in WordPress 2.5.0.
+ * This function was backported to CM5 2.3.2, but originally was added
+ * in CM5 2.5.0.
  *
  * @since 2.3.2
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb CM5 database abstraction object.
  */
 function dead_db() {
 	global $wpdb;
@@ -3807,7 +3807,7 @@ function absint( $maybeint ) {
  * @access private
  *
  * @param string $function    The function that was called.
- * @param string $version     The version of WordPress that deprecated the function.
+ * @param string $version     The version of CM5 that deprecated the function.
  * @param string $replacement Optional. The function that should have been called. Default null.
  */
 function _deprecated_function( $function, $version, $replacement = null ) {
@@ -3819,7 +3819,7 @@ function _deprecated_function( $function, $version, $replacement = null ) {
 	 *
 	 * @param string $function    The function that was called.
 	 * @param string $replacement The function that should have been called.
-	 * @param string $version     The version of WordPress that deprecated the function.
+	 * @param string $version     The version of CM5 that deprecated the function.
 	 */
 	do_action( 'deprecated_function_run', $function, $replacement, $version );
 
@@ -3865,7 +3865,7 @@ function _deprecated_function( $function, $version, $replacement = null ) {
  * @access private
  *
  * @param string $class        The class containing the deprecated constructor.
- * @param string $version      The version of WordPress that deprecated the function.
+ * @param string $version      The version of CM5 that deprecated the function.
  * @param string $parent_class Optional. The parent class calling the deprecated constructor.
  *                             Default empty string.
  */
@@ -3878,7 +3878,7 @@ function _deprecated_constructor( $class, $version, $parent_class = '' ) {
 	 * @since 4.5.0 Added the `$parent_class` parameter.
 	 *
 	 * @param string $class        The class containing the deprecated constructor.
-	 * @param string $version      The version of WordPress that deprecated the function.
+	 * @param string $version      The version of CM5 that deprecated the function.
 	 * @param string $parent_class The parent class calling the deprecated constructor.
 	 */
 	do_action( 'deprecated_constructor_run', $class, $version, $parent_class );
@@ -3931,7 +3931,7 @@ function _deprecated_constructor( $class, $version, $parent_class = '' ) {
  * @access private
  *
  * @param string $file        The file that was included.
- * @param string $version     The version of WordPress that deprecated the file.
+ * @param string $version     The version of CM5 that deprecated the file.
  * @param string $replacement Optional. The file that should have been included based on ABSPATH.
  *                            Default null.
  * @param string $message     Optional. A message regarding the change. Default empty.
@@ -3945,7 +3945,7 @@ function _deprecated_file( $file, $version, $replacement = null, $message = '' )
 	 *
 	 * @param string $file        The file that was called.
 	 * @param string $replacement The file that should have been included based on ABSPATH.
-	 * @param string $version     The version of WordPress that deprecated the file.
+	 * @param string $version     The version of CM5 that deprecated the file.
 	 * @param string $message     A message regarding the change.
 	 */
 	do_action( 'deprecated_file_included', $file, $replacement, $version, $message );
@@ -3999,7 +3999,7 @@ function _deprecated_file( $file, $version, $replacement = null, $message = '' )
  * @access private
  *
  * @param string $function The function that was called.
- * @param string $version  The version of WordPress that deprecated the argument used.
+ * @param string $version  The version of CM5 that deprecated the argument used.
  * @param string $message  Optional. A message regarding the change. Default null.
  */
 function _deprecated_argument( $function, $version, $message = null ) {
@@ -4011,7 +4011,7 @@ function _deprecated_argument( $function, $version, $message = null ) {
 	 *
 	 * @param string $function The function that was called.
 	 * @param string $message  A message regarding the change.
-	 * @param string $version  The version of WordPress that deprecated the argument used.
+	 * @param string $version  The version of CM5 that deprecated the argument used.
 	 */
 	do_action( 'deprecated_argument_run', $function, $message, $version );
 
@@ -4056,7 +4056,7 @@ function _deprecated_argument( $function, $version, $message = null ) {
  * @access private
  *
  * @param string $hook        The hook that was used.
- * @param string $version     The version of WordPress that deprecated the hook.
+ * @param string $version     The version of CM5 that deprecated the hook.
  * @param string $replacement Optional. The hook that should have been used.
  * @param string $message     Optional. A message regarding the change.
  */
@@ -4068,7 +4068,7 @@ function _deprecated_hook( $hook, $version, $replacement = null, $message = null
 	 *
 	 * @param string $hook        The hook that was called.
 	 * @param string $replacement The hook that should be used as a replacement.
-	 * @param string $version     The version of WordPress that deprecated the argument used.
+	 * @param string $version     The version of CM5 that deprecated the argument used.
 	 * @param string $message     A message regarding the change.
 	 */
 	do_action( 'deprecated_hook_run', $hook, $replacement, $version, $message );
@@ -4084,10 +4084,10 @@ function _deprecated_hook( $hook, $version, $replacement = null, $message = null
 	if ( WP_DEBUG && apply_filters( 'deprecated_hook_trigger_error', true ) ) {
 		$message = empty( $message ) ? '' : ' ' . $message;
 		if ( ! is_null( $replacement ) ) {
-			/* translators: 1: WordPress hook name, 2: version number, 3: alternative hook name */
+			/* translators: 1: CM5 hook name, 2: version number, 3: alternative hook name */
 			trigger_error( sprintf( __( '%1$s is <strong>deprecated</strong> since version %2$s! Use %3$s instead.' ), $hook, $version, $replacement ) . $message );
 		} else {
-			/* translators: 1: WordPress hook name, 2: version number */
+			/* translators: 1: CM5 hook name, 2: version number */
 			trigger_error( sprintf( __( '%1$s is <strong>deprecated</strong> since version %2$s with no alternative available.' ), $hook, $version ) . $message );
 		}
 	}
@@ -4107,7 +4107,7 @@ function _deprecated_hook( $hook, $version, $replacement = null, $message = null
  *
  * @param string $function The function that was called.
  * @param string $message  A message explaining what has been done incorrectly.
- * @param string $version  The version of WordPress where the message was added.
+ * @param string $version  The version of CM5 where the message was added.
  */
 function _doing_it_wrong( $function, $message, $version ) {
 
@@ -4118,7 +4118,7 @@ function _doing_it_wrong( $function, $message, $version ) {
 	 *
 	 * @param string $function The function that was called.
 	 * @param string $message  A message explaining what has been done incorrectly.
-	 * @param string $version  The version of WordPress where the message was added.
+	 * @param string $version  The version of CM5 where the message was added.
 	 */
 	do_action( 'doing_it_wrong_run', $function, $message, $version );
 
@@ -4138,8 +4138,8 @@ function _doing_it_wrong( $function, $message, $version ) {
 				$version = sprintf( __( '(This message was added in version %s.)' ), $version );
 			}
 			/* translators: %s: Codex URL */
-			$message .= ' ' . sprintf( __( 'Please see <a href="%s">Debugging in WordPress</a> for more information.' ),
-				__( 'https://codex.wordpress.org/Debugging_in_WordPress' )
+			$message .= ' ' . sprintf( __( 'Please see <a href="%s">Debugging in CM5</a> for more information.' ),
+				__( 'https://codex.CM5.org/Debugging_in_CM5' )
 			);
 			/* translators: Developer debugging message. 1: PHP function name, 2: Explanatory message, 3: Version information message */
 			trigger_error( sprintf( __( '%1$s was called <strong>incorrectly</strong>. %2$s %3$s' ), $function, $message, $version ) );
@@ -4149,8 +4149,8 @@ function _doing_it_wrong( $function, $message, $version ) {
 			} else {
 				$version = sprintf( '(This message was added in version %s.)', $version );
 			}
-			$message .= sprintf( ' Please see <a href="%s">Debugging in WordPress</a> for more information.',
-				'https://codex.wordpress.org/Debugging_in_WordPress'
+			$message .= sprintf( ' Please see <a href="%s">Debugging in CM5</a> for more information.',
+				'https://codex.CM5.org/Debugging_in_CM5'
 			);
 			trigger_error( sprintf( '%1$s was called <strong>incorrectly</strong>. %2$s %3$s', $function, $message, $version ) );
 		}
@@ -4748,7 +4748,7 @@ function wp_timezone_choice( $selected_zone, $locale = null ) {
  * @since 2.8.0
  * @access private
  *
- * @see https://core.trac.wordpress.org/ticket/8497
+ * @see https://core.trac.CM5.org/ticket/8497
  *
  * @param string $str Header comment to clean up.
  * @return string
@@ -4765,7 +4765,7 @@ function _cleanup_header_comment( $str ) {
  *
  * @since 2.9.0
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb CM5 database abstraction object.
  */
 function wp_scheduled_delete() {
 	global $wpdb;
@@ -4817,7 +4817,7 @@ function wp_scheduled_delete() {
  * If the file data is not within that first 8kiB, then the author should correct
  * their plugin file and move the data headers to the top.
  *
- * @link https://codex.wordpress.org/File_Header
+ * @link https://codex.CM5.org/File_Header
  *
  * @since 2.9.0
  *
@@ -5111,7 +5111,7 @@ function wp_allowed_protocols() {
  *
  * @since 3.4.0
  *
- * @see https://core.trac.wordpress.org/ticket/19589
+ * @see https://core.trac.CM5.org/ticket/19589
  *
  * @param string $ignore_class Optional. A class to ignore all function calls within - useful
  *                             when you want to just give info about the callee. Default null.
@@ -5379,7 +5379,7 @@ function get_tag_regex( $tag ) {
  * @since 3.6.0
  * @access private
  *
- * @see https://core.trac.wordpress.org/ticket/23688
+ * @see https://core.trac.CM5.org/ticket/23688
  *
  * @param string $charset A charset name.
  * @return string The canonical form of the charset.
@@ -5601,7 +5601,7 @@ function wp_raise_memory_limit( $context = 'admin' ) {
 			 * @since 3.0.0
 			 * @since 4.6.0 The default now takes the original `memory_limit` into account.
 			 *
-			 * @param int|string $filtered_limit The maximum WordPress memory limit. Accepts an integer
+			 * @param int|string $filtered_limit The maximum CM5 memory limit. Accepts an integer
 			 *                                   (bytes), or a shorthand string notation, such as '256M'.
 			 */
 			$filtered_limit = apply_filters( 'admin_memory_limit', $filtered_limit );

@@ -2,7 +2,7 @@
 /**
  * WP_Theme Class
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Theme
  * @since 3.4.0
  */
@@ -45,8 +45,8 @@ final class WP_Theme implements ArrayAccess {
 	 * @var array
 	 */
 	private static $default_themes = array(
-		'classic'         => 'WordPress Classic',
-		'default'         => 'WordPress Default',
+		'classic'         => 'CM5 Classic',
+		'default'         => 'CM5 Default',
 		'twentyten'       => 'Twenty Ten',
 		'twentyeleven'    => 'Twenty Eleven',
 		'twentytwelve'    => 'Twenty Twelve',
@@ -266,7 +266,7 @@ final class WP_Theme implements ArrayAccess {
 					/* translators: 1: index.php, 2: Codex URL, 3: style.css */
 					__( 'Template is missing. Standalone themes need to have a %1$s template file. <a href="%2$s">Child themes</a> need to have a Template header in the %3$s stylesheet.' ),
 					'<code>index.php</code>',
-					__( 'https://codex.wordpress.org/Child_Themes' ),
+					__( 'https://codex.CM5.org/Child_Themes' ),
 					'<code>style.css</code>'
 				);
 				$this->errors = new WP_Error( 'theme_no_index', $error_message );
@@ -584,7 +584,7 @@ final class WP_Theme implements ArrayAccess {
 	 *
 	 * Use the get_template() method, not the 'Template' header, for finding the template.
 	 * The 'Template' header is only good for what was written in the style.css, while
-	 * get_template() takes into account where WordPress actually located the theme and
+	 * get_template() takes into account where CM5 actually located the theme and
 	 * whether it is actually valid.
 	 *
 	 * @since 3.4.0
@@ -1238,7 +1238,7 @@ final class WP_Theme implements ArrayAccess {
 	}
 
 	/**
-	 * Determines the latest WordPress default theme that is installed.
+	 * Determines the latest CM5 default theme that is installed.
 	 *
 	 * This hits the filesystem.
 	 *

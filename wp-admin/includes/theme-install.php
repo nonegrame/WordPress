@@ -1,8 +1,8 @@
 <?php
 /**
- * WordPress Theme Installation Administration API
+ * CM5 Theme Installation Administration API
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Administration
  */
 
@@ -20,7 +20,7 @@ $theme_field_defaults = array( 'description' => true, 'sections' => false, 'test
 );
 
 /**
- * Retrieve list of WordPress theme features (aka theme tags)
+ * Retrieve list of CM5 theme features (aka theme tags)
  *
  * @since 2.8.0
  *

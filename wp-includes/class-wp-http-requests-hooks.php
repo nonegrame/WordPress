@@ -2,13 +2,13 @@
 /**
  * HTTP API: Requests hook bridge class
  *
- * @package WordPress
+ * @package CM5
  * @subpackage HTTP
  * @since 4.7.0
  */
 
 /**
- * Bridge to connect Requests internal hooks to WordPress actions.
+ * Bridge to connect Requests internal hooks to CM5 actions.
  *
  * @since 4.7.0
  *
@@ -23,7 +23,7 @@ class WP_HTTP_Requests_Hooks extends Requests_Hooks {
 	protected $url;
 
 	/**
-	 * WordPress WP_HTTP request data.
+	 * CM5 WP_HTTP request data.
 	 *
 	 * @var array Request data in WP_Http format.
 	 */
@@ -41,7 +41,7 @@ class WP_HTTP_Requests_Hooks extends Requests_Hooks {
 	}
 
 	/**
-	 * Dispatch a Requests hook to a native WordPress action.
+	 * Dispatch a Requests hook to a native CM5 action.
 	 *
 	 * @param string $hook Hook name.
 	 * @param array $parameters Parameters to pass to callbacks.
@@ -59,9 +59,9 @@ class WP_HTTP_Requests_Hooks extends Requests_Hooks {
 		}
 
 		/**
-		 * Transforms a native Request hook to a WordPress actions.
+		 * Transforms a native Request hook to a CM5 actions.
 		 *
-		 * This action maps Requests internal hook to a native WordPress action.
+		 * This action maps Requests internal hook to a native CM5 action.
 		 *
 		 * @see https://github.com/rmccue/Requests/blob/master/docs/hooks.md
 		 *

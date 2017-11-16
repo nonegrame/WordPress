@@ -2,7 +2,7 @@
 /**
  * The template for displaying 404 pages (Not Found)
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Twenty_Fourteen
  * @since Twenty Fourteen 1.0
  */

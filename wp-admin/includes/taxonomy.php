@@ -1,8 +1,8 @@
 <?php
 /**
- * WordPress Taxonomy Administration API.
+ * CM5 Taxonomy Administration API.
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Administration
  */
 

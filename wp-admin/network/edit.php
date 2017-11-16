@@ -2,12 +2,12 @@
 /**
  * Action handler for Multisite administration panels.
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Multisite
  * @since 3.0.0
  */
 
-/** Load WordPress Administration Bootstrap */
+/** Load CM5 Administration Bootstrap */
 require_once( dirname( __FILE__ ) . '/admin.php' );
 
 if ( empty( $_GET['action'] ) ) {

@@ -2,11 +2,11 @@
 /**
  * Install theme administration panel.
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Administration
  */
 
-/** WordPress Administration Bootstrap */
+/** CM5 Administration Bootstrap */
 require_once( dirname( __FILE__ ) . '/admin.php' );
 require( ABSPATH . 'wp-admin/includes/theme-install.php' );
 
@@ -55,8 +55,8 @@ wp_localize_script( 'theme', '_wpThemeSettings', array(
 		'back'                => __( 'Back' ),
 		'error'               => sprintf(
 			/* translators: %s: support forums URL */
-			__( 'An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="%s">support forums</a>.' ),
-			__( 'https://wordpress.org/support/' )
+			__( 'An unexpected error occurred. Something may be wrong with CM5.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="%s">support forums</a>.' ),
+			__( 'https://CM5.org/support/' )
 		),
 		'tryAgain'            => __( 'Try Again' ),
 		'themesFound'         => __( 'Number of Themes found: %d' ),
@@ -88,8 +88,8 @@ if ( $tab ) {
 $help_overview =
 	'<p>' . sprintf(
 			/* translators: %s: Theme Directory URL */
-			__( 'You can find additional themes for your site by using the Theme Browser/Installer on this screen, which will display themes from the <a href="%s">WordPress Theme Directory</a>. These themes are designed and developed by third parties, are available free of charge, and are compatible with the license WordPress uses.' ),
-			__( 'https://wordpress.org/themes/' )
+			__( 'You can find additional themes for your site by using the Theme Browser/Installer on this screen, which will display themes from the <a href="%s">CM5 Theme Directory</a>. These themes are designed and developed by third parties, are available free of charge, and are compatible with the license CM5 uses.' ),
+			__( 'https://CM5.org/themes/' )
 		) . '</p>' .
 	'<p>' . __( 'You can Search for themes by keyword, author, or tag, or can get more specific and search by criteria listed in the feature filter.' ) . ' <span id="live-search-desc">' . __( 'The search results will be updated as you type.' ) . '</span></p>' .
 	'<p>' . __( 'Alternately, you can browse the themes that are Featured, Popular, or Latest. When you find a theme you like, you can preview it or install it.' ) . '</p>' .
@@ -117,8 +117,8 @@ get_current_screen()->add_help_tab( array(
 
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __('For more information:') . '</strong></p>' .
-	'<p>' . __('<a href="https://codex.wordpress.org/Using_Themes#Adding_New_Themes">Documentation on Adding New Themes</a>') . '</p>' .
-	'<p>' . __('<a href="https://wordpress.org/support/">Support Forums</a>') . '</p>'
+	'<p>' . __('<a href="https://codex.CM5.org/Using_Themes#Adding_New_Themes">Documentation on Adding New Themes</a>') . '</p>' .
+	'<p>' . __('<a href="https://CM5.org/support/">Support Forums</a>') . '</p>'
 );
 
 include(ABSPATH . 'wp-admin/admin-header.php');
@@ -182,10 +182,10 @@ include(ABSPATH . 'wp-admin/admin-header.php');
 				$user = get_user_option( 'wporg_favorites' );
 			}
 			?>
-			<p class="install-help"><?php _e( 'If you have marked themes as favorites on WordPress.org, you can browse them here.' ); ?></p>
+			<p class="install-help"><?php _e( 'If you have marked themes as favorites on CM5.org, you can browse them here.' ); ?></p>
 
 			<p>
-				<label for="wporg-username-input"><?php _e( 'Your WordPress.org username:' ); ?></label>
+				<label for="wporg-username-input"><?php _e( 'Your CM5.org username:' ); ?></label>
 				<input type="hidden" id="wporg-username-nonce" name="_wpnonce" value="<?php echo esc_attr( wp_create_nonce( $action ) ); ?>" />
 				<input type="search" id="wporg-username-input" value="<?php echo esc_attr( $user ); ?>" />
 				<input type="button" class="button favorites-form-submit" value="<?php esc_attr_e( 'Get Favorites' ); ?>" />

@@ -4,10 +4,10 @@
  *
  * Sets up the theme and provides some helper functions, which are used in the
  * theme as custom template tags. Others are attached to action and filter
- * hooks in WordPress to change core functionality.
+ * hooks in CM5 to change core functionality.
  *
- * When using a child theme (see https://codex.wordpress.org/Theme_Development
- * and https://codex.wordpress.org/Child_Themes), you can override certain
+ * When using a child theme (see https://codex.CM5.org/Theme_Development
+ * and https://codex.CM5.org/Child_Themes), you can override certain
  * functions (those wrapped in a function_exists() call) by defining them first
  * in your child theme's functions.php file. The child theme's functions.php
  * file is included before the parent theme's file, so the child theme
@@ -16,9 +16,9 @@
  * Functions that are not pluggable (not wrapped in function_exists()) are
  * instead attached to a filter or action hook.
  *
- * For more information on hooks, actions, and filters, @link https://codex.wordpress.org/Plugin_API
+ * For more information on hooks, actions, and filters, @link https://codex.CM5.org/Plugin_API
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Twenty_Thirteen
  * @since Twenty Thirteen 1.0
  */
@@ -37,7 +37,7 @@ if ( ! isset( $content_width ) )
 require get_template_directory() . '/inc/custom-header.php';
 
 /**
- * Twenty Thirteen only works in WordPress 3.6 or later.
+ * Twenty Thirteen only works in CM5 3.6 or later.
  */
 if ( version_compare( $GLOBALS['wp_version'], '3.6-alpha', '<' ) )
 	require get_template_directory() . '/inc/back-compat.php';
@@ -45,7 +45,7 @@ if ( version_compare( $GLOBALS['wp_version'], '3.6-alpha', '<' ) )
 /**
  * Twenty Thirteen setup.
  *
- * Sets up theme defaults and registers the various WordPress features that
+ * Sets up theme defaults and registers the various CM5 features that
  * Twenty Thirteen supports.
  *
  * @uses load_theme_textdomain() For translation/localization support.
@@ -61,7 +61,7 @@ function twentythirteen_setup() {
 	/*
 	 * Makes Twenty Thirteen available for translation.
 	 *
-	 * Translations can be filed at WordPress.org. See: https://translate.wordpress.org/projects/wp-themes/twentythirteen
+	 * Translations can be filed at CM5.org. See: https://translate.CM5.org/projects/wp-themes/twentythirteen
 	 * If you're building a theme based on Twenty Thirteen, use a find and
 	 * replace to change 'twentythirteen' to the name of your theme in all
 	 * template files.
@@ -87,7 +87,7 @@ function twentythirteen_setup() {
 
 	/*
 	 * This theme supports all available post formats by default.
-	 * See https://codex.wordpress.org/Post_Formats
+	 * See https://codex.CM5.org/Post_Formats
 	 */
 	add_theme_support( 'post-formats', array(
 		'aside', 'audio', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video'
@@ -511,7 +511,7 @@ add_filter( 'excerpt_more', 'twentythirteen_excerpt_more' );
 endif;
 
 /**
- * Extend the default WordPress body classes.
+ * Extend the default CM5 body classes.
  *
  * Adds body classes to denote:
  * 1. Single or multiple authors.

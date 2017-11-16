@@ -2,12 +2,12 @@
 /**
  * Edit Site Users Administration Screen
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Multisite
  * @since 3.1.0
  */
 
-/** Load WordPress Administration Bootstrap */
+/** Load CM5 Administration Bootstrap */
 require_once( dirname( __FILE__ ) . '/admin.php' );
 
 if ( ! current_user_can('manage_sites') )

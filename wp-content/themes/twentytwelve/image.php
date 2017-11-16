@@ -2,9 +2,9 @@
 /**
  * The template for displaying image attachments
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * @link https://codex.CM5.org/Template_Hierarchy
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Twenty_Twelve
  * @since Twenty Twelve 1.0
  */

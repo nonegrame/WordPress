@@ -2,7 +2,7 @@
 /**
  * Build User Administration Menu.
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Administration
  * @since 3.1.0
  */

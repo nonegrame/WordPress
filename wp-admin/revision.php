@@ -4,7 +4,7 @@
  *
  * Requires wp-admin/includes/revision.php.
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Administration
  * @since 2.6.0
  *
@@ -15,7 +15,7 @@
  * @param int    to       Optional, required if revision missing. The revision to compare to.
  */
 
-/** WordPress Administration Bootstrap */
+/** CM5 Administration Bootstrap */
 require_once( dirname( __FILE__ ) . '/admin.php' );
 
 require ABSPATH . 'wp-admin/includes/revision.php';
@@ -117,8 +117,8 @@ get_current_screen()->add_help_tab( array(
 ) );
 
 $revisions_sidebar  = '<p><strong>' . __( 'For more information:' ) . '</strong></p>';
-$revisions_sidebar .= '<p>' . __( '<a href="https://codex.wordpress.org/Revision_Management">Revisions Management</a>' ) . '</p>';
-$revisions_sidebar .= '<p>' . __( '<a href="https://wordpress.org/support/">Support Forums</a>' ) . '</p>';
+$revisions_sidebar .= '<p>' . __( '<a href="https://codex.CM5.org/Revision_Management">Revisions Management</a>' ) . '</p>';
+$revisions_sidebar .= '<p>' . __( '<a href="https://CM5.org/support/">Support Forums</a>' ) . '</p>';
 
 get_current_screen()->set_help_sidebar( $revisions_sidebar );
 

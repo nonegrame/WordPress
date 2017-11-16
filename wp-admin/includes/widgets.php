@@ -1,8 +1,8 @@
 <?php
 /**
- * WordPress Widgets Administration API
+ * CM5 Widgets Administration API
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Administration
  */
 

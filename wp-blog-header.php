@@ -1,18 +1,18 @@
 <?php
 /**
- * Loads the WordPress environment and template.
+ * Loads the CM5 environment and template.
  *
- * @package WordPress
+ * @package CM5
  */
 
 if ( !isset($wp_did_header) ) {
 
 	$wp_did_header = true;
 
-	// Load the WordPress library.
+	// Load the CM5 library.
 	require_once( dirname(__FILE__) . '/wp-load.php' );
 
-	// Set up the WordPress query.
+	// Set up the CM5 query.
 	wp();
 
 	// Load the theme template.

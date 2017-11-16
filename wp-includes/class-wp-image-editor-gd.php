@@ -1,13 +1,13 @@
 <?php
 /**
- * WordPress GD Image Editor
+ * CM5 GD Image Editor
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Image_Editor
  */
 
 /**
- * WordPress Image Editor Class for Image Manipulation through GD
+ * CM5 Image Editor Class for Image Manipulation through GD
  *
  * @since 3.5.0
  *

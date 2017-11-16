@@ -1,10 +1,10 @@
 <?php
 /**
- * Deprecated functions from past WordPress versions. You shouldn't use these
+ * Deprecated functions from past CM5 versions. You shouldn't use these
  * functions and look for the alternatives instead. The functions will be
  * removed in a later version.
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Deprecated
  */
 
@@ -49,11 +49,11 @@ function get_postdata($postid) {
 }
 
 /**
- * Sets up the WordPress Loop.
+ * Sets up the CM5 Loop.
  *
  * Use The Loop instead.
  *
- * @link https://codex.wordpress.org/The_Loop
+ * @link https://codex.CM5.org/The_Loop
  *
  * @since 1.0.1
  * @deprecated 1.5.0
@@ -61,7 +61,7 @@ function get_postdata($postid) {
 function start_wp() {
 	global $wp_query;
 
-	_deprecated_function( __FUNCTION__, '1.5.0', __('new WordPress Loop') );
+	_deprecated_function( __FUNCTION__, '1.5.0', __('new CM5 Loop') );
 
 	// Since the old style loop is being used, advance the query iterator here.
 	$wp_query->next_post();
@@ -1279,7 +1279,7 @@ function get_category_children( $id, $before = '/', $after = '', $visited = arra
  * @deprecated 4.0.0 Use get_terms()
  * @see get_terms()
  *
- * @link https://codex.wordpress.org/Function_Reference/get_all_category_ids
+ * @link https://codex.CM5.org/Function_Reference/get_all_category_ids
  *
  * @return object List of all of the category IDs.
  */
@@ -2364,7 +2364,7 @@ function update_usermeta( $user_id, $meta_key, $meta_value ) {
  * @deprecated 3.1.0 Use get_users()
  * @see get_users()
  *
- * @global wpdb $wpdb    WordPress database abstraction object.
+ * @global wpdb $wpdb    CM5 database abstraction object.
  *
  * @param int $id Site ID.
  * @return array List of users that are part of that site ID
@@ -3206,7 +3206,7 @@ function wp_load_image( $file ) {
  * be PNG. The only supported image types are PNG, GIF, and JPEG.
  *
  * Some functionality requires API to exist, so some PHP version may lose out
- * support. This is not the fault of WordPress (where functionality is
+ * support. This is not the fault of CM5 (where functionality is
  * downgraded, not actual defects), but of your PHP version.
  *
  * @since 2.5.0
@@ -3372,7 +3372,7 @@ function _search_terms_tidy( $t ) {
  * Determine if TinyMCE is available.
  *
  * Checks to see if the user has deleted the tinymce files to slim down
- * their WordPress installation.
+ * their CM5 installation.
  *
  * @since 2.1.0
  * @deprecated 3.9.0
@@ -3437,7 +3437,7 @@ function like_escape($text) {
 /**
  * Determines if the URL can be accessed over SSL.
  *
- * Determines if the URL can be accessed over SSL by using the WordPress HTTP API to access
+ * Determines if the URL can be accessed over SSL by using the CM5 HTTP API to access
  * the URL using https as the scheme.
  *
  * @since 2.5.0

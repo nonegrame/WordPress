@@ -1,8 +1,8 @@
 <?php
 /**
- * WordPress List utility class
+ * CM5 List utility class
  *
- * @package WordPress
+ * @package CM5
  * @since 4.7.0
  */
 

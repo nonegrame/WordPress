@@ -2,7 +2,7 @@
 /**
  * REST API: WP_REST_Request class
  *
- * @package WordPress
+ * @package CM5
  * @subpackage REST_API
  * @since 4.4.0
  */
@@ -16,7 +16,7 @@
  * used in that manner. It does not use ArrayObject (as we cannot rely on SPL),
  * so be aware it may have non-array behaviour in some cases.
  *
- * Note: When using features provided by ArrayAccess, be aware that WordPress deliberately
+ * Note: When using features provided by ArrayAccess, be aware that CM5 deliberately
  * does not distinguish between arguments of the same name for different request methods.
  * For instance, in a request with `GET id=1` and `POST id=2`, `$request['id']` will equal
  * 2 (`POST`) not 1 (`GET`). For more precision between request methods, use
@@ -640,7 +640,7 @@ class WP_REST_Request implements ArrayAccess {
 		 * Check for a parsing error.
 		 *
 		 * Note that due to WP's JSON compatibility functions, json_last_error
-		 * might not be defined: https://core.trac.wordpress.org/ticket/27799
+		 * might not be defined: https://core.trac.CM5.org/ticket/27799
 		 */
 		if ( null === $params && ( ! function_exists( 'json_last_error' ) || JSON_ERROR_NONE !== json_last_error() ) ) {
 			// Ensure subsequent calls receive error instance.

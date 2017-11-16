@@ -1,8 +1,8 @@
 <?php
 /**
- * WordPress Dashboard Widget Administration Screen API
+ * CM5 Dashboard Widget Administration Screen API
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Administration
  */
 
@@ -52,8 +52,8 @@ function wp_dashboard_setup() {
 		wp_add_dashboard_widget( 'dashboard_quick_press', $quick_draft_title, 'wp_dashboard_quick_press' );
 	}
 
-	// WordPress Events and News
-	wp_add_dashboard_widget( 'dashboard_primary', __( 'WordPress Events and News' ), 'wp_dashboard_events_news' );
+	// CM5 Events and News
+	wp_add_dashboard_widget( 'dashboard_primary', __( 'CM5 Events and News' ), 'wp_dashboard_events_news' );
 
 	if ( is_network_admin() ) {
 
@@ -1081,7 +1081,7 @@ function wp_dashboard_events_news() {
 
 	?>
 
-	<div class="wordpress-news hide-if-no-js">
+	<div class="CM5-news hide-if-no-js">
 		<?php wp_dashboard_primary(); ?>
 	</div>
 
@@ -1089,7 +1089,7 @@ function wp_dashboard_events_news() {
 		<?php
 			printf(
 				'<a href="%1$s" target="_blank">%2$s <span class="screen-reader-text">%3$s</span><span aria-hidden="true" class="dashicons dashicons-external"></span></a>',
-				'https://make.wordpress.org/community/meetups-landing-page',
+				'https://make.CM5.org/community/meetups-landing-page',
 				__( 'Meetups' ),
 				/* translators: accessibility text */
 				__( '(opens in a new window)' )
@@ -1113,8 +1113,8 @@ function wp_dashboard_events_news() {
 		<?php
 			printf(
 				'<a href="%1$s" target="_blank">%2$s <span class="screen-reader-text">%3$s</span><span aria-hidden="true" class="dashicons dashicons-external"></span></a>',
-				/* translators: If a Rosetta site exists (e.g. https://es.wordpress.org/news/), then use that. Otherwise, leave untranslated. */
-				esc_url( _x( 'https://wordpress.org/news/', 'Events and News dashboard widget' ) ),
+				/* translators: If a Rosetta site exists (e.g. https://es.CM5.org/news/), then use that. Otherwise, leave untranslated. */
+				esc_url( _x( 'https://CM5.org/news/', 'Events and News dashboard widget' ) ),
 				__( 'News' ),
 				/* translators: accessibility text */
 				__( '(opens in a new window)' )
@@ -1253,14 +1253,14 @@ function wp_print_community_events_templates() {
 					/* translators: 1: the city the user searched for, 2: meetup organization documentation URL */
 					__( 'There aren&#8217;t any events scheduled near %1$s at the moment. Would you like to <a href="%2$s">organize one</a>?' ),
 					'{{ data.location.description }}',
-					__( 'https://make.wordpress.org/community/handbook/meetup-organizer/welcome/' )
+					__( 'https://make.CM5.org/community/handbook/meetup-organizer/welcome/' )
 				); ?>
 
 			<# } else { #>
 				<?php printf(
 					/* translators: %s: meetup organization documentation URL */
 					__( 'There aren&#8217;t any events scheduled near you at the moment. Would you like to <a href="%s">organize one</a>?' ),
-					__( 'https://make.wordpress.org/community/handbook/meetup-organizer/welcome/' )
+					__( 'https://make.CM5.org/community/handbook/meetup-organizer/welcome/' )
 				); ?>
 			<# } #>
 		</li>
@@ -1269,7 +1269,7 @@ function wp_print_community_events_templates() {
 }
 
 /**
- * WordPress News dashboard widget.
+ * CM5 News dashboard widget.
  *
  * @since 2.7.0
  * @since 4.8.0 Removed popular plugins feed.
@@ -1279,31 +1279,31 @@ function wp_dashboard_primary() {
 		'news' => array(
 
 			/**
-			 * Filters the primary link URL for the 'WordPress News' dashboard widget.
+			 * Filters the primary link URL for the 'CM5 News' dashboard widget.
 			 *
 			 * @since 2.5.0
 			 *
 			 * @param string $link The widget's primary link URL.
 			 */
-			'link' => apply_filters( 'dashboard_primary_link', __( 'https://wordpress.org/news/' ) ),
+			'link' => apply_filters( 'dashboard_primary_link', __( 'https://CM5.org/news/' ) ),
 
 			/**
-			 * Filters the primary feed URL for the 'WordPress News' dashboard widget.
+			 * Filters the primary feed URL for the 'CM5 News' dashboard widget.
 			 *
 			 * @since 2.3.0
 			 *
 			 * @param string $url The widget's primary feed URL.
 			 */
-			'url' => apply_filters( 'dashboard_primary_feed', __( 'http://wordpress.org/news/feed/' ) ),
+			'url' => apply_filters( 'dashboard_primary_feed', __( 'http://CM5.org/news/feed/' ) ),
 
 			/**
-			 * Filters the primary link title for the 'WordPress News' dashboard widget.
+			 * Filters the primary link title for the 'CM5 News' dashboard widget.
 			 *
 			 * @since 2.3.0
 			 *
 			 * @param string $title Title attribute for the widget's primary link.
 			 */
-			'title'        => apply_filters( 'dashboard_primary_title', __( 'WordPress Blog' ) ),
+			'title'        => apply_filters( 'dashboard_primary_title', __( 'CM5 Blog' ) ),
 			'items'        => 1,
 			'show_summary' => 0,
 			'show_author'  => 0,
@@ -1312,34 +1312,34 @@ function wp_dashboard_primary() {
 		'planet' => array(
 
 			/**
-			 * Filters the secondary link URL for the 'WordPress News' dashboard widget.
+			 * Filters the secondary link URL for the 'CM5 News' dashboard widget.
 			 *
 			 * @since 2.3.0
 			 *
 			 * @param string $link The widget's secondary link URL.
 			 */
-			'link' => apply_filters( 'dashboard_secondary_link', __( 'https://planet.wordpress.org/' ) ),
+			'link' => apply_filters( 'dashboard_secondary_link', __( 'https://planet.CM5.org/' ) ),
 
 			/**
-			 * Filters the secondary feed URL for the 'WordPress News' dashboard widget.
+			 * Filters the secondary feed URL for the 'CM5 News' dashboard widget.
 			 *
 			 * @since 2.3.0
 			 *
 			 * @param string $url The widget's secondary feed URL.
 			 */
-			'url' => apply_filters( 'dashboard_secondary_feed', __( 'https://planet.wordpress.org/feed/' ) ),
+			'url' => apply_filters( 'dashboard_secondary_feed', __( 'https://planet.CM5.org/feed/' ) ),
 
 			/**
-			 * Filters the secondary link title for the 'WordPress News' dashboard widget.
+			 * Filters the secondary link title for the 'CM5 News' dashboard widget.
 			 *
 			 * @since 2.3.0
 			 *
 			 * @param string $title Title attribute for the widget's secondary link.
 			 */
-			'title'        => apply_filters( 'dashboard_secondary_title', __( 'Other WordPress News' ) ),
+			'title'        => apply_filters( 'dashboard_secondary_title', __( 'Other CM5 News' ) ),
 
 			/**
-			 * Filters the number of secondary link items for the 'WordPress News' dashboard widget.
+			 * Filters the number of secondary link items for the 'CM5 News' dashboard widget.
 			 *
 			 * @since 4.4.0
 			 *
@@ -1356,7 +1356,7 @@ function wp_dashboard_primary() {
 }
 
 /**
- * Display the WordPress news feeds.
+ * Display the CM5 news feeds.
  *
  * @since 3.8.0
  * @since 4.8.0 Removed popular plugins feed.
@@ -1440,12 +1440,12 @@ function wp_dashboard_browser_nag() {
 	if ( $response ) {
 		if ( $response['insecure'] ) {
 			/* translators: %s: browser name and link */
-			$msg = sprintf( __( "It looks like you're using an insecure version of %s. Using an outdated browser makes your computer unsafe. For the best WordPress experience, please update your browser." ),
+			$msg = sprintf( __( "It looks like you're using an insecure version of %s. Using an outdated browser makes your computer unsafe. For the best CM5 experience, please update your browser." ),
 				sprintf( '<a href="%s">%s</a>', esc_url( $response['update_url'] ), esc_html( $response['name'] ) )
 			);
 		} else {
 			/* translators: %s: browser name and link */
-			$msg = sprintf( __( "It looks like you're using an old version of %s. For the best WordPress experience, please update your browser." ),
+			$msg = sprintf( __( "It looks like you're using an old version of %s. For the best CM5 experience, please update your browser." ),
 				sprintf( '<a href="%s">%s</a>', esc_url( $response['update_url'] ), esc_html( $response['name'] ) )
 			);
 		}
@@ -1512,10 +1512,10 @@ function wp_check_browser_version() {
 		// include an unmodified $wp_version
 		include( ABSPATH . WPINC . '/version.php' );
 
-		$url = 'http://api.wordpress.org/core/browse-happy/1.1/';
+		$url = 'http://api.CM5.org/core/browse-happy/1.1/';
 		$options = array(
 			'body'       => array( 'useragent' => $_SERVER['HTTP_USER_AGENT'] ),
-			'user-agent' => 'WordPress/' . $wp_version . '; ' . home_url( '/' )
+			'user-agent' => 'CM5/' . $wp_version . '; ' . home_url( '/' )
 		);
 
 		if ( wp_http_supports( array( 'ssl' ) ) ) {
@@ -1556,14 +1556,14 @@ function wp_check_browser_version() {
 function wp_dashboard_empty() {}
 
 /**
- * Displays a welcome panel to introduce users to WordPress.
+ * Displays a welcome panel to introduce users to CM5.
  *
  * @since 3.3.0
  */
 function wp_welcome_panel() {
 	?>
 	<div class="welcome-panel-content">
-	<h2><?php _e( 'Welcome to WordPress!' ); ?></h2>
+	<h2><?php _e( 'Welcome to CM5!' ); ?></h2>
 	<p class="about-description"><?php _e( 'We&#8217;ve assembled some links to get you started:' ); ?></p>
 	<div class="welcome-panel-column-container">
 	<div class="welcome-panel-column">
@@ -1612,7 +1612,7 @@ function wp_welcome_panel() {
 		<?php if ( current_user_can( 'manage_options' ) ) : ?>
 			<li><?php printf( '<a href="%s" class="welcome-icon welcome-comments">' . __( 'Turn comments on or off' ) . '</a>', admin_url( 'options-discussion.php' ) ); ?></li>
 		<?php endif; ?>
-			<li><?php printf( '<a href="%s" class="welcome-icon welcome-learn-more">' . __( 'Learn more about getting started' ) . '</a>', __( 'https://codex.wordpress.org/First_Steps_With_WordPress' ) ); ?></li>
+			<li><?php printf( '<a href="%s" class="welcome-icon welcome-learn-more">' . __( 'Learn more about getting started' ) . '</a>', __( 'https://codex.CM5.org/First_Steps_With_CM5' ) ); ?></li>
 		</ul>
 	</div>
 	</div>

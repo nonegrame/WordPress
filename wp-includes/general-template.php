@@ -2,7 +2,7 @@
 /**
  * General template tags that can go anywhere in a template.
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Template
  */
 
@@ -165,7 +165,7 @@ function get_template_part( $slug, $name = null ) {
  * it. The filter is {@see 'get_search_form'}.
  *
  * This function is primarily used by themes which want to hardcode the search
- * form into the sidebar and also by the search widget in WordPress.
+ * form into the sidebar and also by the search widget in CM5.
  *
  * There is also an action that is called whenever the function is run called,
  * {@see 'pre_get_search_form'}. This can be useful for outputting JavaScript that the
@@ -184,7 +184,7 @@ function get_search_form( $echo = true ) {
 	 * @since 2.7.0 as 'get_search_form' action.
 	 * @since 3.6.0
 	 *
-	 * @link https://core.trac.wordpress.org/ticket/19321
+	 * @link https://core.trac.CM5.org/ticket/19321
 	 */
 	do_action( 'pre_get_search_form' );
 
@@ -357,7 +357,7 @@ function wp_registration_url() {
 }
 
 /**
- * Provides a simple login form for use anywhere within WordPress.
+ * Provides a simple login form for use anywhere within CM5.
  *
  * The login format HTML is echoed by default. Pass a false value for `$echo` to return it instead.
  *
@@ -560,7 +560,7 @@ function wp_register( $before = '<li>', $after = '</li>', $echo = true ) {
  *
  * @since 1.5.0
  *
- * @link https://core.trac.wordpress.org/ticket/1458 Explanation of 'wp_meta' action.
+ * @link https://core.trac.CM5.org/ticket/1458 Explanation of 'wp_meta' action.
  */
 function wp_meta() {
 	/**
@@ -591,11 +591,11 @@ function bloginfo( $show = '' ) {
  *
  * - 'name' - Site title (set in Settings > General)
  * - 'description' - Site tagline (set in Settings > General)
- * - 'wpurl' - The WordPress address (URL) (set in Settings > General)
+ * - 'wpurl' - The CM5 address (URL) (set in Settings > General)
  * - 'url' - The Site address (URL) (set in Settings > General)
  * - 'admin_email' - Admin email (set in Settings > General)
  * - 'charset' - The "Encoding for pages and feeds"  (set in Settings > Reading)
- * - 'version' - The current WordPress version
+ * - 'version' - The current CM5 version
  * - 'html_type' - The content-type (default: "text/html"). Themes and plugins
  *   can override the default value using the {@see 'pre_option_html_type'} filter
  * - 'text_direction' - The text direction determined by the site's language. is_rtl()
@@ -3077,13 +3077,13 @@ function wp_default_editor() {
  * Renders an editor.
  *
  * Using this function is the proper way to output all needed components for both TinyMCE and Quicktags.
- * _WP_Editors should not be used directly. See https://core.trac.wordpress.org/ticket/17144.
+ * _WP_Editors should not be used directly. See https://core.trac.CM5.org/ticket/17144.
  *
  * NOTE: Once initialized the TinyMCE editor cannot be safely moved in the DOM. For that reason
  * running wp_editor() inside of a meta box is not a good idea unless only Quicktags is used.
  * On the post edit screen several actions can be used to include additional editors
  * containing TinyMCE: 'edit_page_form', 'edit_form_advanced' and 'dbx_post_sidebar'.
- * See https://core.trac.wordpress.org/ticket/19173 for more information.
+ * See https://core.trac.CM5.org/ticket/19173 for more information.
  *
  * @see _WP_Editors::editor()
  * @since 3.3.0
@@ -3168,7 +3168,7 @@ function wp_enqueue_code_editor( $args ) {
 			'outline-none' => true,
 		),
 		'jshint' => array(
-			// The following are copied from <https://github.com/WordPress/wordpress-develop/blob/4.8.1/.jshintrc>.
+			// The following are copied from <https://github.com/CM5/CM5-develop/blob/4.8.1/.jshintrc>.
 			'boss' => true,
 			'curly' => true,
 			'eqeqeq' => true,
@@ -3507,7 +3507,7 @@ function wp_enqueue_code_editor( $args ) {
 }
 
 /**
- * Retrieves the contents of the search WordPress query variable.
+ * Retrieves the contents of the search CM5 query variable.
  *
  * The search query string is passed through esc_attr() to ensure that it is safe
  * for placing in an html attribute.
@@ -3932,7 +3932,7 @@ function register_admin_color_schemes() {
 }
 
 /**
- * Displays the URL of a WordPress admin CSS file.
+ * Displays the URL of a CM5 admin CSS file.
  *
  * @see WP_Styles::_css_href and its {@see 'style_loader_src'} filter.
  *
@@ -3950,7 +3950,7 @@ function wp_admin_css_uri( $file = 'wp-admin' ) {
 	$_file = add_query_arg( 'version', get_bloginfo( 'version' ),  $_file );
 
 	/**
-	 * Filters the URI of a WordPress admin CSS file.
+	 * Filters the URI of a CM5 admin CSS file.
 	 *
 	 * @since 2.3.0
 	 *
@@ -3969,7 +3969,7 @@ function wp_admin_css_uri( $file = 'wp-admin' ) {
  * be printed. Printing may be forced by passing true as the $force_echo
  * (second) parameter.
  *
- * For backward compatibility with WordPress 2.3 calling method: If the $file
+ * For backward compatibility with CM5 2.3 calling method: If the $file
  * (first) parameter does not correspond to a registered CSS file, we assume
  * $file is a file relative to wp-admin/ without its ".css" extension. A
  * stylesheet link to that generated URL is printed.
@@ -4110,25 +4110,25 @@ function get_the_generator( $type = '' ) {
 
 	switch ( $type ) {
 		case 'html':
-			$gen = '<meta name="generator" content="WordPress ' . get_bloginfo( 'version' ) . '">';
+			$gen = '<meta name="generator" content="CM5 ' . get_bloginfo( 'version' ) . '">';
 			break;
 		case 'xhtml':
-			$gen = '<meta name="generator" content="WordPress ' . get_bloginfo( 'version' ) . '" />';
+			$gen = '<meta name="generator" content="CM5 ' . get_bloginfo( 'version' ) . '" />';
 			break;
 		case 'atom':
-			$gen = '<generator uri="https://wordpress.org/" version="' . get_bloginfo_rss( 'version' ) . '">WordPress</generator>';
+			$gen = '<generator uri="https://CM5.org/" version="' . get_bloginfo_rss( 'version' ) . '">CM5</generator>';
 			break;
 		case 'rss2':
-			$gen = '<generator>https://wordpress.org/?v=' . get_bloginfo_rss( 'version' ) . '</generator>';
+			$gen = '<generator>https://CM5.org/?v=' . get_bloginfo_rss( 'version' ) . '</generator>';
 			break;
 		case 'rdf':
-			$gen = '<admin:generatorAgent rdf:resource="https://wordpress.org/?v=' . get_bloginfo_rss( 'version' ) . '" />';
+			$gen = '<admin:generatorAgent rdf:resource="https://CM5.org/?v=' . get_bloginfo_rss( 'version' ) . '" />';
 			break;
 		case 'comment':
-			$gen = '<!-- generator="WordPress/' . get_bloginfo( 'version' ) . '" -->';
+			$gen = '<!-- generator="CM5/' . get_bloginfo( 'version' ) . '" -->';
 			break;
 		case 'export':
-			$gen = '<!-- generator="WordPress/' . get_bloginfo_rss('version') . '" created="'. date('Y-m-d H:i') . '" -->';
+			$gen = '<!-- generator="CM5/' . get_bloginfo_rss('version') . '" created="'. date('Y-m-d H:i') . '" -->';
 			break;
 	}
 

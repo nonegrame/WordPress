@@ -2,7 +2,7 @@
 /**
  * Parse OPML XML files and store in globals.
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Administration
  */
 

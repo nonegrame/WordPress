@@ -4,7 +4,7 @@
  *
  * Requires skin classes and WP_Upgrader subclasses for backward compatibility.
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Upgrader
  * @since 2.8.0
  */
@@ -148,10 +148,10 @@ class WP_Upgrader {
 		$this->strings['bad_request'] = __('Invalid data provided.');
 		$this->strings['fs_unavailable'] = __('Could not access filesystem.');
 		$this->strings['fs_error'] = __('Filesystem error.');
-		$this->strings['fs_no_root_dir'] = __('Unable to locate WordPress root directory.');
-		$this->strings['fs_no_content_dir'] = __('Unable to locate WordPress content directory (wp-content).');
-		$this->strings['fs_no_plugins_dir'] = __('Unable to locate WordPress plugin directory.');
-		$this->strings['fs_no_themes_dir'] = __('Unable to locate WordPress theme directory.');
+		$this->strings['fs_no_root_dir'] = __('Unable to locate CM5 root directory.');
+		$this->strings['fs_no_content_dir'] = __('Unable to locate CM5 content directory (wp-content).');
+		$this->strings['fs_no_plugins_dir'] = __('Unable to locate CM5 plugin directory.');
+		$this->strings['fs_no_themes_dir'] = __('Unable to locate CM5 theme directory.');
 		/* translators: %s: directory name */
 		$this->strings['fs_no_folder'] = __('Unable to locate needed folder (%s).');
 
@@ -824,7 +824,7 @@ class WP_Upgrader {
 	}
 
 	/**
- 	 * Creates a lock using WordPress options.
+ 	 * Creates a lock using CM5 options.
  	 *
  	 * @since 4.5.0
  	 * @static

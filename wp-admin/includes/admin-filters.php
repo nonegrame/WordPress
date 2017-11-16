@@ -2,7 +2,7 @@
 /**
  * Administration API: Default admin hooks
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Administration
  * @since 4.3.0
  */
@@ -121,7 +121,7 @@ add_action( 'admin_notices', 'maintenance_nag', 10 );
 add_filter( 'update_footer', 'core_update_footer' );
 
 // Update Core hooks.
-add_action( '_core_updated_successfully', '_redirect_to_about_wordpress' );
+add_action( '_core_updated_successfully', '_redirect_to_about_CM5' );
 
 // Upgrade hooks.
 add_action( 'upgrader_process_complete', array( 'Language_Pack_Upgrader', 'async_upgrade' ), 20 );

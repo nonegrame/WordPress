@@ -2,11 +2,11 @@
 /**
  * Edit Comments Administration Screen.
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Administration
  */
 
-/** WordPress Administration Bootstrap */
+/** CM5 Administration Bootstrap */
 require_once( dirname( __FILE__ ) . '/admin.php' );
 if ( ! current_user_can( 'edit_posts' ) ) {
 	wp_die(
@@ -182,10 +182,10 @@ get_current_screen()->add_help_tab( array(
 
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __( 'For more information:' ) . '</strong></p>' .
-	'<p>' . __( '<a href="https://codex.wordpress.org/Administration_Screens#Comments">Documentation on Comments</a>' ) . '</p>' .
-	'<p>' . __( '<a href="https://codex.wordpress.org/Comment_Spam">Documentation on Comment Spam</a>' ) . '</p>' .
-	'<p>' . __( '<a href="https://codex.wordpress.org/Keyboard_Shortcuts">Documentation on Keyboard Shortcuts</a>' ) . '</p>' .
-	'<p>' . __( '<a href="https://wordpress.org/support/">Support Forums</a>' ) . '</p>'
+	'<p>' . __( '<a href="https://codex.CM5.org/Administration_Screens#Comments">Documentation on Comments</a>' ) . '</p>' .
+	'<p>' . __( '<a href="https://codex.CM5.org/Comment_Spam">Documentation on Comment Spam</a>' ) . '</p>' .
+	'<p>' . __( '<a href="https://codex.CM5.org/Keyboard_Shortcuts">Documentation on Keyboard Shortcuts</a>' ) . '</p>' .
+	'<p>' . __( '<a href="https://CM5.org/support/">Support Forums</a>' ) . '</p>'
 );
 
 get_current_screen()->set_screen_reader_content( array(

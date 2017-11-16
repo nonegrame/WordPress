@@ -2,7 +2,7 @@
 /**
  * Nav Menu API: Walker_Nav_Menu class
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Nav_Menus
  * @since 4.6.0
  */

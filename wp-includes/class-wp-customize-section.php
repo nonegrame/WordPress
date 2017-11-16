@@ -1,8 +1,8 @@
 <?php
 /**
- * WordPress Customize Section classes
+ * CM5 Customize Section classes
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Customize
  * @since 3.4.0
  */

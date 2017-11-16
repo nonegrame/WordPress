@@ -2,7 +2,7 @@
 /**
  * List Table API: WP_Theme_Install_List_Table class
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Administration
  * @since 3.1.0
  */
@@ -221,24 +221,24 @@ class WP_Theme_Install_List_Table extends WP_Themes_List_Table {
 	}
 
 	/**
-	 * Prints a theme from the WordPress.org API.
+	 * Prints a theme from the CM5.org API.
 	 *
 	 * @since 3.1.0
 	 *
 	 * @global array $themes_allowedtags
 	 *
 	 * @param object $theme {
-	 *     An object that contains theme data returned by the WordPress.org API.
+	 *     An object that contains theme data returned by the CM5.org API.
 	 *
 	 *     @type string $name           Theme name, e.g. 'Twenty Seventeen'.
 	 *     @type string $slug           Theme slug, e.g. 'twentyseventeen'.
 	 *     @type string $version        Theme version, e.g. '1.1'.
 	 *     @type string $author         Theme author username, e.g. 'melchoyce'.
-	 *     @type string $preview_url    Preview URL, e.g. 'http://2017.wordpress.net/'.
-	 *     @type string $screenshot_url Screenshot URL, e.g. 'https://wordpress.org/themes/twentyseventeen/'.
+	 *     @type string $preview_url    Preview URL, e.g. 'http://2017.CM5.net/'.
+	 *     @type string $screenshot_url Screenshot URL, e.g. 'https://CM5.org/themes/twentyseventeen/'.
 	 *     @type float  $rating         Rating score.
 	 *     @type int    $num_ratings    The number of ratings.
-	 *     @type string $homepage       Theme homepage, e.g. 'https://wordpress.org/themes/twentyseventeen/'.
+	 *     @type string $homepage       Theme homepage, e.g. 'https://CM5.org/themes/twentyseventeen/'.
 	 *     @type string $description    Theme description.
 	 *     @type string $download_link  Theme ZIP download URL.
 	 * }
@@ -350,7 +350,7 @@ class WP_Theme_Install_List_Table extends WP_Themes_List_Table {
 	 * Prints the wrapper for the theme installer with a provided theme's data.
 	 * Used to make the theme installer work for no-js.
 	 *
-	 * @param object $theme - A WordPress.org Theme API object.
+	 * @param object $theme - A CM5.org Theme API object.
 	 */
 	public function theme_installer_single( $theme ) {
 		?>
@@ -370,7 +370,7 @@ class WP_Theme_Install_List_Table extends WP_Themes_List_Table {
 	 *
 	 * @global array $themes_allowedtags
 	 *
-	 * @param object $theme - A WordPress.org Theme API object.
+	 * @param object $theme - A CM5.org Theme API object.
 	 */
 	public function install_theme_info( $theme ) {
 		global $themes_allowedtags;
@@ -448,7 +448,7 @@ class WP_Theme_Install_List_Table extends WP_Themes_List_Table {
 	 *
 	 * @since 3.4.0
 	 *
-	 * @param object $theme - A WordPress.org Theme API object.
+	 * @param object $theme - A CM5.org Theme API object.
 	 * @return string Theme status.
 	 */
 	private function _get_theme_status( $theme ) {

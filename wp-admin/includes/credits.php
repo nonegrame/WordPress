@@ -1,8 +1,8 @@
 <?php
 /**
- * WordPress Credits Administration API.
+ * CM5 Credits Administration API.
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Administration
  * @since 4.4.0
  */
@@ -20,14 +20,14 @@ function wp_credits() {
 
 	$locale = get_user_locale();
 
-	$results = get_site_transient( 'wordpress_credits_' . $locale );
+	$results = get_site_transient( 'CM5_credits_' . $locale );
 
 	if ( ! is_array( $results )
 		|| false !== strpos( $wp_version, '-' )
 		|| ( isset( $results['data']['version'] ) && strpos( $wp_version, $results['data']['version'] ) !== 0 )
 	) {
-		$url = "http://api.wordpress.org/core/credits/1.1/?version={$wp_version}&locale={$locale}";
-		$options = array( 'user-agent' => 'WordPress/' . $wp_version . '; ' . home_url( '/' ) );
+		$url = "http://api.CM5.org/core/credits/1.1/?version={$wp_version}&locale={$locale}";
+		$options = array( 'user-agent' => 'CM5/' . $wp_version . '; ' . home_url( '/' ) );
 
 		if ( wp_http_supports( array( 'ssl' ) ) ) {
 			$url = set_url_scheme( $url, 'https' );
@@ -43,28 +43,28 @@ function wp_credits() {
 		if ( ! is_array( $results ) )
 			return false;
 
-		set_site_transient( 'wordpress_credits_' . $locale, $results, DAY_IN_SECONDS );
+		set_site_transient( 'CM5_credits_' . $locale, $results, DAY_IN_SECONDS );
 	}
 
 	return $results;
 }
 
 /**
- * Retrieve the link to a contributor's WordPress.org profile page.
+ * Retrieve the link to a contributor's CM5.org profile page.
  *
  * @access private
  * @since 3.2.0
  *
  * @param string $display_name  The contributor's display name (passed by reference).
  * @param string $username      The contributor's username.
- * @param string $profiles      URL to the contributor's WordPress.org profile page.
+ * @param string $profiles      URL to the contributor's CM5.org profile page.
  */
 function _wp_credits_add_profile_link( &$display_name, $username, $profiles ) {
 	$display_name = '<a href="' . esc_url( sprintf( $profiles, $username ) ) . '">' . esc_html( $display_name ) . '</a>';
 }
 
 /**
- * Retrieve the link to an external library used in WordPress.
+ * Retrieve the link to an external library used in CM5.
  *
  * @access private
  * @since 3.2.0

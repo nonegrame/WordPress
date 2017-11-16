@@ -2,7 +2,7 @@
 /**
  * Build Network Administration Menu.
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Multisite
  * @since 3.1.0
  */

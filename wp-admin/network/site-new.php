@@ -2,15 +2,15 @@
 /**
  * Add Site Administration Screen
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Multisite
  * @since 3.1.0
  */
 
-/** Load WordPress Administration Bootstrap */
+/** Load CM5 Administration Bootstrap */
 require_once( dirname( __FILE__ ) . '/admin.php' );
 
-/** WordPress Translation Installation API */
+/** CM5 Translation Installation API */
 require_once( ABSPATH . 'wp-admin/includes/translation-install.php' );
 
 if ( ! current_user_can( 'create_sites' ) ) {
@@ -27,8 +27,8 @@ get_current_screen()->add_help_tab( array(
 
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __('For more information:') . '</strong></p>' .
-	'<p>' . __('<a href="https://codex.wordpress.org/Network_Admin_Sites_Screen">Documentation on Site Management</a>') . '</p>' .
-	'<p>' . __('<a href="https://wordpress.org/support/forum/multisite/">Support Forums</a>') . '</p>'
+	'<p>' . __('<a href="https://codex.CM5.org/Network_Admin_Sites_Screen">Documentation on Site Management</a>') . '</p>' .
+	'<p>' . __('<a href="https://CM5.org/support/forum/multisite/">Support Forums</a>') . '</p>'
 );
 
 if ( isset($_REQUEST['action']) && 'add-site' == $_REQUEST['action'] ) {
@@ -49,7 +49,7 @@ if ( isset($_REQUEST['action']) && 'add-site' == $_REQUEST['action'] ) {
 		if ( in_array( $domain, $subdirectory_reserved_names ) ) {
 			wp_die(
 				/* translators: %s: reserved names list */
-				sprintf( __( 'The following words are reserved for use by WordPress functions and cannot be used as blog names: %s' ),
+				sprintf( __( 'The following words are reserved for use by CM5 functions and cannot be used as blog names: %s' ),
 					'<code>' . implode( '</code>, <code>', $subdirectory_reserved_names ) . '</code>'
 				)
 			);

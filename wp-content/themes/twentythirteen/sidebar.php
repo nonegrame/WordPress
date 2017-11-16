@@ -6,7 +6,7 @@
  *
  * If no active widgets are in this sidebar, hide it completely.
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Twenty_Thirteen
  * @since Twenty Thirteen 1.0
  */

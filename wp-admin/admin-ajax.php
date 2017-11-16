@@ -1,11 +1,11 @@
 <?php
 /**
- * WordPress Ajax Process Execution
+ * CM5 Ajax Process Execution
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Administration
  *
- * @link https://codex.wordpress.org/AJAX_in_Plugins
+ * @link https://codex.CM5.org/AJAX_in_Plugins
  */
 
 /**
@@ -18,7 +18,7 @@ if ( ! defined( 'WP_ADMIN' ) ) {
 	define( 'WP_ADMIN', true );
 }
 
-/** Load WordPress Bootstrap */
+/** Load CM5 Bootstrap */
 require_once( dirname( dirname( __FILE__ ) ) . '/wp-load.php' );
 
 /** Allow for cross-domain requests (from the front end). */
@@ -28,10 +28,10 @@ send_origin_headers();
 if ( empty( $_REQUEST['action'] ) )
 	wp_die( '0', 400 );
 
-/** Load WordPress Administration APIs */
+/** Load CM5 Administration APIs */
 require_once( ABSPATH . 'wp-admin/includes/admin.php' );
 
-/** Load Ajax Handlers for WordPress Core */
+/** Load Ajax Handlers for CM5 Core */
 require_once( ABSPATH . 'wp-admin/includes/ajax-actions.php' );
 
 @header( 'Content-Type: text/html; charset=' . get_option( 'blog_charset' ) );

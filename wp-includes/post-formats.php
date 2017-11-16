@@ -2,7 +2,7 @@
 /**
  * Post format functions.
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Post
  */
 

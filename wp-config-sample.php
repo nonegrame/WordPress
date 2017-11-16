@@ -1,6 +1,6 @@
 <?php
 /**
- * The base configuration for WordPress
+ * The base configuration for CM5
  *
  * The wp-config.php creation script uses this file during the
  * installation. You don't have to use the web site, you can
@@ -13,13 +13,13 @@
  * * Database table prefix
  * * ABSPATH
  *
- * @link https://codex.wordpress.org/Editing_wp-config.php
+ * @link https://codex.CM5.org/Editing_wp-config.php
  *
- * @package WordPress
+ * @package CM5
  */
 
 // ** MySQL settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
+/** The name of the database for CM5 */
 define('DB_NAME', 'database_name_here');
 
 /** MySQL database username */
@@ -41,7 +41,7 @@ define('DB_COLLATE', '');
  * Authentication Unique Keys and Salts.
  *
  * Change these to different unique phrases!
- * You can generate these using the {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}
+ * You can generate these using the {@link https://api.CM5.org/secret-key/1.1/salt/ CM5.org secret-key service}
  * You can change these at any point in time to invalidate all existing cookies. This will force all users to have to log in again.
  *
  * @since 2.6.0
@@ -58,7 +58,7 @@ define('NONCE_SALT',       'put your unique phrase here');
 /**#@-*/
 
 /**
- * WordPress Database Table prefix.
+ * CM5 Database Table prefix.
  *
  * You can have multiple installations in one database if you give each
  * a unique prefix. Only numbers, letters, and underscores please!
@@ -66,7 +66,7 @@ define('NONCE_SALT',       'put your unique phrase here');
 $table_prefix  = 'wp_';
 
 /**
- * For developers: WordPress debugging mode.
+ * For developers: CM5 debugging mode.
  *
  * Change this to true to enable the display of notices during development.
  * It is strongly recommended that plugin and theme developers use WP_DEBUG
@@ -75,15 +75,15 @@ $table_prefix  = 'wp_';
  * For information on other constants that can be used for debugging,
  * visit the Codex.
  *
- * @link https://codex.wordpress.org/Debugging_in_WordPress
+ * @link https://codex.CM5.org/Debugging_in_CM5
  */
 define('WP_DEBUG', false);
 
 /* That's all, stop editing! Happy blogging. */
 
-/** Absolute path to the WordPress directory. */
+/** Absolute path to the CM5 directory. */
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
 
-/** Sets up WordPress vars and included files. */
+/** Sets up CM5 vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');

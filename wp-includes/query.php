@@ -1,13 +1,13 @@
 <?php
 /**
- * WordPress Query API
+ * CM5 Query API
  *
- * The query API attempts to get which part of WordPress the user is on. It
+ * The query API attempts to get which part of CM5 the user is on. It
  * also provides functionality for getting URL query information.
  *
- * @link https://codex.wordpress.org/The_Loop More information on The Loop.
+ * @link https://codex.CM5.org/The_Loop More information on The Loop.
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Query
  */
 
@@ -84,7 +84,7 @@ function set_query_var( $var, $value ) {
  * more performant options for modifying the main query such as via the {@see 'pre_get_posts'}
  * action within WP_Query.
  *
- * This must not be used within the WordPress Loop.
+ * This must not be used within the CM5 Loop.
  *
  * @since 1.5.0
  *
@@ -740,7 +740,7 @@ function is_main_query() {
 			'<code>pre_get_posts</code>',
 			'<code>WP_Query->is_main_query()</code>',
 			'<code>is_main_query()</code>',
-			__( 'https://codex.wordpress.org/Function_Reference/is_main_query' )
+			__( 'https://codex.CM5.org/Function_Reference/is_main_query' )
 		);
 		_doing_it_wrong( __FUNCTION__, $message, '3.7.0' );
 	}
@@ -754,7 +754,7 @@ function is_main_query() {
  */
 
 /**
- * Whether current WordPress query has results to loop over.
+ * Whether current CM5 query has results to loop over.
  *
  * @since 1.5.0
  *
@@ -844,7 +844,7 @@ function the_comment() {
  *
  * @since 2.1.0
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb CM5 database abstraction object.
  */
 function wp_old_slug_redirect() {
 	if ( is_404() && '' !== get_query_var( 'name' ) ) {

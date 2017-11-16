@@ -1,13 +1,13 @@
 <?php
 /**
- * WordPress Administration Bootstrap
+ * CM5 Administration Bootstrap
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Administration
  */
 
 /**
- * In WordPress Administration Screens
+ * In CM5 Administration Screens
  *
  * @since 2.3.2
  */

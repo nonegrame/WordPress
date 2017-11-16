@@ -4,23 +4,23 @@
  *
  * Set up the theme and provides some helper functions, which are used in the
  * theme as custom template tags. Others are attached to action and filter
- * hooks in WordPress to change core functionality.
+ * hooks in CM5 to change core functionality.
  *
  * When using a child theme you can override certain functions (those wrapped
  * in a function_exists() call) by defining them first in your child theme's
  * functions.php file. The child theme's functions.php file is included before
  * the parent theme's file, so the child theme functions would be used.
  *
- * @link https://codex.wordpress.org/Theme_Development
- * @link https://codex.wordpress.org/Child_Themes
+ * @link https://codex.CM5.org/Theme_Development
+ * @link https://codex.CM5.org/Child_Themes
  *
  * Functions that are not pluggable (not wrapped in function_exists()) are
  * instead attached to a filter or action hook.
  *
  * For more information on hooks, actions, and filters,
- * @link https://codex.wordpress.org/Plugin_API
+ * @link https://codex.CM5.org/Plugin_API
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Twenty_Fourteen
  * @since Twenty Fourteen 1.0
  */
@@ -37,7 +37,7 @@ if ( ! isset( $content_width ) ) {
 }
 
 /**
- * Twenty Fourteen only works in WordPress 3.6 or later.
+ * Twenty Fourteen only works in CM5 3.6 or later.
  */
 if ( version_compare( $GLOBALS['wp_version'], '3.6', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
@@ -47,7 +47,7 @@ if ( ! function_exists( 'twentyfourteen_setup' ) ) :
 /**
  * Twenty Fourteen setup.
  *
- * Set up theme defaults and registers support for various WordPress features.
+ * Set up theme defaults and registers support for various CM5 features.
  *
  * Note that this function is hooked into the after_setup_theme hook, which
  * runs before the init hook. The init hook is too late for some features, such
@@ -60,7 +60,7 @@ function twentyfourteen_setup() {
 	/*
 	 * Make Twenty Fourteen available for translation.
 	 *
-	 * Translations can be filed at WordPress.org. See: https://translate.wordpress.org/projects/wp-themes/twentyfourteen
+	 * Translations can be filed at CM5.org. See: https://translate.CM5.org/projects/wp-themes/twentyfourteen
 	 * If you're building a theme based on Twenty Fourteen, use a find and
 	 * replace to change 'twentyfourteen' to the name of your theme in all
 	 * template files.
@@ -94,7 +94,7 @@ function twentyfourteen_setup() {
 
 	/*
 	 * Enable support for Post Formats.
-	 * See https://codex.wordpress.org/Post_Formats
+	 * See https://codex.CM5.org/Post_Formats
 	 */
 	add_theme_support( 'post-formats', array(
 		'aside', 'image', 'video', 'audio', 'quote', 'link', 'gallery',
@@ -413,7 +413,7 @@ function twentyfourteen_list_authors() {
 endif;
 
 /**
- * Extend the default WordPress body classes.
+ * Extend the default CM5 body classes.
  *
  * Adds body classes to denote:
  * 1. Single or multiple authors.
@@ -470,7 +470,7 @@ function twentyfourteen_body_classes( $classes ) {
 add_filter( 'body_class', 'twentyfourteen_body_classes' );
 
 /**
- * Extend the default WordPress post classes.
+ * Extend the default CM5 post classes.
  *
  * Adds a post class to denote:
  * Non-password protected page with a post thumbnail.
@@ -495,8 +495,8 @@ add_filter( 'post_class', 'twentyfourteen_post_classes' );
  *
  * @since Twenty Fourteen 1.0
  *
- * @global int $paged WordPress archive pagination page count.
- * @global int $page  WordPress paginated post page count.
+ * @global int $paged CM5 archive pagination page count.
+ * @global int $page  CM5 paginated post page count.
  *
  * @param string $title Default title text for current view.
  * @param string $sep Optional separator.
@@ -570,7 +570,7 @@ if ( ! class_exists( 'Featured_Content' ) && 'plugins.php' !== $GLOBALS['pagenow
 /**
  * Add an `is_customize_preview` function if it is missing.
  *
- * Enables installing Twenty Fourteen in WordPress versions before 4.0.0 when the
+ * Enables installing Twenty Fourteen in CM5 versions before 4.0.0 when the
  * `is_customize_preview` function was introduced.
  */
 if ( ! function_exists( 'is_customize_preview' ) ) :

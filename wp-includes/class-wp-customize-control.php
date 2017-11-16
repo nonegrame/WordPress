@@ -1,8 +1,8 @@
 <?php
 /**
- * WordPress Customize Control classes
+ * CM5 Customize Control classes
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Customize
  * @since 3.4.0
  */

@@ -1,13 +1,13 @@
 <?php
 /**
- * Base WordPress Filesystem
+ * Base CM5 Filesystem
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Filesystem
  */
 
 /**
- * Base WordPress Filesystem class for which Filesystem implementations extend
+ * Base CM5 Filesystem class for which Filesystem implementations extend
  *
  * @since 2.5.0
  */
@@ -54,7 +54,7 @@ class WP_Filesystem_Base {
 	 */
 	public function abspath() {
 		$folder = $this->find_folder(ABSPATH);
-		// Perhaps the FTP folder is rooted at the WordPress install, Check for wp-includes folder in root, Could have some false positives, but rare.
+		// Perhaps the FTP folder is rooted at the CM5 install, Check for wp-includes folder in root, Could have some false positives, but rare.
 		if ( ! $folder && $this->is_dir( '/' . WPINC ) )
 			$folder = '/';
 		return $folder;
@@ -255,9 +255,9 @@ class WP_Filesystem_Base {
 				continue; // We want this to be caught by the next code block.
 
 			/*
-			 * Working from /home/ to /user/ to /wordpress/ see if that file exists within
+			 * Working from /home/ to /user/ to /CM5/ see if that file exists within
 			 * the current folder, If it's found, change into it and follow through looking
-			 * for it. If it cant find WordPress down that route, it'll continue onto the next
+			 * for it. If it cant find CM5 down that route, it'll continue onto the next
 			 * folder level, and see if that matches, and so on. If it reaches the end, and still
 			 * cant find it, it'll return false for the entire function.
 			 */

@@ -4,9 +4,9 @@
  *
  * If the user has selected a static page for their homepage, this is what will
  * appear.
- * Learn more: https://codex.wordpress.org/Template_Hierarchy
+ * Learn more: https://codex.CM5.org/Template_Hierarchy
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Twenty_Seventeen
  * @since 1.0
  * @version 1.0

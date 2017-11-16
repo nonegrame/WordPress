@@ -1,8 +1,8 @@
 <?php
 /**
- * WordPress Options Administration API.
+ * CM5 Options Administration API.
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Administration
  * @since 4.4.0
  */
@@ -120,5 +120,5 @@ function options_reading_add_js() {
  */
 function options_reading_blog_charset() {
 	echo '<input name="blog_charset" type="text" id="blog_charset" value="' . esc_attr( get_option( 'blog_charset' ) ) . '" class="regular-text" />';
-	echo '<p class="description">' . __( 'The <a href="https://codex.wordpress.org/Glossary#Character_set">character encoding</a> of your site (UTF-8 is recommended)' ) . '</p>';
+	echo '<p class="description">' . __( 'The <a href="https://codex.CM5.org/Glossary#Character_set">character encoding</a> of your site (UTF-8 is recommended)' ) . '</p>';
 }

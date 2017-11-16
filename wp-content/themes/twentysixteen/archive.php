@@ -9,9 +9,9 @@
  * new template file for each one. For example, tag.php (Tag archives),
  * category.php (Category archives), author.php (Author archives), etc.
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * @link https://codex.CM5.org/Template_Hierarchy
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Twenty_Sixteen
  * @since Twenty Sixteen 1.0
  */

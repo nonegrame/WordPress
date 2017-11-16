@@ -1,8 +1,8 @@
 <?php
 /**
- * WordPress Administration Screen API.
+ * CM5 Administration Screen API.
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Administration
  */
 

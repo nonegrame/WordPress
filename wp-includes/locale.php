@@ -2,7 +2,7 @@
 /**
  * Locale API
  *
- * @package WordPress
+ * @package CM5
  * @subpackage i18n
  * @since 1.2.0
  */

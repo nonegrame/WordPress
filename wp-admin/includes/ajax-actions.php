@@ -2,7 +2,7 @@
 /**
  * Administration API: Core Ajax handlers
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Administration
  * @since 2.1.0
  */
@@ -2060,7 +2060,7 @@ function wp_ajax_upload_attachment() {
 	/*
 	 * This function does not use wp_send_json_success() / wp_send_json_error()
 	 * as the html4 Plupload handler requires a text/html content-type for older IE.
-	 * See https://core.trac.wordpress.org/ticket/31037
+	 * See https://core.trac.CM5.org/ticket/31037
 	 */
 
 	if ( ! current_user_can( 'upload_files' ) ) {
@@ -2380,7 +2380,7 @@ function wp_ajax_wp_remove_post_lock() {
 }
 
 /**
- * Ajax handler for dismissing a WordPress pointer.
+ * Ajax handler for dismissing a CM5 pointer.
  *
  * @since 3.1.0
  */
@@ -2742,10 +2742,10 @@ function wp_ajax_send_link_to_editor() {
 
 	$post = get_post( isset( $_POST['post_id'] ) ? $_POST['post_id'] : 0 );
 
-	// Ping WordPress for an embed.
+	// Ping CM5 for an embed.
 	$check_embed = $wp_embed->run_shortcode( '[embed]'. $src .'[/embed]' );
 
-	// Fallback that WordPress creates when no oEmbed was found.
+	// Fallback that CM5 creates when no oEmbed was found.
 	$fallback = $wp_embed->maybe_make_link( $src );
 
 	if ( $check_embed !== $fallback ) {
@@ -3338,7 +3338,7 @@ function wp_ajax_generate_password() {
 }
 
 /**
- * Ajax handler for saving the user's WordPress.org username.
+ * Ajax handler for saving the user's CM5.org username.
  *
  * @since 4.4.0
  */

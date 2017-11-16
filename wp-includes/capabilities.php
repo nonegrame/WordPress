@@ -2,7 +2,7 @@
 /**
  * Core User Role & Capabilities API
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Users
  */
 

@@ -3,17 +3,17 @@
  * Bootstrap file for setting the ABSPATH constant
  * and loading the wp-config.php file. The wp-config.php
  * file will then load the wp-settings.php file, which
- * will then set up the WordPress environment.
+ * will then set up the CM5 environment.
  *
  * If the wp-config.php file is not found then an error
  * will be displayed asking the visitor to set up the
  * wp-config.php file.
  *
- * Will also search for wp-config.php in WordPress' parent
- * directory to allow the WordPress directory to remain
+ * Will also search for wp-config.php in CM5' parent
+ * directory to allow the CM5 directory to remain
  * untouched.
  *
- * @package WordPress
+ * @package CM5
  */
 
 /** Define ABSPATH as this file's directory */
@@ -24,10 +24,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 error_reporting( E_CORE_ERROR | E_CORE_WARNING | E_COMPILE_ERROR | E_ERROR | E_WARNING | E_PARSE | E_USER_ERROR | E_USER_WARNING | E_RECOVERABLE_ERROR );
 
 /*
- * If wp-config.php exists in the WordPress root, or if it exists in the root and wp-settings.php
+ * If wp-config.php exists in the CM5 root, or if it exists in the root and wp-settings.php
  * doesn't, load wp-config.php. The secondary check for wp-settings.php has the added benefit
- * of avoiding cases where the current directory is a nested installation, e.g. / is WordPress(a)
- * and /blog/ is WordPress(b).
+ * of avoiding cases where the current directory is a nested installation, e.g. / is CM5(a)
+ * and /blog/ is CM5(b).
  *
  * If neither set of conditions is true, initiate loading the setup process.
  */
@@ -80,7 +80,7 @@ if ( file_exists( ABSPATH . 'wp-config.php') ) {
 	$die .= '<p>' . sprintf(
 		/* translators: %s: Codex URL */
 		__( "Need more help? <a href='%s'>We got it</a>." ),
-		__( 'https://codex.wordpress.org/Editing_wp-config.php' )
+		__( 'https://codex.CM5.org/Editing_wp-config.php' )
 	) . '</p>';
 	$die .= '<p>' . sprintf(
 		/* translators: %s: wp-config.php */
@@ -89,5 +89,5 @@ if ( file_exists( ABSPATH . 'wp-config.php') ) {
 	) . '</p>';
 	$die .= '<p><a href="' . $path . '" class="button button-large">' . __( "Create a Configuration File" ) . '</a>';
 
-	wp_die( $die, __( 'WordPress &rsaquo; Error' ) );
+	wp_die( $die, __( 'CM5 &rsaquo; Error' ) );
 }

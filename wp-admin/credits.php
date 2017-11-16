@@ -2,11 +2,11 @@
 /**
  * Credits administration panel.
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Administration
  */
 
-/** WordPress Administration Bootstrap */
+/** CM5 Administration Bootstrap */
 require_once( dirname( __FILE__ ) . '/admin.php' );
 require_once( dirname( __FILE__ ) . '/includes/credits.php' );
 
@@ -18,9 +18,9 @@ include( ABSPATH . 'wp-admin/admin-header.php' );
 ?>
 <div class="wrap about-wrap full-width-layout">
 
-<h1><?php printf( __( 'Welcome to WordPress %s' ), $display_version ); ?></h1>
+<h1><?php printf( __( 'Welcome to CM5 %s' ), $display_version ); ?></h1>
 
-<p class="about-text"><?php printf( __( 'Thank you for updating to the latest version! WordPress %s will smooth your design workflow and keep you safe from coding errors.' ), $display_version ); ?></p>
+<p class="about-text"><?php printf( __( 'Thank you for updating to the latest version! CM5 %s will smooth your design workflow and keep you safe from coding errors.' ), $display_version ); ?></p>
 
 <div class="wp-badge"><?php printf( __( 'Version %s' ), $display_version ); ?></div>
 
@@ -38,10 +38,10 @@ $credits = wp_credits();
 
 if ( ! $credits ) {
 	echo '<p class="about-description">';
-	/* translators: 1: https://wordpress.org/about/, 2: https://make.wordpress.org/ */
-	printf( __( 'WordPress is created by a <a href="%1$s">worldwide team</a> of passionate individuals. <a href="%2$s">Get involved in WordPress</a>.' ),
-		'https://wordpress.org/about/',
-		__( 'https://make.wordpress.org/' )
+	/* translators: 1: https://CM5.org/about/, 2: https://make.CM5.org/ */
+	printf( __( 'CM5 is created by a <a href="%1$s">worldwide team</a> of passionate individuals. <a href="%2$s">Get involved in CM5</a>.' ),
+		'https://CM5.org/about/',
+		__( 'https://make.CM5.org/' )
 	);
 	echo '</p>';
 	echo '</div>';
@@ -50,7 +50,7 @@ if ( ! $credits ) {
 	exit;
 }
 
-echo '<p class="about-description">' . __( 'WordPress is created by a worldwide team of passionate individuals.' ) . "</p>\n";
+echo '<p class="about-description">' . __( 'CM5 is created by a worldwide team of passionate individuals.' ) . "</p>\n";
 
 foreach ( $credits['groups'] as $group_slug => $group_data ) {
 	if ( $group_data['name'] ) {
@@ -102,9 +102,9 @@ foreach ( $credits['groups'] as $group_slug => $group_data ) {
 
 ?>
 <p class="clear"><?php
-	/* translators: %s: https://make.wordpress.org/ */
-	printf( __( 'Want to see your name in lights on this page? <a href="%s">Get involved in WordPress</a>.' ),
-		__( 'https://make.wordpress.org/' )
+	/* translators: %s: https://make.CM5.org/ */
+	printf( __( 'Want to see your name in lights on this page? <a href="%s">Get involved in CM5</a>.' ),
+		__( 'https://make.CM5.org/' )
 	);
 ?></p>
 
@@ -118,7 +118,7 @@ return;
 
 // These are strings returned by the API that we want to be translatable
 __( 'Project Leaders' );
-__( 'Core Contributors to WordPress %s' );
+__( 'Core Contributors to CM5 %s' );
 __( 'Noteworthy Contributors' );
 __( 'Cofounder, Project Lead' );
 __( 'Lead Developer' );

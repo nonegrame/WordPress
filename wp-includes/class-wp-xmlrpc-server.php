@@ -1,19 +1,19 @@
 <?php
 /**
- * XML-RPC protocol support for WordPress
+ * XML-RPC protocol support for CM5
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Publishing
  */
 
 /**
- * WordPress XMLRPC server implementation.
+ * CM5 XMLRPC server implementation.
  *
  * Implements compatibility for Blogger API, MetaWeblog API, MovableType, and
- * pingback. Additional WordPress API for managing comments, pages, posts,
+ * pingback. Additional CM5 API for managing comments, pages, posts,
  * options, etc.
  *
- * As of WordPress 3.5.0, XML-RPC is enabled by default. It can be disabled
+ * As of CM5 3.5.0, XML-RPC is enabled by default. It can be disabled
  * via the {@see 'xmlrpc_enabled'} filter found in wp_xmlrpc_server::login().
  *
  * @since 1.5.0
@@ -60,7 +60,7 @@ class wp_xmlrpc_server extends IXR_Server {
 	 */
 	public function __construct() {
 		$this->methods = array(
-			// WordPress API
+			// CM5 API
 			'wp.getUsersBlogs'		=> 'this:wp_getUsersBlogs',
 			'wp.newPost'			=> 'this:wp_newPost',
 			'wp.editPost'			=> 'this:wp_editPost',
@@ -472,7 +472,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			'software_name'     => array(
 				'desc'          => __( 'Software Name' ),
 				'readonly'      => true,
-				'value'         => 'WordPress'
+				'value'         => 'CM5'
 			),
 			'software_version'  => array(
 				'desc'          => __( 'Software Version' ),
@@ -480,7 +480,7 @@ class wp_xmlrpc_server extends IXR_Server {
 				'value'         => get_bloginfo( 'version' )
 			),
 			'blog_url'          => array(
-				'desc'          => __( 'WordPress Address (URL)' ),
+				'desc'          => __( 'CM5 Address (URL)' ),
 				'readonly'      => true,
 				'option'        => 'siteurl'
 			),
@@ -810,7 +810,7 @@ class wp_xmlrpc_server extends IXR_Server {
 	}
 
 	/**
-	 * Convert a WordPress date string to an IXR_Date object.
+	 * Convert a CM5 date string to an IXR_Date object.
 	 *
 	 *
 	 * @param string $date Date string to convert.
@@ -824,10 +824,10 @@ class wp_xmlrpc_server extends IXR_Server {
 	}
 
 	/**
-	 * Convert a WordPress GMT date string to an IXR_Date object.
+	 * Convert a CM5 GMT date string to an IXR_Date object.
 	 *
 	 *
-	 * @param string $date_gmt WordPress GMT date string.
+	 * @param string $date_gmt CM5 GMT date string.
 	 * @param string $date     Date string.
 	 * @return IXR_Date IXR_Date object.
 	 */
@@ -2964,7 +2964,7 @@ class wp_xmlrpc_server extends IXR_Server {
 	 *
 	 * @since 2.2.0
 	 *
-	 * @global wpdb $wpdb WordPress database abstraction object.
+	 * @global wpdb $wpdb CM5 database abstraction object.
 	 *
 	 * @param array  $args {
 	 *     Method arguments. Note: arguments must be ordered as documented.
@@ -3142,7 +3142,7 @@ class wp_xmlrpc_server extends IXR_Server {
 		}
 
 		// If no slug was provided make it empty so that
-		// WordPress will generate one.
+		// CM5 will generate one.
 		if ( empty($category['slug']) )
 			$category['slug'] = '';
 
@@ -4982,7 +4982,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			}
 		}
 
-		// Let WordPress generate the post_name (slug) unless
+		// Let CM5 generate the post_name (slug) unless
 		// one has been provided.
 		$post_name = "";
 		if ( isset($content_struct['wp_slug']) )
@@ -5229,7 +5229,7 @@ class wp_xmlrpc_server extends IXR_Server {
 	 *
 	 * @since 2.1.0
 	 *
-	 * @global wpdb $wpdb WordPress database abstraction object.
+	 * @global wpdb $wpdb CM5 database abstraction object.
 	 *
 	 * @param int $post_ID Post ID.
 	 * @param string $post_content Post Content for attachment.
@@ -5317,7 +5317,7 @@ class wp_xmlrpc_server extends IXR_Server {
 		$post_type = $postdata['post_type'];
 		$menu_order = $postdata['menu_order'];
 
-		// Let WordPress manage slug if none was provided.
+		// Let CM5 manage slug if none was provided.
 		$post_name = $postdata['post_name'];
 		if ( isset($content_struct['wp_slug']) )
 			$post_name = $content_struct['wp_slug'];
@@ -5858,11 +5858,11 @@ class wp_xmlrpc_server extends IXR_Server {
 	 *
 	 * Adapted from a patch by Johann Richard.
 	 *
-	 * @link http://mycvs.org/archives/2004/06/30/file-upload-to-wordpress-in-ecto/
+	 * @link http://mycvs.org/archives/2004/06/30/file-upload-to-CM5-in-ecto/
 	 *
 	 * @since 1.5.0
 	 *
-	 * @global wpdb $wpdb WordPress database abstraction object.
+	 * @global wpdb $wpdb CM5 database abstraction object.
 	 *
 	 * @param array  $args {
 	 *     Method arguments. Note: arguments must be ordered as documented.
@@ -6202,7 +6202,7 @@ class wp_xmlrpc_server extends IXR_Server {
 	 *
 	 * @since 1.5.0
 	 *
-	 * @global wpdb $wpdb WordPress database abstraction object.
+	 * @global wpdb $wpdb CM5 database abstraction object.
 	 *
 	 * @param int $post_ID
 	 * @return array|IXR_Error
@@ -6389,7 +6389,7 @@ class wp_xmlrpc_server extends IXR_Server {
 		$remote_ip = preg_replace( '/[^0-9a-fA-F:., ]/', '', $_SERVER['REMOTE_ADDR'] );
 
 		/** This filter is documented in wp-includes/class-http.php */
-		$user_agent = apply_filters( 'http_headers_useragent', 'WordPress/' . get_bloginfo( 'version' ) . '; ' . get_bloginfo( 'url' ) );
+		$user_agent = apply_filters( 'http_headers_useragent', 'CM5/' . get_bloginfo( 'version' ) . '; ' . get_bloginfo( 'url' ) );
 
 		// Let's check the remote site
 		$http_api_args = array(
@@ -6511,7 +6511,7 @@ class wp_xmlrpc_server extends IXR_Server {
 	 *
 	 * @since 1.5.0
 	 *
-	 * @global wpdb $wpdb WordPress database abstraction object.
+	 * @global wpdb $wpdb CM5 database abstraction object.
 	 *
 	 * @param string $url
 	 * @return array|IXR_Error

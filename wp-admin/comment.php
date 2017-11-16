@@ -2,11 +2,11 @@
 /**
  * Comment Management Screen
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Administration
  */
 
-/** Load WordPress Bootstrap */
+/** Load CM5 Bootstrap */
 require_once( dirname( __FILE__ ) . '/admin.php' );
 
 $parent_file = 'edit-comments.php';
@@ -48,8 +48,8 @@ case 'editcomment' :
 
 	get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __( 'For more information:' ) . '</strong></p>' .
-	'<p>' . __( '<a href="https://codex.wordpress.org/Administration_Screens#Comments">Documentation on Comments</a>' ) . '</p>' .
-	'<p>' . __( '<a href="https://wordpress.org/support/">Support Forums</a>' ) . '</p>'
+	'<p>' . __( '<a href="https://codex.CM5.org/Administration_Screens#Comments">Documentation on Comments</a>' ) . '</p>' .
+	'<p>' . __( '<a href="https://CM5.org/support/">Support Forums</a>' ) . '</p>'
 	);
 
 	wp_enqueue_script('comment');

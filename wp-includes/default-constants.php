@@ -2,18 +2,18 @@
 /**
  * Defines constants and global variables that can be overridden, generally in wp-config.php.
  *
- * @package WordPress
+ * @package CM5
  */
 
 /**
- * Defines initial WordPress constants
+ * Defines initial CM5 constants
  *
  * @see wp_debug_mode()
  *
  * @since 3.0.0
  *
  * @global int    $blog_id    The current site ID.
- * @global string $wp_version The WordPress version string.
+ * @global string $wp_version The CM5 version string.
  */
 function wp_initial_constants() {
 	global $blog_id;
@@ -128,7 +128,7 @@ function wp_initial_constants() {
 }
 
 /**
- * Defines plugin directory WordPress constants
+ * Defines plugin directory CM5 constants
  *
  * Defines must-use plugin directory constants, which may be overridden in the sunrise.php drop-in
  *
@@ -190,7 +190,7 @@ function wp_plugin_directory_constants() {
 }
 
 /**
- * Defines cookie related WordPress constants
+ * Defines cookie related CM5 constants
  *
  * Defines constants after multisite is loaded.
  * @since 3.0.0
@@ -213,37 +213,37 @@ function wp_cookie_constants() {
 	 * @since 2.0.0
 	 */
 	if ( !defined('USER_COOKIE') )
-		define('USER_COOKIE', 'wordpressuser_' . COOKIEHASH);
+		define('USER_COOKIE', 'CM5user_' . COOKIEHASH);
 
 	/**
 	 * @since 2.0.0
 	 */
 	if ( !defined('PASS_COOKIE') )
-		define('PASS_COOKIE', 'wordpresspass_' . COOKIEHASH);
+		define('PASS_COOKIE', 'CM5pass_' . COOKIEHASH);
 
 	/**
 	 * @since 2.5.0
 	 */
 	if ( !defined('AUTH_COOKIE') )
-		define('AUTH_COOKIE', 'wordpress_' . COOKIEHASH);
+		define('AUTH_COOKIE', 'CM5_' . COOKIEHASH);
 
 	/**
 	 * @since 2.6.0
 	 */
 	if ( !defined('SECURE_AUTH_COOKIE') )
-		define('SECURE_AUTH_COOKIE', 'wordpress_sec_' . COOKIEHASH);
+		define('SECURE_AUTH_COOKIE', 'CM5_sec_' . COOKIEHASH);
 
 	/**
 	 * @since 2.6.0
 	 */
 	if ( !defined('LOGGED_IN_COOKIE') )
-		define('LOGGED_IN_COOKIE', 'wordpress_logged_in_' . COOKIEHASH);
+		define('LOGGED_IN_COOKIE', 'CM5_logged_in_' . COOKIEHASH);
 
 	/**
 	 * @since 2.3.0
 	 */
 	if ( !defined('TEST_COOKIE') )
-		define('TEST_COOKIE', 'wordpress_test_cookie');
+		define('TEST_COOKIE', 'CM5_test_cookie');
 
 	/**
 	 * @since 1.2.0
@@ -277,7 +277,7 @@ function wp_cookie_constants() {
 }
 
 /**
- * Defines cookie related WordPress constants
+ * Defines cookie related CM5 constants
  *
  * @since 3.0.0
  */
@@ -304,7 +304,7 @@ function wp_ssl_constants() {
 }
 
 /**
- * Defines functionality related WordPress constants
+ * Defines functionality related CM5 constants
  *
  * @since 3.0.0
  */
@@ -332,7 +332,7 @@ function wp_functionality_constants() {
 }
 
 /**
- * Defines templating related WordPress constants
+ * Defines templating related CM5 constants
  *
  * @since 3.0.0
  */

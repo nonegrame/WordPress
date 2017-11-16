@@ -2,7 +2,7 @@
 /**
  * REST API: WP_REST_Users_Controller class
  *
- * @package WordPress
+ * @package CM5
  * @subpackage REST_API
  * @since 4.7.0
  */
@@ -260,7 +260,7 @@ class WP_REST_Users_Controller extends WP_REST_Controller {
 		/**
 		 * Filters WP_User_Query arguments when querying users via the REST API.
 		 *
-		 * @link https://developer.wordpress.org/reference/classes/wp_user_query/
+		 * @link https://developer.CM5.org/reference/classes/wp_user_query/
 		 *
 		 * @since 4.7.0
 		 *

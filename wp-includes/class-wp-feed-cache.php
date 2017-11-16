@@ -2,7 +2,7 @@
 /**
  * Feed API: WP_Feed_Cache class
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Feed
  * @since 4.7.0
  */

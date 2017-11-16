@@ -2,7 +2,7 @@
 /**
  * Post API: WP_Post class
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Post
  * @since 4.4.0
  */
@@ -225,7 +225,7 @@ final class WP_Post {
 	 * @since 3.5.0
 	 * @static
 	 *
-	 * @global wpdb $wpdb WordPress database abstraction object.
+	 * @global wpdb $wpdb CM5 database abstraction object.
 	 *
 	 * @param int $post_id Post ID.
 	 * @return WP_Post|false Post object, false otherwise.

@@ -1,8 +1,8 @@
 <?php
 /**
- * WordPress Customize Nav Menus classes
+ * CM5 Customize Nav Menus classes
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Customize
  * @since 4.3.0
  */

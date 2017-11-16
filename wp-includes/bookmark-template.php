@@ -2,7 +2,7 @@
 /**
  * Bookmark Template Functions for usage in Themes
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Template
  */
 

@@ -2,14 +2,14 @@
 /**
  * Dashboard Administration Screen
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Administration
  */
 
-/** Load WordPress Bootstrap */
+/** Load CM5 Bootstrap */
 require_once( dirname( __FILE__ ) . '/admin.php' );
 
-/** Load WordPress dashboard API */
+/** Load CM5 dashboard API */
 require_once(ABSPATH . 'wp-admin/includes/dashboard.php');
 
 wp_dashboard_setup();
@@ -30,7 +30,7 @@ if ( wp_is_mobile() )
 $title = __('Dashboard');
 $parent_file = 'index.php';
 
-$help = '<p>' . __( 'Welcome to your WordPress Dashboard! This is the screen you will see when you log in to your site, and gives you access to all the site management features of WordPress. You can get help for any screen by clicking the Help tab above the screen title.' ) . '</p>';
+$help = '<p>' . __( 'Welcome to your CM5 Dashboard! This is the screen you will see when you log in to your site, and gives you access to all the site management features of CM5. You can get help for any screen by clicking the Help tab above the screen title.' ) . '</p>';
 
 $screen = get_current_screen();
 
@@ -42,8 +42,8 @@ $screen->add_help_tab( array(
 
 // Help tabs
 
-$help  = '<p>' . __( 'The left-hand navigation menu provides links to all of the WordPress administration screens, with submenu items displayed on hover. You can minimize this menu to a narrow icon strip by clicking on the Collapse Menu arrow at the bottom.' ) . '</p>';
-$help .= '<p>' . __( 'Links in the Toolbar at the top of the screen connect your dashboard and the front end of your site, and provide access to your profile and helpful WordPress information.' ) . '</p>';
+$help  = '<p>' . __( 'The left-hand navigation menu provides links to all of the CM5 administration screens, with submenu items displayed on hover. You can minimize this menu to a narrow icon strip by clicking on the Collapse Menu arrow at the bottom.' ) . '</p>';
+$help .= '<p>' . __( 'Links in the Toolbar at the top of the screen connect your dashboard and the front end of your site, and provide access to your profile and helpful CM5 information.' ) . '</p>';
 
 $screen->add_help_tab( array(
 	'id'      => 'help-navigation',
@@ -64,21 +64,21 @@ $screen->add_help_tab( array(
 
 $help  = '<p>' . __( 'The boxes on your Dashboard screen are:' ) . '</p>';
 if ( current_user_can( 'edit_posts' ) )
-	$help .= '<p>' . __( '<strong>At A Glance</strong> &mdash; Displays a summary of the content on your site and identifies which theme and version of WordPress you are using.' ) . '</p>';
+	$help .= '<p>' . __( '<strong>At A Glance</strong> &mdash; Displays a summary of the content on your site and identifies which theme and version of CM5 you are using.' ) . '</p>';
 	$help .= '<p>' . __( '<strong>Activity</strong> &mdash; Shows the upcoming scheduled posts, recently published posts, and the most recent comments on your posts and allows you to moderate them.' ) . '</p>';
 if ( is_blog_admin() && current_user_can( 'edit_posts' ) )
 	$help .= '<p>' . __( "<strong>Quick Draft</strong> &mdash; Allows you to create a new post and save it as a draft. Also displays links to the 5 most recent draft posts you've started." ) . '</p>';
 if ( ! is_multisite() && current_user_can( 'install_plugins' ) )
 	$help .= '<p>' . sprintf(
-		/* translators: %s: WordPress Planet URL */
-		__( '<strong>WordPress News</strong> &mdash; Latest news from the official WordPress project, the <a href="%s">WordPress Planet</a>, and popular plugins.' ),
-		__( 'https://planet.wordpress.org/' )
+		/* translators: %s: CM5 Planet URL */
+		__( '<strong>CM5 News</strong> &mdash; Latest news from the official CM5 project, the <a href="%s">CM5 Planet</a>, and popular plugins.' ),
+		__( 'https://planet.CM5.org/' )
 	) . '</p>';
 else
 	$help .= '<p>' . sprintf(
-		/* translators: %s: WordPress Planet URL */
-		__( '<strong>WordPress News</strong> &mdash; Latest news from the official WordPress project and the <a href="%s">WordPress Planet</a>.' ),
-		__( 'https://planet.wordpress.org/' )
+		/* translators: %s: CM5 Planet URL */
+		__( '<strong>CM5 News</strong> &mdash; Latest news from the official CM5 project and the <a href="%s">CM5 Planet</a>.' ),
+		__( 'https://planet.CM5.org/' )
 	) . '</p>';
 if ( current_user_can( 'edit_theme_options' ) )
 	$help .= '<p>' . __( '<strong>Welcome</strong> &mdash; Shows links for some of the most common tasks when setting up a new site.' ) . '</p>';
@@ -93,8 +93,8 @@ unset( $help );
 
 $screen->set_help_sidebar(
 	'<p><strong>' . __( 'For more information:' ) . '</strong></p>' .
-	'<p>' . __( '<a href="https://codex.wordpress.org/Dashboard_Screen">Documentation on Dashboard</a>' ) . '</p>' .
-	'<p>' . __( '<a href="https://wordpress.org/support/">Support Forums</a>' ) . '</p>'
+	'<p>' . __( '<a href="https://codex.CM5.org/Dashboard_Screen">Documentation on Dashboard</a>' ) . '</p>' .
+	'<p>' . __( '<a href="https://CM5.org/support/">Support Forums</a>' ) . '</p>'
 );
 
 include( ABSPATH . 'wp-admin/admin-header.php' );

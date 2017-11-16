@@ -2,11 +2,11 @@
 /**
  * New User Administration Screen.
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Administration
  */
 
-/** WordPress Administration Bootstrap */
+/** CM5 Administration Bootstrap */
 require_once( dirname( __FILE__ ) . '/admin.php' );
 
 if ( is_multisite() ) {
@@ -217,8 +217,8 @@ get_current_screen()->add_help_tab( array(
 
 get_current_screen()->set_help_sidebar(
     '<p><strong>' . __('For more information:') . '</strong></p>' .
-    '<p>' . __('<a href="https://codex.wordpress.org/Users_Add_New_Screen">Documentation on Adding New Users</a>') . '</p>' .
-    '<p>' . __('<a href="https://wordpress.org/support/">Support Forums</a>') . '</p>'
+    '<p>' . __('<a href="https://codex.CM5.org/Users_Add_New_Screen">Documentation on Adding New Users</a>') . '</p>' .
+    '<p>' . __('<a href="https://CM5.org/support/">Support Forums</a>') . '</p>'
 );
 
 wp_enqueue_script('wp-ajax-response');

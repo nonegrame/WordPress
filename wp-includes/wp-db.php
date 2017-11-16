@@ -1,10 +1,10 @@
 <?php
 /**
- * WordPress DB Class
+ * CM5 DB Class
  *
  * Original code from {@link http://php.justinvincent.com Justin Vincent (justin@visunet.ie)}
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Database
  * @since 0.71
  */
@@ -36,14 +36,14 @@ define( 'ARRAY_A', 'ARRAY_A' );
 define( 'ARRAY_N', 'ARRAY_N' );
 
 /**
- * WordPress Database Access Abstraction Object
+ * CM5 Database Access Abstraction Object
  *
  * It is possible to replace this class with your own
  * by setting the $wpdb global variable in wp-content/db.php
  * file to your class. The wpdb class will still be included,
  * so you can extend it or simply use your own.
  *
- * @link https://codex.wordpress.org/Function_Reference/wpdb_Class
+ * @link https://codex.CM5.org/Function_Reference/wpdb_Class
  *
  * @since 0.71
  */
@@ -191,9 +191,9 @@ class wpdb {
 	protected $reconnect_retries = 5;
 
 	/**
-	 * WordPress table prefix
+	 * CM5 table prefix
 	 *
-	 * You can set this to have multiple WordPress installations
+	 * You can set this to have multiple CM5 installations
 	 * in a single database. The second reason is for possible
 	 * security precautions.
 	 *
@@ -203,7 +203,7 @@ class wpdb {
 	public $prefix = '';
 
 	/**
-	 * WordPress base table prefix.
+	 * CM5 base table prefix.
 	 *
 	 * @since 3.0.0
 	 * @var string
@@ -235,7 +235,7 @@ class wpdb {
 	public $siteid = 0;
 
 	/**
-	 * List of WordPress per-blog tables
+	 * List of CM5 per-blog tables
 	 *
 	 * @since 2.5.0
 	 * @see wpdb::tables()
@@ -245,7 +245,7 @@ class wpdb {
 		'terms', 'term_taxonomy', 'term_relationships', 'termmeta', 'commentmeta' );
 
 	/**
-	 * List of deprecated WordPress tables
+	 * List of deprecated CM5 tables
 	 *
 	 * categories, post2cat, and link2cat were deprecated in 2.3.0, db version 5539
 	 *
@@ -256,7 +256,7 @@ class wpdb {
 	var $old_tables = array( 'categories', 'post2cat', 'link2cat' );
 
 	/**
-	 * List of WordPress global tables
+	 * List of CM5 global tables
 	 *
 	 * @since 3.0.0
 	 * @see wpdb::tables()
@@ -275,7 +275,7 @@ class wpdb {
 		'sitecategories', 'registration_log', 'blog_versions' );
 
 	/**
-	 * WordPress Comments table
+	 * CM5 Comments table
 	 *
 	 * @since 1.5.0
 	 * @var string
@@ -283,7 +283,7 @@ class wpdb {
 	public $comments;
 
 	/**
-	 * WordPress Comment Metadata table
+	 * CM5 Comment Metadata table
 	 *
 	 * @since 2.9.0
 	 * @var string
@@ -291,7 +291,7 @@ class wpdb {
 	public $commentmeta;
 
 	/**
-	 * WordPress Links table
+	 * CM5 Links table
 	 *
 	 * @since 1.5.0
 	 * @var string
@@ -299,7 +299,7 @@ class wpdb {
 	public $links;
 
 	/**
-	 * WordPress Options table
+	 * CM5 Options table
 	 *
 	 * @since 1.5.0
 	 * @var string
@@ -307,7 +307,7 @@ class wpdb {
 	public $options;
 
 	/**
-	 * WordPress Post Metadata table
+	 * CM5 Post Metadata table
 	 *
 	 * @since 1.5.0
 	 * @var string
@@ -315,7 +315,7 @@ class wpdb {
 	public $postmeta;
 
 	/**
-	 * WordPress Posts table
+	 * CM5 Posts table
 	 *
 	 * @since 1.5.0
 	 * @var string
@@ -323,7 +323,7 @@ class wpdb {
 	public $posts;
 
 	/**
-	 * WordPress Terms table
+	 * CM5 Terms table
 	 *
 	 * @since 2.3.0
 	 * @var string
@@ -331,7 +331,7 @@ class wpdb {
 	public $terms;
 
 	/**
-	 * WordPress Term Relationships table
+	 * CM5 Term Relationships table
 	 *
 	 * @since 2.3.0
 	 * @var string
@@ -339,7 +339,7 @@ class wpdb {
 	public $term_relationships;
 
 	/**
-	 * WordPress Term Taxonomy table
+	 * CM5 Term Taxonomy table
 	 *
 	 * @since 2.3.0
 	 * @var string
@@ -347,7 +347,7 @@ class wpdb {
 	public $term_taxonomy;
 
 	/**
-	 * WordPress Term Meta table.
+	 * CM5 Term Meta table.
 	 *
 	 * @since 4.4.0
 	 * @var string
@@ -359,7 +359,7 @@ class wpdb {
 	//
 
 	/**
-	 * WordPress User Metadata table
+	 * CM5 User Metadata table
 	 *
 	 * @since 2.3.0
 	 * @var string
@@ -367,7 +367,7 @@ class wpdb {
 	public $usermeta;
 
 	/**
-	 * WordPress Users table
+	 * CM5 Users table
 	 *
 	 * @since 1.5.0
 	 * @var string
@@ -513,7 +513,7 @@ class wpdb {
 	 * Whether MySQL is used as the database engine.
 	 *
 	 * Set in WPDB::db_connect() to true, by default. This is used when checking
-	 * against the required MySQL version for WordPress. Normally, a replacement
+	 * against the required MySQL version for CM5. Normally, a replacement
 	 * database drop-in (db.php) will skip these checks, but setting this to true
 	 * will force the checks to occur.
 	 *
@@ -554,7 +554,7 @@ class wpdb {
 	 * the actual setting up of the class properties and connection
 	 * to the database.
 	 *
-	 * @link https://core.trac.wordpress.org/ticket/3354
+	 * @link https://core.trac.CM5.org/ticket/3354
 	 * @since 2.0.8
 	 *
 	 * @global string $wp_version
@@ -572,7 +572,7 @@ class wpdb {
 
 		/* Use ext/mysqli if it exists and:
 		 *  - WP_USE_EXT_MYSQL is defined as false, or
-		 *  - We are a development version of WordPress, or
+		 *  - We are a development version of CM5, or
 		 *  - We are running PHP 5.5 or greater, or
 		 *  - ext/mysql is not loaded.
 		 */
@@ -784,7 +784,7 @@ class wpdb {
 	}
 
 	/**
-	 * Change the current SQL mode, and ensure its WordPress compatibility.
+	 * Change the current SQL mode, and ensure its CM5 compatibility.
 	 *
 	 * If no modes are passed, it will ensure the current MySQL server
 	 * modes are compatible.
@@ -849,7 +849,7 @@ class wpdb {
 	}
 
 	/**
-	 * Sets the table prefix for the WordPress tables.
+	 * Sets the table prefix for the CM5 tables.
 	 *
 	 * @since 2.5.0
 	 *
@@ -937,10 +937,10 @@ class wpdb {
 	}
 
 	/**
-	 * Returns an array of WordPress tables.
+	 * Returns an array of CM5 tables.
 	 *
 	 * Also allows for the CUSTOM_USER_TABLE and CUSTOM_USER_META_TABLE to
-	 * override the WordPress users and usermeta tables that would otherwise
+	 * override the CM5 users and usermeta tables that would otherwise
 	 * be determined by the prefix.
 	 *
 	 * The scope argument can take one of the following:
@@ -1065,8 +1065,8 @@ class wpdb {
 
 				$message .= '<p>' . sprintf(
 					/* translators: %s: support forums URL */
-					__( 'If you don&#8217;t know how to set up a database you should <strong>contact your host</strong>. If all else fails you may find help at the <a href="%s">WordPress Support Forums</a>.' ),
-					__( 'https://wordpress.org/support/' )
+					__( 'If you don&#8217;t know how to set up a database you should <strong>contact your host</strong>. If all else fails you may find help at the <a href="%s">CM5 Support Forums</a>.' ),
+					__( 'https://CM5.org/support/' )
 				) . "</p>\n";
 
 				$this->bail( $message, 'db_select_fail' );
@@ -1367,10 +1367,10 @@ class wpdb {
 
 		if ( $caller = $this->get_caller() ) {
 			/* translators: 1: Database error message, 2: SQL query, 3: Name of the calling function */
-			$error_str = sprintf( __( 'WordPress database error %1$s for query %2$s made by %3$s' ), $str, $this->last_query, $caller );
+			$error_str = sprintf( __( 'CM5 database error %1$s for query %2$s made by %3$s' ), $str, $this->last_query, $caller );
 		} else {
 			/* translators: 1: Database error message, 2: SQL query */
-			$error_str = sprintf( __( 'WordPress database error %1$s for query %2$s' ), $str, $this->last_query );
+			$error_str = sprintf( __( 'CM5 database error %1$s for query %2$s' ), $str, $this->last_query );
 		}
 
 		error_log( $error_str );
@@ -1383,7 +1383,7 @@ class wpdb {
 		if ( is_multisite() ) {
 			$msg = sprintf(
 				"%s [%s]\n%s\n",
-				__( 'WordPress database error:' ),
+				__( 'CM5 database error:' ),
 				$str,
 				$this->last_query
 			);
@@ -1400,7 +1400,7 @@ class wpdb {
 
 			printf(
 				'<div id="error"><p class="wpdberror"><strong>%s</strong> [%s]<br /><code>%s</code></p></div>',
-				__( 'WordPress database error:' ),
+				__( 'CM5 database error:' ),
 				$str,
 				$query
 			);
@@ -1598,8 +1598,8 @@ class wpdb {
 
 			$message .= '<p>' . sprintf(
 				/* translators: %s: support forums URL */
-				__( 'If you&#8217;re unsure what these terms mean you should probably contact your host. If you still need help you can always visit the <a href="%s">WordPress Support Forums</a>.' ),
-				__( 'https://wordpress.org/support/' )
+				__( 'If you&#8217;re unsure what these terms mean you should probably contact your host. If you still need help you can always visit the <a href="%s">CM5 Support Forums</a>.' ),
+				__( 'https://CM5.org/support/' )
 			) . "</p>\n";
 
 			$this->bail( $message, 'db_connect_fail' );
@@ -1749,8 +1749,8 @@ class wpdb {
 
 		$message .= '<p>' . sprintf(
 			/* translators: %s: support forums URL */
-			__( 'If you&#8217;re unsure what these terms mean you should probably contact your host. If you still need help you can always visit the <a href="%s">WordPress Support Forums</a>.' ),
-			__( 'https://wordpress.org/support/' )
+			__( 'If you&#8217;re unsure what these terms mean you should probably contact your host. If you still need help you can always visit the <a href="%s">CM5 Support Forums</a>.' ),
+			__( 'https://CM5.org/support/' )
 		) . "</p>\n";
 
 		// We weren't able to reconnect, so we better bail.
@@ -3307,15 +3307,15 @@ class wpdb {
 		global $wp_version, $required_mysql_version;
 		// Make sure the server has the required MySQL version
 		if ( version_compare($this->db_version(), $required_mysql_version, '<') ) {
-			/* translators: 1: WordPress version number, 2: Minimum required MySQL version number */
-			return new WP_Error('database_version', sprintf( __( '<strong>ERROR</strong>: WordPress %1$s requires MySQL %2$s or higher' ), $wp_version, $required_mysql_version ));
+			/* translators: 1: CM5 version number, 2: Minimum required MySQL version number */
+			return new WP_Error('database_version', sprintf( __( '<strong>ERROR</strong>: CM5 %1$s requires MySQL %2$s or higher' ), $wp_version, $required_mysql_version ));
 		}
 	}
 
 	/**
 	 * Whether the database supports collation.
 	 *
-	 * Called when WordPress is generating the table scheme.
+	 * Called when CM5 is generating the table scheme.
 	 *
 	 * Use `wpdb::has_cap( 'collation' )`.
 	 *

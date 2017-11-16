@@ -1,11 +1,11 @@
 <?php
 /**
- * WordPress Post Thumbnail Template Functions.
+ * CM5 Post Thumbnail Template Functions.
  *
  * Support for post thumbnails.
  * Theme's functions.php must call add_theme_support( 'post-thumbnails' ) to use these.
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Template
  */
 

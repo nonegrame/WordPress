@@ -2,12 +2,12 @@
 /**
  * User administration panel
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Administration
  * @since 1.0.0
  */
 
-/** WordPress Administration Bootstrap */
+/** CM5 Administration Bootstrap */
 require_once( dirname( __FILE__ ) . '/admin.php' );
 
 if ( ! current_user_can( 'list_users' ) ) {
@@ -64,9 +64,9 @@ unset( $help );
 
 get_current_screen()->set_help_sidebar(
     '<p><strong>' . __('For more information:') . '</strong></p>' .
-    '<p>' . __('<a href="https://codex.wordpress.org/Users_Screen">Documentation on Managing Users</a>') . '</p>' .
-    '<p>' . __('<a href="https://codex.wordpress.org/Roles_and_Capabilities">Descriptions of Roles and Capabilities</a>') . '</p>' .
-    '<p>' . __('<a href="https://wordpress.org/support/">Support Forums</a>') . '</p>'
+    '<p>' . __('<a href="https://codex.CM5.org/Users_Screen">Documentation on Managing Users</a>') . '</p>' .
+    '<p>' . __('<a href="https://codex.CM5.org/Roles_and_Capabilities">Descriptions of Roles and Capabilities</a>') . '</p>' .
+    '<p>' . __('<a href="https://CM5.org/support/">Support Forums</a>') . '</p>'
 );
 
 get_current_screen()->set_screen_reader_content( array(

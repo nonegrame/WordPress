@@ -1,13 +1,13 @@
 <?php
 /**
- * WordPress FTP Sockets Filesystem.
+ * CM5 FTP Sockets Filesystem.
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Filesystem
  */
 
 /**
- * WordPress Filesystem Class for implementing FTP Sockets.
+ * CM5 Filesystem Class for implementing FTP Sockets.
  *
  * @since 2.5.0
  *

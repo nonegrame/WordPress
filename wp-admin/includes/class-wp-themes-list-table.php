@@ -2,7 +2,7 @@
 /**
  * List Table API: WP_Themes_List_Table class
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Administration
  * @since 3.1.0
  */
@@ -102,7 +102,7 @@ class WP_Themes_List_Table extends WP_List_Table {
 			// Else, fallthrough. install_themes doesn't help if you can't enable it.
 		} else {
 			if ( current_user_can( 'install_themes' ) ) {
-				printf( __( 'You only have one theme installed right now. Live a little! You can choose from over 1,000 free themes in the WordPress Theme Directory at any time: just click on the <a href="%s">Install Themes</a> tab above.' ), admin_url( 'theme-install.php' ) );
+				printf( __( 'You only have one theme installed right now. Live a little! You can choose from over 1,000 free themes in the CM5 Theme Directory at any time: just click on the <a href="%s">Install Themes</a> tab above.' ), admin_url( 'theme-install.php' ) );
 
 				return;
 			}
@@ -231,7 +231,7 @@ class WP_Themes_List_Table extends WP_List_Table {
 				<p><?php echo $theme->display('Description'); ?></p>
 				<?php if ( $theme->parent() ) {
 					printf( ' <p class="howto">' . __( 'This <a href="%1$s">child theme</a> requires its parent theme, %2$s.' ) . '</p>',
-						__( 'https://codex.wordpress.org/Child_Themes' ),
+						__( 'https://codex.CM5.org/Child_Themes' ),
 						$theme->parent()->display( 'Name' ) );
 				} ?>
 			</div>

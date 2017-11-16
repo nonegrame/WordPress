@@ -1,13 +1,13 @@
 <?php
 /**
- * WordPress Direct Filesystem.
+ * CM5 Direct Filesystem.
  *
- * @package WordPress
+ * @package CM5
  * @subpackage Filesystem
  */
 
 /**
- * WordPress Filesystem Class for direct PHP file and folder manipulation.
+ * CM5 Filesystem Class for direct PHP file and folder manipulation.
  *
  * @since 2.5.0
  *
